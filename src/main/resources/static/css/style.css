@@ -1,0 +1,14 @@
+.sidemenu{
+    width: 30%;
+    height: 100%;
+    background: #eaeaea;
+    position: absolute;
+    padding: 20px;
+}
+.comment{
+    background: #868686;
+    width: 100%;
+    height: 12%;
+    margin-top: 10px;
+    border-radius: 20px;
+}
