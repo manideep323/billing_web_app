@@ -19,9 +19,14 @@ public class ProductController {
 
 	@Autowired
 	private ProductService productService;
+	
+	@RequestMapping(value = "/hi", method = RequestMethod.GET)
+	public void hi() {
+		System.out.println("method calling");
+	}
 	@RequestMapping(value = "/products", method = RequestMethod.GET)
 	public List<Product> getProducts(){
-		System.out.println("+++++++++++prodcontrolle"); 
+		//System.out.println("+++++++++++prodcontrolle"); 
 		//System.out.println(this.getClass().getSimpleName() + " - Get all employees service is invoked.");
 	       
 		 return productService.getProducts();

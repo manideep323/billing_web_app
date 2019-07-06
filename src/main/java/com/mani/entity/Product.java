@@ -4,10 +4,9 @@ package com.mani.entity;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection="topics")
+@Document(collection="users")
 public class Product {
 	@Id
-	private int id;
 	private String fpix_topic_id;
 	private String topic;
 	private String video_id;

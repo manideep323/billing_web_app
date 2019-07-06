@@ -14,7 +14,7 @@ public class ProductService {
 	@Autowired
 	ProductRepository dao;
 	public List<Product> getProducts(){
-		System.out.println("__________________ser");
+		//System.out.println("__________________ser");
 		System.out.println(dao.findAll());
 		return dao.findAll();
 	}
