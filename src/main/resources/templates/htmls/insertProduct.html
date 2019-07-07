@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+	<title>customer entry</title>
+	<style type="text/css">
+		input {
+			width: 98%;
+		}
+	</style>
+</head>
+<body>
+	
+	<form action="#" th:action="@{/insertProduct}" th:object="${Product}" method="post">
+
+<div class="customer-entry">
+	<table border="1" align="center" style="text-align: center; border-collapse: collapse;">
+		<tbody>
+			<tr>
+				<td colspan="2"><h3>Product Entry</h3></td>
+			</tr>
+			<tr>
+				<td>Prod. Code</td>
+
+
+
+				<td>
+					<input type="text" th:field="*{product_code}"></input></td>
+			</tr>
+			<tr>
+				<td>MFG's</td>
+				<td><input type="text" th:field="*{manufacturer_company}"></input></td>
+			</tr>
+			<tr>
+				<td>Brand Name</td>
+				<td><input type="text" th:field="*{brand_name}"></input></td>
+			</tr>
+			<tr>
+				<td>Class</td>
+				<td><input type="text" th:field="*{class_type}"></input></td>
+			</tr>
+			<tr>
+				<td>Division</td>
+				<td><input type="text" th:field="*{division}"></input></td>
+			</tr>
+			<tr>
+				<td>Unit</td>
+				<td><input type="number" th:field="*{unit}"></input></td>
+			</tr>
+			<tr>
+				<td>Rate</td>
+				<td><input type="number" th:field="*{rate}"></input></td>
+			</tr><tr>
+				<td>HSN Code</td>
+				<td><input type="text" th:field="*{hsn_code}"></input></td>
+			</tr><tr>
+				<td>SME</td>
+				<td><input type="text" th:field="*{sme}"></input></td>
+			</tr><tr>
+				<td>Safe Dist.</td>
+				<td><input type="text" th:field="*{safe_dist}"></input></td>
+			</tr>
+			<tr>
+
+					<button>save</button>
+					
+				
+			</tr>
+		</tbody>
+	</table>
+</div>
+  <input type="submit" value="Submit"></input>
+
+</form>
+</body>
+</html>

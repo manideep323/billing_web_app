@@ -1,14 +1,20 @@
 package com.mani.document;
 
 
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 @Document(collection="products")
 public class Product {
 	@Id
-	private Integer product_code;
+	private ObjectId id;
+	@Indexed(unique=true)
+	private int product_code;
 	private String manufacturer_company;
+	@Indexed
 	private String brand_name;
 	private int class_type;
 	private int division;
@@ -18,9 +24,13 @@ public class Product {
 	private int hsn_code;
 	private String safe_dist;
 	
+	public Product() {
+		super();
+	}
+	
 	public Product(int product_code, String manufacturer_company, String brand_name, int class_type, int division,
 			String unit, String sme, float rate, int hsn_code, String safe_dist) {
-		super();
+		//super();
 		this.product_code = product_code;
 		this.manufacturer_company = manufacturer_company;
 		this.brand_name = brand_name;
