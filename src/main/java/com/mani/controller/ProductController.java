@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.mani.entity.Product;
+import com.mani.document.Product;
 import com.mani.service.ProductService;
 @RestController
 public class ProductController {
@@ -20,8 +20,9 @@ public class ProductController {
 	@Autowired
 	private ProductService productService;
 	
-	@RequestMapping(value = "/hi", method = RequestMethod.GET)
-	public void hi() {
+	@RequestMapping(value = "/insertProduct", method = RequestMethod.GET)
+	public void insertProduct() {
+		productService.insertProduct();
 		System.out.println("method calling");
 	}
 	@RequestMapping(value = "/products", method = RequestMethod.GET)
