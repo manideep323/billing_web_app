@@ -11,7 +11,8 @@
 	<groupId>com.example</groupId>
 	<artifactId>tree_structure</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>tree_structure</name>
+	<packaging>war</packaging>
+	<name>billing_web_app</name>
 	<description>floder structure to tree structurs view for Spring Boot</description>
 
 	<properties>
