@@ -4,7 +4,10 @@ import java.util.List;
 
 
 import org.apache.log4j.Logger;
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -22,27 +25,46 @@ private Logger logger = Logger.getLogger(this.getClass());
 	ProductRepository dao;
 	
 	public String insertProduct(Product product) {
-		String Result = null;
-		System.out.println("00000"+product.getProduct_code());
+		String result = null;
 		try {
 			dao.save(product);
 		//System.out.println(dao.save(new Product(101, "doemhgjkfj", "hi", 2, 3, "30.2", "sf", 28.0f, 3465, "kdjf")));
 		}
 		catch (org.springframework.dao.DuplicateKeyException d) {
-			//d.printStackTrace();
-			Result = "product code is exists please try with other code";
+			result = "product code is exists please try with other code";
 		}
 		catch (MongoException e) {
-			Result = "database excption please contat development team";
+			result = "database excption please contat development team";
 	    }
+		if(result == null) {
+			result = "product created sucessful";
+		}
 		
-	return Result;	
+	return result;	
 	}
-	
 	//logger.info("insertProduct -> {}", ProductService.createProduct);
-	
-	
 	public List<Product> getProducts(){
 		return dao.findAll();
+	}
+	public String deleteProduct(ObjectId id) {
+		
+		String result = null;
+		try {
+		dao.delete(id);
+		result ="product deleted sucussesful";
+		}
+		catch(Exception e) {
+			result = "error occured";
+		}
+		
+		return result;
+	}
+	public Product updateProductToPage(ObjectId id) {
+		return dao.findOne(id);
+	}
+	public String updateProduct(Product product, ObjectId id) {
+		dao.delete(id);
+		dao.save(product);
+		return "product saved succesfully";
 	}
 }

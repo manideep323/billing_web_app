@@ -42,6 +42,9 @@ public class Product {
 		this.hsn_code = hsn_code;
 		this.safe_dist = safe_dist;
 	}
+	public ObjectId getId() {
+		return id;
+	}
 	public int getProduct_code() {
 		return product_code;
 	}

@@ -1,8 +1,8 @@
 <%@ include file="common/header.jspf" %>
-
+<div>${message}</div>
 	<div class="container">
 		<table class="table table-striped">
-			<caption>Your todos are</caption>
+			<caption>Your products are</caption>
 			<thead>
 				<tr>
 					<th>product_code</th>
@@ -32,9 +32,9 @@
 						<td>${product.safe_dist}</td>
 						
 						<td><a type="button" 
-							href="/update-product?id=${product.product_code}">Update</a></td>
+							href="/updateProduct?id=${product.id}">Update</a></td>
 						<td><a type="button" 
-							href="/delete-product?id=${product.product_code}">Delete</a></td>
+							href="/deleteProduct?id=${product.id}">Delete</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>

@@ -3,10 +3,7 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
 <html>
-
 <head>
-<title>First Web Application</title>
-<div>hiiiiiii</div>
+<title>Billing Web App</title>
 </head>
-
 <body>

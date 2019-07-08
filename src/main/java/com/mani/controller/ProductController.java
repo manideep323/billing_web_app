@@ -2,8 +2,10 @@ package com.mani.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
 import javax.xml.ws.BindingType;
 
+import org.bson.types.ObjectId;
 import org.json.simple.JSONArray;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -15,12 +17,14 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.mani.document.Product;
 import com.mani.service.ProductService;
-@RestController
+@Controller
 public class ProductController {
 
 	@Autowired
@@ -29,23 +33,50 @@ public class ProductController {
 	
 
 	@RequestMapping(value = "/insertProduct", method = RequestMethod.GET)
-	public ModelAndView showInsertProductPage(ModelMap model, Product product) {
+	public String showInsertProductPage(ModelMap model, Product product) {
 		//model.addAttribute("");
-		return new ModelAndView("insertProduct");
+		return "insertProduct";
 	}
 	
 	@RequestMapping(value = "/insertProduct", method =  RequestMethod.POST)
-	public String insertProduct(ModelMap model, Product product, BindingResult result) {
-		String result1 = productService.insertProduct(product);
+	public String insertProduct(ModelMap model, @Valid Product product, BindingResult result) {
+		String error = productService.insertProduct(product);
+		model.addAttribute("error",error);
+		return "insertProduct";
+		/*System.out.println("5555555"+result1);
 		if(result.hasErrors()) {
 			return result1;	
 		}
 		if(result1 != null) {
 			return "product";	
 		}
-		return "products";
+		return "products";*/
 	}
+	@RequestMapping(value = "/deleteProduct", method = RequestMethod.GET)
+	public String deleteProduct(@RequestParam ObjectId id, ModelMap model) {
+		String result = productService.deleteProduct(id);
+		
+		if(result != null) {
+			System.out.println("attr");
+		model.addAttribute("result", result);
+		}
+		return "redirect:/products";
+	}	
 	
+	@RequestMapping(value = "/updateProduct", method = RequestMethod.GET)
+	public String showUpdateProductPage(@RequestParam ObjectId id, ModelMap model) {
+		model.put("product", productService.updateProductToPage(id));
+		return "/updateProduct";
+	}
+	@RequestMapping(value = "/updateProduct", method = RequestMethod.POST)
+	public String updateProduct(ModelMap model, @Valid Product product, BindingResult result, @RequestParam ObjectId id, final RedirectAttributes redirectAttributes) {
+		String status = productService.updateProduct(product,id);
+		//System.out.println(product.getBrand_name());
+		model.addAttribute("status", status);
+		redirectAttributes.addFlashAttribute("message", "product updated Successfully..");
+		return "redirect:/products";
+	}
+
 	
 	@RequestMapping(value = "/products", method = RequestMethod.GET)
 	public ModelAndView getProducts(Model model){

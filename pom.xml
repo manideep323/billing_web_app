@@ -51,13 +51,7 @@
     <groupId>javax.servlet</groupId>
     <artifactId>jstl</artifactId>
     <scope>provided</scope>
-</dependency>		
-		<!-- https://mvnrepository.com/artifact/org.mongodb/mongodb-driver -->
-<!-- <dependency>
-    <groupId>org.mongodb</groupId>
-    <artifactId>mongodb-driver</artifactId>
-    </dependency>
- -->		
+</dependency>			
 		<dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-mongodb</artifactId>
