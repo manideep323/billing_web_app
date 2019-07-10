@@ -1,5 +1,6 @@
 <%@ include file="common/header.jspf" %>
 <div>${message}</div>
+<div>${result}</div>
 	<div class="container">
 		<table class="table table-striped">
 			<caption>Your products are</caption>
