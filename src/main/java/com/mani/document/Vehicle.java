@@ -12,18 +12,17 @@ public class Vehicle {
 	
 	@Id
 	private ObjectId id;
-	@Indexed(unique=true)
+	@Indexed
 	private String vehicleNo;
-	@Indexed(unique=true)
 	private String licence;
 	private Date validDate;
 	private int capacity;
+	@Indexed
 	private String ownName;
 	private double noCases;
 	private double edCases;
 	public Vehicle() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	public Vehicle(String vehicleNo, String licence, Date validDate, int capacity, String ownName, double noCases,
 			double edCases) {
@@ -39,9 +38,7 @@ public class Vehicle {
 	public ObjectId getId() {
 		return id;
 	}
-	public void setId(ObjectId id) {
-		this.id = id;
-	}
+	
 	public String getVehicleNo() {
 		return vehicleNo;
 	}

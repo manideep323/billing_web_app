@@ -3,6 +3,7 @@
 <%@ include file="common/header.jspf" %>
 
  <form:form method="post" commandName="vehicle">
+ <div>${error}</div>
 <form:label path="vehicleNo">vehicleNo</form:label>
 <form:input path="vehicleNo" type="text" />
 <form:errors path="vehicleNo" />

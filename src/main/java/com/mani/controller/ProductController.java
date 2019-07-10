@@ -53,12 +53,10 @@ public class ProductController {
 		return "products";*/
 	}
 	@RequestMapping(value = "/deleteProduct", method = RequestMethod.GET)
-	public String deleteProduct(@RequestParam ObjectId id, ModelMap model) {
+	public String deleteProduct(@RequestParam ObjectId id, ModelMap model, final RedirectAttributes redirectAttributes) {
 		String result = productService.deleteProduct(id);
-		
 		if(result != null) {
-			System.out.println("attr");
-		model.addAttribute("result", result);
+		redirectAttributes.addFlashAttribute("result", result);
 		}
 		return "redirect:/products";
 	}	
@@ -71,9 +69,8 @@ public class ProductController {
 	@RequestMapping(value = "/updateProduct", method = RequestMethod.POST)
 	public String updateProduct(ModelMap model, @Valid Product product, BindingResult result, @RequestParam ObjectId id, final RedirectAttributes redirectAttributes) {
 		String status = productService.updateProduct(product,id);
-		//System.out.println(product.getBrand_name());
 		model.addAttribute("status", status);
-		redirectAttributes.addFlashAttribute("message", "product updated Successfully..");
+		redirectAttributes.addFlashAttribute("result", "product updated Successfully..");
 		return "redirect:/products";
 	}
 
