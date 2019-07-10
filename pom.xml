@@ -11,7 +11,7 @@
 	<groupId>com.example</groupId>
 	<artifactId>tree_structure</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 	<name>billing_web_app</name>
 	<description>floder structure to tree structurs view for Spring Boot</description>
 
@@ -62,6 +62,7 @@
 	</dependencies>
 
 	<build>
+		<finalName>billing</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
