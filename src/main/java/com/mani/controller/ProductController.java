@@ -23,6 +23,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.mani.document.Product;
+import com.mani.document.SolrProduct;
 import com.mani.service.ProductService;
 @Controller
 public class ProductController {
@@ -39,8 +40,8 @@ public class ProductController {
 	}
 	
 	@RequestMapping(value = "/insertProduct", method =  RequestMethod.POST)
-	public String insertProduct(ModelMap model, @Valid Product product, BindingResult result) {
-		String error = productService.insertProduct(product);
+	public String insertProduct(ModelMap model, @Valid Product product, BindingResult result, SolrProduct solrProduct) {
+		String error = productService.insertProduct(product,solrProduct);
 		model.addAttribute("error",error);
 		return "insertProduct";
 		/*System.out.println("5555555"+result1);
