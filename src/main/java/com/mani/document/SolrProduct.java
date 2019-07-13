@@ -9,8 +9,6 @@ import org.springframework.data.solr.core.mapping.SolrDocument;
 
 @SolrDocument(solrCoreName = "products")
 public class SolrProduct {
-	
-	
 	@Id
 	private String id;
 	@Indexed
