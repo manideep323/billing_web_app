@@ -6,6 +6,8 @@ import java.util.List;
 import org.apache.log4j.Logger;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
@@ -32,7 +34,10 @@ private Logger logger = Logger.getLogger(this.getClass());
 		String result = null;
 		try {
 			dao.save(product);
+			solrProduct.setId(product.getId().toString());
 			solrDao.save(solrProduct);
+			
+			//System.out.println(product.getId());
 		//System.out.println(dao.save(new Product(101, "doemhgjkfj", "hi", 2, 3, "30.2", "sf", 28.0f, 3465, "kdjf")));
 		}
 		catch (org.springframework.dao.DuplicateKeyException d) {
@@ -49,6 +54,10 @@ private Logger logger = Logger.getLogger(this.getClass());
 	}
 	//logger.info("insertProduct -> {}", ProductService.createProduct);
 	public List<Product> getProducts(){
+		Page<SolrProduct> findByBrandName = solrDao.findByCustomQuery("male", new PageRequest(0, 10));
+		for (SolrProduct solrProduct : findByBrandName) {
+			System.out.println(solrProduct.toString());	
+		}
 		return dao.findAll();
 	}
 	public String deleteProduct(ObjectId id) {
