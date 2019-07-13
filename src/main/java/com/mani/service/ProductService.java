@@ -12,7 +12,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.mani.document.Product;
+import com.mani.document.SolrProduct;
 import com.mani.repository.ProductRepository;
+import com.mani.repository.SolrProductRepositry;
 import com.mongodb.DuplicateKeyException;
 import com.mongodb.MongoException;
 
@@ -23,11 +25,14 @@ public class ProductService {
 private Logger logger = Logger.getLogger(this.getClass());
 	@Autowired
 	ProductRepository dao;
+	@Autowired
+	SolrProductRepositry solrDao;
 	
-	public String insertProduct(Product product) {
+	public String insertProduct(Product product, SolrProduct solrProduct) {
 		String result = null;
 		try {
 			dao.save(product);
+			solrDao.save(solrProduct);
 		//System.out.println(dao.save(new Product(101, "doemhgjkfj", "hi", 2, 3, "30.2", "sf", 28.0f, 3465, "kdjf")));
 		}
 		catch (org.springframework.dao.DuplicateKeyException d) {
