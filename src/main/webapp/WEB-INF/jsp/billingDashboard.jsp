@@ -1,27 +1,8 @@
 <%@ include file="common/header.jspf" %>
 	<div class="container">
-
-		<form:form method="post" commandName="product">
-		<form:label name="product_code" path="product_code">product_code</form:label>
-		<form:input path="product_code" type="text" />
-		<form:label path="manufacturer_company">manufacturer_company</form:label>
-		<form:input path="manufacturer_company" type="text" />
-		<form:label path="brand_name">brand_name</form:label>
-		<form:input path="brand_name" type="text" />
-		<form:label path="class_type">class_type</form:label>
-		<form:input path="class_type" type="text" />
-		<form:label path="division">division</form:label>
-		<form:input path="division" type="text" />
-		<form:label path="unit">unit</form:label>
-		<form:input path="unit" type="text" />
-		<form:label path="rate">rate</form:label>
-		<form:input path="rate" type="text" />
-		<form:label path="hsn_code">hsn_code</form:label>
-		<form:input path="hsn_code" type="text" />
-		<form:label path="sme">sme</form:label>
-		<form:input path="sme" type="text" />
-		<form:label path="safe_dist">safe_dist</form:label>
-		<form:input path="safe_dist" type="text" />
-		</form:form>
-
+	<c:forEach items="${products}" var="product">
+			<div>${product.id}</div>
+			<div>${product.brand_name}</div>
+			<div>${product.product_code}</div>
+	</c:forEach>
 	</div>

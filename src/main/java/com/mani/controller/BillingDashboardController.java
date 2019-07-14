@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -18,8 +19,6 @@ import com.mani.service.BillingDashboardService;
 public class BillingDashboardController {
 	@Autowired
 	private BillingDashboardService billingDashboardService;
-	@Autowired
-	SolrProductRepositry solrDao;
 	
 	
 	@RequestMapping(value = "/billingDashboard", method = RequestMethod.GET)
@@ -28,16 +27,9 @@ public class BillingDashboardController {
 	}
 	@RequestMapping(value = "/searchProductCode", method = RequestMethod.GET)
 	//public Page<SolrProduct> searchProductCode(@RequestParam("product_code") int product_code) {
-	public Page<SolrProduct> searchProductCode() {
-		Page<SolrProduct> findByBrandName = solrDao.findByCustomQuery("m", new PageRequest(0, 10));
-		for (SolrProduct solrProduct : findByBrandName) {
-			System.out.println(solrProduct.toString());	
-		}
-		Page<SolrProduct> findByProductCode = solrDao.findByProductCode(12021, new PageRequest(0, 10));
-		for (SolrProduct solrProduct : findByProductCode) {
-			System.out.println(solrProduct.toString());	
-		}
-		return findByProductCode;
+	public String searchProductCode(Model model) {
+		Page<SolrProduct> findByProductCode = billingDashboardService.searchProductCode();
+		model.addAttribute("products", findByProductCode);
+		return "searchProductCode";
 	}
-
 }

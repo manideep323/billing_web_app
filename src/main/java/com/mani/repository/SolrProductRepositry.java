@@ -14,7 +14,7 @@ import java.util.List;
 public interface SolrProductRepositry extends SolrCrudRepository<SolrProduct, String>{
 	 //List<SolrProduct> findByDivision(int division);
 	 @Query("product_code:*?0*")
-	 public Page<SolrProduct> findByProductCode(int searchTerm, Pageable pageable);
+	 public Page<SolrProduct> findByProductCode(String searchTerm, Pageable pageable);
 	 @Query("brand_name:*?0*")
 	 public Page<SolrProduct> findByCustomQuery(String searchTerm, Pageable pageable);
 }
