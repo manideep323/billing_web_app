@@ -1,5 +1,8 @@
 package com.mani.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -25,11 +28,15 @@ public class BillingDashboardController {
 	public String showBillingDashboardPage() {
 		return "billingDashboard";
 	}
+	
 	@RequestMapping(value = "/searchProductCode", method = RequestMethod.GET)
 	//public Page<SolrProduct> searchProductCode(@RequestParam("product_code") int product_code) {
-	public String searchProductCode(Model model) {
+	public Map<String, Object> searchProductCode(Model model, @RequestParam  String searchText) {
+		System.out.println("comming");
+		Map<String,Object> map = new HashMap<String, Object>();
 		Page<SolrProduct> findByProductCode = billingDashboardService.searchProductCode();
-		model.addAttribute("products", findByProductCode);
-		return "searchProductCode";
+		map.put("products", findByProductCode);
+		System.out.print("before");
+		return map;
 	}
 }

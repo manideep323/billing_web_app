@@ -12,7 +12,7 @@ public class Vehicle {
 	
 	@Id
 	private ObjectId id;
-	@Indexed
+	@Indexed(unique = true)
 	private String vehicleNo;
 	private String licence;
 	private Date validDate;
