@@ -16,8 +16,7 @@ public class Vehicle {
 	private String vehicleNo;
 	private String licence;
 	private Date validDate;
-	private int capacity;
-	@Indexed
+	private int capacity; 
 	private String ownName;
 	private double noCases;
 	private double edCases;

@@ -34,8 +34,8 @@ public class BillingDashboardController {
 	public Map<String, Object> searchProductCode(Model model, @RequestParam  String searchText) {
 		System.out.println("comming");
 		Map<String,Object> map = new HashMap<String, Object>();
-		Page<SolrProduct> findByProductCode = billingDashboardService.searchProductCode();
-		map.put("products", findByProductCode);
+	 
+		map.put("products", billingDashboardService.searchProductCode());
 		System.out.print("before");
 		return map;
 	}

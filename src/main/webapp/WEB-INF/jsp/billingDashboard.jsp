@@ -40,12 +40,11 @@ document.getElementById('amit').innerHTML=val;
 <body>
 <h1>hello</h1>
 
- <marquee><h1>This is an example of ajax</h1></marquee>  
 <form name="vinform">  
 Enter id:<input type="text" name="searchText" onkeyup="sendInfo()">  
 </form>  
   
-<span id="amit"> </span>  
+
 <div class="container">	
 	<c:forEach items="${products}" var="product">
 			<div>${product.id}</div>
