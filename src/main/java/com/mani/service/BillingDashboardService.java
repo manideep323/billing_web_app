@@ -15,7 +15,7 @@ public class BillingDashboardService {
 	@Autowired
 	SolrProductRepositry solrDao;
 	
-	public Page<SolrProduct> searchProductCode() {
+	/*public Page<SolrProduct> searchProductCode() {
 		Page<SolrProduct> findByBrandName = solrDao.findByCustomQuery("m", new PageRequest(0, 10));
 		for (SolrProduct solrProduct : findByBrandName) {
 			System.out.println(solrProduct.toString());	
@@ -25,6 +25,6 @@ public class BillingDashboardService {
 			System.out.println(solrProduct.toString());	
 		}
 		return findByProductCode;
-	}
+	}*/
 
 }

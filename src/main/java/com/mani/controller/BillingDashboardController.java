@@ -17,17 +17,34 @@ import com.mani.document.Product;
 import com.mani.document.SolrProduct;
 import com.mani.repository.SolrProductRepositry;
 import com.mani.service.BillingDashboardService;
+import com.mani.service.ProductService;
 
 @Controller
 public class BillingDashboardController {
 	@Autowired
 	private BillingDashboardService billingDashboardService;
+	@Autowired
+	private ProductService productService;
 	
-	
-	@RequestMapping(value = "/billingDashboard", method = RequestMethod.GET)
+	/*@RequestMapping(value = "/billingDashboardBkp", method = RequestMethod.GET)
 	public String showBillingDashboardPage() {
 		return "billingDashboard";
+	}*/
+	@RequestMapping(value = "/billingDashboard", method = RequestMethod.GET)
+	public String showBillingDashboardPage(Model model) {
+		model.addAttribute("products", productService.getProducts());
+		return "billingDashboard";
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	@RequestMapping(value = "/searchProductCode", method = RequestMethod.GET)
 	//public Page<SolrProduct> searchProductCode(@RequestParam("product_code") int product_code) {
@@ -35,7 +52,7 @@ public class BillingDashboardController {
 		System.out.println("comming");
 		Map<String,Object> map = new HashMap<String, Object>();
 	 
-		map.put("products", billingDashboardService.searchProductCode());
+		//map.put("products", billingDashboardService.searchProductCode());
 		System.out.print("before");
 		return map;
 	}

@@ -27,15 +27,15 @@ public class ProductService {
 private Logger logger = Logger.getLogger(this.getClass());
 	@Autowired
 	ProductRepository dao;
-	@Autowired
-	SolrProductRepositry solrDao;
+	//@Autowired
+	//SolrProductRepositry solrDao;
 	
 	public String insertProduct(Product product, SolrProduct solrProduct) {
 		String result = null;
 		try {
 			dao.save(product);
 			solrProduct.setId(product.getId().toString());
-			solrDao.save(solrProduct);
+			//solrDao.save(solrProduct);
 			
 			//System.out.println(product.getId());
 		//System.out.println(dao.save(new Product(101, "doemhgjkfj", "hi", 2, 3, "30.2", "sf", 28.0f, 3465, "kdjf")));
@@ -54,10 +54,10 @@ private Logger logger = Logger.getLogger(this.getClass());
 	}
 	//logger.info("insertProduct -> {}", ProductService.createProduct);
 	public List<Product> getProducts(){
-		Page<SolrProduct> findByBrandName = solrDao.findByCustomQuery("male", new PageRequest(0, 10));
+		/*Page<SolrProduct> findByBrandName = solrDao.findByCustomQuery("male", new PageRequest(0, 10));
 		for (SolrProduct solrProduct : findByBrandName) {
 			System.out.println(solrProduct.toString());	
-		}
+		}*/
 		return dao.findAll();
 	}
 	public String deleteProduct(ObjectId id) {
