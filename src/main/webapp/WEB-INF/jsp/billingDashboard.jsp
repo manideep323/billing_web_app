@@ -1,9 +1,7 @@
 <%@ include file="common/header.jspf" %>
 <div>${products}</div>
 
-<script>
-console.log("hiii");
-</script>
+
 
 <c:forEach items="${products}" var="product">
 			<div>${product.product_code}</div>
