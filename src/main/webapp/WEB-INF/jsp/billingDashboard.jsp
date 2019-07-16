@@ -2,11 +2,14 @@
 <div>${products}</div>
 
 
+<link href="${pageContext.request.contextPath}/webapp/WEB-INF/css/style.css" rel="stylesheet" type="text/css">
 
 <c:forEach items="${products}" var="product">
-			<div>${product.product_code}</div>
-			<div>${product.brand_name}</div>
+			<div class="product">${product.product_code}</div>
+			<div class="product">${product.brand_name}</div>
 </c:forEach>
+
+
 <%-- <form:form method="post" commandName="product">
 <div>${error}</div>
 <form:label path="product_code">product_code</form:label>
