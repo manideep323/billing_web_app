@@ -20,7 +20,7 @@ public class Product {
 	private int division;
 	private String unit;
 	private String sme;
-	private float rate;
+	private String rate;
 	private int hsn_code;
 	private String safe_dist;
 	
@@ -29,7 +29,7 @@ public class Product {
 	}
 	
 	public Product(int product_code, String manufacturer_company, String brand_name, int class_type, int division,
-			String unit, String sme, float rate, int hsn_code, String safe_dist) {
+			String unit, String sme, String rate, int hsn_code, String safe_dist) {
 		//super();
 		this.product_code = product_code;
 		this.manufacturer_company = manufacturer_company;
@@ -87,10 +87,10 @@ public class Product {
 	public void setSme(String sme) {
 		this.sme = sme;
 	}
-	public float getRate() {
+	public String getRate() {
 		return rate;
 	}
-	public void setRate(float rate) {
+	public void setRate(String rate) {
 		this.rate = rate;
 	}
 	public int getHsn_code() {

@@ -1,8 +1,9 @@
 <%@ include file="common/header.jspf" %>
-<div>${products}</div>
 
 
-<link href="${pageContext.request.contextPath}/webapp/WEB-INF/css/style.css" rel="stylesheet" type="text/css">
+
+<script src="js/custom.js"></script>
+<link href="css/style.css" rel="stylesheet">
 
 <c:forEach items="${products}" var="product">
 			<div class="product">${product.product_code}</div>

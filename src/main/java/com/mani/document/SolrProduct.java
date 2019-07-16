@@ -2,7 +2,6 @@ package com.mani.document;
 
 
 import org.apache.solr.client.solrj.beans.Field;
-import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.solr.core.mapping.SolrDocument;
