@@ -1,0 +1,45 @@
+table {
+			border-collapse: collapse;
+			vertical-align: middle;
+		}
+
+		input {
+			width: 100%;
+			height: 100%;
+		}
+
+		textarea {
+			width: 100%;
+			height: 100%;
+			resize: none;
+			margin: 0;
+		}
+
+		label {
+			margin: 0;
+		}
+
+		.form-group {
+			margin: 0; 
+		}
+		table table {
+			border: none; 
+		}
+
+		th, td, tr {
+			margin: 0;
+			padding: 0;
+			border-collapse: collapse;
+		}
+
+		.gst-table td{
+			width: 12.2%;
+		}
+
+		.bank-details-table td{
+			width: 33.3%
+		}
+
+		.logo, .type-click {
+			width: 20%;
+		}
