@@ -393,10 +393,15 @@
 						</tr>
 						<tr>
 							<td>1</td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
+							<td><select onclick="setProductValues(value)" class="brand-id" id="inputGroupSelect01">
+									    <option selected>Choose...</option>
+									     <c:forEach var="product" items="${products}" varStatus="loop">
+									     	<option value='{"index":"${loop.index}","brand":"${product.brand_name}"}' >${product.product_code}</option>
+									    </c:forEach> 
+									  </select></td>
+							<td><input class="product-name" id="product-description"></input></td>
+							<td class="hsn-code"></td>
+							<td><input type="text" value=manufacturer_company class="brand-id" id="brand-id"/></td>
 							<td></td>
 							<td></td>
 							<td></td>
@@ -587,10 +592,38 @@
 	</div>
 	</div>
 </body>
-<script src="js/custom.js"></script>
+<!-- <script src="js/custom.js"></script> -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+/*  $(document).ready(function(){
+	$('option').each(function(ele){
+			$(this).click(function(){
+			alert()
+		})
+	})
+	
+}) */
+
+/* jQuery(document).ready(function($){
+	  $('#inputGroupSelect01').on('click',function(){
+	    var val = JSON.parse( $(this).val() );
+	    debugger
+	    console.log(val);
+	  });
+	}); */
+
+/* function setProductValues(value){
+	console.log("hi");
+	var val = JSON.parse(value);
+	debugger
+} 
+ */
+
+
+</script>
 </html>
 
 
