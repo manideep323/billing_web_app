@@ -5,7 +5,7 @@ function setProductValues(value){
 	var val = JSON.parse(value);
 	
 $('#product-description').each(function(ele){
-	debugger
+	//debugger
 	//var prod = $(this).addClass('product-data_'+ele+'');
 	
 	$(this).val(val["brand"]);
