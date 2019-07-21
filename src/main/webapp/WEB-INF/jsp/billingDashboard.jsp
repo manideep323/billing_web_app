@@ -722,24 +722,39 @@
 
 				// Handle key event that hasn't been handled by KeyTable
 				$('#example').on('key.dt',function(e, datatable, key, cell, originalEvent) {
+
 							// If ENTER key is pressed
 							var i = 1;
 							if (key === 13) {
-								
+																
 								// Get highlighted row data
 								var data = table.row(cell.index().row).data();
 								//$('#exampleModalCenter').hide();
 
 								$('#exampleModalCenter').modal('hide');
-								//debugger
 								
-								console.log(data);
-								$('#brand_id_'+i+'').val(data[1]);
-								$('#product-description_'+i+'').val(data[3]);
-								$('#hsn_code_'+i+'').text(data[8]);
-								$('#unit_'+i+'').text(data[6]);
-								$('#class_'+i+'').text(data[4]);
-								$('#division_'+i+'').text(data[5]);
+								var product_name=$($($('#addr' + i).children()[2]).children()[0]).parent().children().attr('id');
+								console.log(product_name);	
+								console.log(data[3]);
+								$('#'+product_name+'').val(data[3]);
+								//$('"#"+hsn').val(data[3]);
+								//debugger
+								//debugger
+								//$('"#"+$($($('#addr' + i).children()[3]).children()[0]).parent().children().attr('id')').text(data[8])
+								
+								
+								
+								
+								//dataSendToBillingTable(data);
+								
+								
+								
+								//$('#brand_id_'+i+'').val(data[1]);
+								//$('#product-description_'+i+'').val(data[3]);
+								//$('#hsn_code_'+i+'').text(data[8]);
+								//$('#unit_'+i+'').text(data[6]);
+								//$('#class_'+i+'').text(data[4]);
+								//$('#division_'+i+'').text(data[5]);
 								//$(''brand_id_'+data[0]+'')
 								// FOR DEMONSTRATION ONLY
 								$("#example-console").html(data.join(', '));
@@ -748,7 +763,16 @@
 							
 						});
 			});
-</script>
+
+	function dataSendToBillingTable(data){
+		console.log(data);
+		
+		//debugger
+	}
+	
+	
+	
+	</script>
 
 
 </html>
