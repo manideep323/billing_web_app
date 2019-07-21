@@ -15,7 +15,7 @@
 <form:label path="gstNo">gstNo</form:label>
 <form:input path="gstNo" type="text" />
 <form:label path="validDt">validDt</form:label>
-<form:input path="validDt" type="text" />
+<form:input path="validDt" type="date" />
 <form:label path="stateCode">stateCode</form:label>
 <form:input path="stateCode" type="text" />
 <form:label path="docNo">docNo</form:label>

@@ -18,7 +18,7 @@
 					</tr>
 			</thead>
 			<tbody>
-				<c:forEach items="${customers}" var="cusromer">
+				<c:forEach items="${customers}" var="customer">
 					<tr>
 						<td>${customer.code}</td>
 						<td>${customer.licNo}</td>
@@ -28,7 +28,7 @@
 						<td>${customer.validDt}</td>
 						<td>${customer.stateCode}</td>
 						<td>${customer.docNo}</td>
-					
+						
 						<td><a type="button" 
 							href="/updateCustomer?id=${customer.id}">Update</a></td>
 						<td><a type="button" 

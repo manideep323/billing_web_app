@@ -6,14 +6,16 @@ import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.format.annotation.DateTimeFormat;
 
-@Document(collection="vehicle")
+@Document(collection="vehicles")
 public class Vehicle {
 	
 	@Id
 	private ObjectId id;
 	private String vehicleNo;
 	private String licence;
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
 	private Date validDate;
 	private int capacity; 
 	private String ownName;
@@ -78,6 +80,12 @@ public class Vehicle {
 	}
 	public void setEdCases(double edCases) {
 		this.edCases = edCases;
+	}
+	@Override
+	public String toString() {
+		return "Vehicle [id=" + id + ", vehicleNo=" + vehicleNo + ", licence=" + licence + ", validDate=" + validDate
+				+ ", capacity=" + capacity + ", ownName=" + ownName + ", noCases=" + noCases + ", edCases=" + edCases
+				+ "]";
 	}
 	
 	

@@ -724,7 +724,7 @@
 				$('#example').on('key.dt',function(e, datatable, key, cell, originalEvent) {
 
 							// If ENTER key is pressed
-							var i = 1;
+							//var i = 1;
 							if (key === 13) {
 																
 								// Get highlighted row data

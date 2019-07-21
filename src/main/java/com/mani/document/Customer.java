@@ -1,7 +1,10 @@
 package com.mani.document;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.Date;
+
+import javax.annotation.PreDestroy;
 
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.CreatedDate;
@@ -9,9 +12,10 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.domain.Persistable;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.format.annotation.DateTimeFormat;
 
 
-@Document(collection="customer")
+@Document(collection="customers")
 public class Customer implements Persistable<Serializable> {
 	
 	/**
@@ -34,6 +38,7 @@ public class Customer implements Persistable<Serializable> {
 	private String tinNo;
 	@Indexed(unique=true)
 	private String gstNo;
+	 @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
 	private Date   validDt;
 	private String stateCode;
 	
@@ -41,11 +46,7 @@ public class Customer implements Persistable<Serializable> {
 	private Address shippingAddress;
 	@Indexed(unique=true)
 	private String docNo;
-	@Override
-	public Serializable getId() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 	@Override
 	public boolean isNew() {
 		// TODO Auto-generated method stub
@@ -123,6 +124,47 @@ public class Customer implements Persistable<Serializable> {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
+	@Override
+	public String toString() {
+		return "Customer [id=" + id + ", code=" + code + ", licNo=" + licNo + ", custName=" + custName
+				+ ", createdDate=" + createdDate + ", tinNo=" + tinNo + ", gstNo=" + gstNo + ", validDt=" + validDt
+				+ ", stateCode=" + stateCode + ", billingAddress=" + billingAddress + ", shippingAddress="
+				+ shippingAddress + ", docNo=" + docNo + "]";
+	}
+	public void setId(ObjectId id) {
+		this.id = id;
+	}
+	
+	public ObjectId getId(){
+		return id;
+	}
+
+
+	public Customer(ObjectId id, long code, String licNo, String custName, Date createdDate, String tinNo, String gstNo,
+			Date validDt, String stateCode, Address billingAddress, Address shippingAddress, String docNo) {
+		super();
+		this.id = id;
+		this.code = code;
+		this.licNo = licNo;
+		this.custName = custName;
+		this.createdDate = createdDate;
+		this.tinNo = tinNo;
+		this.gstNo = gstNo;
+		this.validDt = validDt;
+		this.stateCode = stateCode;
+		this.billingAddress = billingAddress;
+		this.shippingAddress = shippingAddress;
+		this.docNo = docNo;
+	}
+
+
+	public Customer() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+	
 	
 	
 
