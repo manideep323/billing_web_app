@@ -43,3 +43,10 @@ table {
 		.logo, .type-click {
 			width: 20%;
 		}
+		
+		.modal-dialog {
+			max-width: 80% !important;
+		}
+		
+		
+		
