@@ -335,13 +335,13 @@
 						</tbody>
 					</table>
 					<!--------------------- product Table---------------------- -->
-					<div class="container">
+					<div class="">
 						<div class="row clearfix">
 							<div class="col-md-12">
-								<table class="table table-bordered table-hover" id="tab_logic">
+								<table class="" id="tab_logic" border="1">
 									<thead>
 										<tr>
-											<th class="text-center">#</th>
+											<th class="text-center">S No</th>
 											<th class="text-center">Brand Id</th>
 											<th class="text-center">Product Description</th>
 											<th class="text-center">HSN Code</th>
@@ -359,16 +359,16 @@
 									<tbody>
 										<tr id='addr0'>
 											<td>1</td>
-											<td class="brand-id"><input type="number"
+											<td class="brand-id"><input type="number" class="form-control" placeholder='Brand Id'
 												data-toggle="modal" data-target="#exampleModalCenter" id="brand_id_1"/>
 												<!-- <p>
 													<b>Details:</b> <span id="example-console">N/A</span>
-												</p> -->
+												</p> --> 
 											</td>
 											<td class="product-name">
 											<input type="text"
-												name='product[]' placeholder='Enter Product Name'
-												class="form-control" id="product-description_1" />
+												name='product[]' placeholder='Product'
+												class="form-control" id="product-description_1" readonly/>
 											</td>
 											<td class="hsn-code" >
 												<span id='hsn_code_1'></span>
@@ -391,15 +391,15 @@
 											
 											<td class="gst-percent">
 												<input type="number" 
-												placeholder='0.00' class="form-control" readonly />
+												placeholder='%' class="form-control gst" id="gst"/>
 											</td>
 											<td class="gst-amount">
 											<input type="number" 
-												placeholder='0.00' class="form-control" readonly />
+												placeholder='0.00' class="form-control gst_amount" readonly id="gst_amount"/>
 											</td>
 											<td class="net-amount">
 												<input type="number" name='total[]'
-												placeholder='0.00' class="form-control" readonly />
+												placeholder='0.00' class="form-control net_amount" readonly id="net_amount"/>
 											</td>
 											<td class="class-data">
 												<span id="class_1"></span>
@@ -433,7 +433,9 @@
 									<td>IGST</td>
 									<td></td>
 									<td>Gross Amount</td>
-									<td></td>
+									<td class='gross-amount'>
+										<input type="number" name='gross_total' placeholder='0.00' class="form-control" id="gross_total" readonly/>
+									</td>
 								</tr>
 								<tr>
 									<td>@0%</td>
@@ -443,7 +445,9 @@
 									<td>SGST</td>
 									<td></td>
 									<td>GST Amount</td>
-									<td></td>
+									<td class="gst-total">
+										<input type="number" name='gst_total' placeholder='0.00' class="form-control" id="gst_total" readonly/>
+									</td>
 								</tr>
 								<tr>
 									<td>@5%</td>
@@ -453,11 +457,13 @@
 									<td>CGST</td>
 									<td></td>
 									<td>Net Amount</td>
-									<td></td>
+									<td class="net-amount">
+										<input type="number" name='net_amount' placeholder='0.00' class="form-control" id="netamount_total" readonly"/>
+									</td>
 								</tr>
 								<tr>
 									<td>Amount in Words</td>
-									<td colspan="5"></td>
+									<td colspan="5" ><div id="word"></div></td>
 									<td>Payment Status</td>
 									<td><select class="custom-select">
 											<option selected>Choose...</option>
@@ -651,6 +657,7 @@
 				$('#tab_logic tbody').on('keyup change', function() {
 					calc();
 				});
+				
 				$('#tax').on('keyup change', function() {
 					calc_total();
 				});
@@ -664,7 +671,15 @@
 				var qty = $(this).find('.qty').val();
 				var price = $(this).find('.price').val();
 				$(this).find('.total').val(qty * price);
-
+				
+				
+				var totalAmount = parseInt($(this).find('.total').val());
+				var gst = $(this).find('.gst').val();
+				$(this).find('.gst_amount').val(gst / 100 * totalAmount);
+				
+				
+				var gstAmount = parseInt($(this).find('.gst_amount').val());
+				$(this).find('.net_amount').val(totalAmount + gstAmount);
 				calc_total();
 			}
 		});
@@ -675,10 +690,23 @@
 		$('.total').each(function() {
 			total += parseInt($(this).val());
 		});
-		$('#sub_total').val(total.toFixed(2));
-		tax_sum = total / 100 * $('#tax').val();
-		$('#tax_amount').val(tax_sum.toFixed(2));
-		$('#total_amount').val((tax_sum + total).toFixed(2));
+		$('#gross_total').val(total.toFixed(2));
+		
+		
+		gst = 0;
+		$('.gst_amount').each(function() {
+	        gst += parseInt($(this).val());
+	        //debugger
+	    });
+		$('#gst_total').val(gst.toFixed(2));
+		
+		
+		netAmounttotal = 0;
+		$('.net_amount').each(function() {
+			netAmounttotal += parseInt($(this).val());
+	    });
+		$('#netamount_total').val(netAmounttotal.toFixed(2));
+		 
 	}
 
 	
@@ -724,7 +752,7 @@
 				$('#example').on('key.dt',function(e, datatable, key, cell, originalEvent) {
 
 							// If ENTER key is pressed
-							//var i = 1;
+							var i = 1;
 							if (key === 13) {
 																
 								// Get highlighted row data
@@ -749,12 +777,12 @@
 								
 								
 								
-								//$('#brand_id_'+i+'').val(data[1]);
-								//$('#product-description_'+i+'').val(data[3]);
-								//$('#hsn_code_'+i+'').text(data[8]);
-								//$('#unit_'+i+'').text(data[6]);
-								//$('#class_'+i+'').text(data[4]);
-								//$('#division_'+i+'').text(data[5]);
+								$('#brand_id_'+i+'').val(data[1]);
+								$('#product-description_'+i+'').val(data[3]);
+								$('#hsn_code_'+i+'').text(data[8]);
+								$('#unit_'+i+'').text(data[6]);
+								$('#class_'+i+'').text(data[4]);
+								$('#division_'+i+'').text(data[5]);
 								//$(''brand_id_'+data[0]+'')
 								// FOR DEMONSTRATION ONLY
 								$("#example-console").html(data.join(', '));
