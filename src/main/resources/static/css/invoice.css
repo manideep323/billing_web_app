@@ -48,5 +48,12 @@ table {
 			max-width: 80% !important;
 		}
 		
+		.dataTables_wrapper .dataTables_filter input {
+			height:30px;
+		}
+		
+		.form-group, form {
+		
+		margin-bottom: 0 !important;}
 		
 		
