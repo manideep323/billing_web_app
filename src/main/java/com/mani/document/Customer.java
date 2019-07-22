@@ -17,31 +17,21 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 @Document(collection="customers")
 public class Customer implements Persistable<Serializable> {
-	
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 	
 	@Id
 	private ObjectId id;
-	@Indexed(unique=true)
-	private long code;
-	@Indexed(unique=true)
+	//private long code;
 	private String licNo;
-	
 	private String custName;
-	
 	@CreatedDate
 	private Date createdDate;
-	@Indexed(unique=true)
 	private String tinNo;
-	@Indexed(unique=true)
 	private String gstNo;
-	 @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
 	private Date   validDt;
 	private String stateCode;
-	
 	private Address billingAddress;
 	private Address shippingAddress;
 	@Indexed(unique=true)
@@ -54,12 +44,10 @@ public class Customer implements Persistable<Serializable> {
 	}
 	
 	
-	public long getCode() {
-		return code;
-	}
-	public void setCode(long code) {
-		this.code = code;
-	}
+	/*
+	 * public long getCode() { return code; } public void setCode(long code) {
+	 * this.code = code; }
+	 */
 	
 	public String getLicNo() {
 		return licNo;
@@ -126,7 +114,7 @@ public class Customer implements Persistable<Serializable> {
 	}
 	@Override
 	public String toString() {
-		return "Customer [id=" + id + ", code=" + code + ", licNo=" + licNo + ", custName=" + custName
+		return "Customer [id=" + id + ", licNo=" + licNo + ", custName=" + custName
 				+ ", createdDate=" + createdDate + ", tinNo=" + tinNo + ", gstNo=" + gstNo + ", validDt=" + validDt
 				+ ", stateCode=" + stateCode + ", billingAddress=" + billingAddress + ", shippingAddress="
 				+ shippingAddress + ", docNo=" + docNo + "]";
@@ -144,7 +132,6 @@ public class Customer implements Persistable<Serializable> {
 			Date validDt, String stateCode, Address billingAddress, Address shippingAddress, String docNo) {
 		super();
 		this.id = id;
-		this.code = code;
 		this.licNo = licNo;
 		this.custName = custName;
 		this.createdDate = createdDate;

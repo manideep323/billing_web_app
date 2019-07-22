@@ -38,6 +38,7 @@ public class VehicleService {
 		}
 		//logger.info("insertVehicle -> {}", VehicleService.createVehicle);
 		public List<Vehicle> getVehicles(){
+			//System.out.println();
 			return dao.findAll();
 		}
 		public String deleteVehicle(ObjectId id) {

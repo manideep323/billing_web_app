@@ -1,8 +1,4 @@
 <%@ include file="common/header.jspf"%>
-
-
-
-
 <%-- <c:forEach items="${products}" var="product">
 			<div class="product">${product.product_code}</div>
 			<div class="product">${product.brand_name}</div>
@@ -10,8 +6,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-
 <!-- <link href="css/style.css" rel="stylesheet"> -->
 <link href="css/invoice.css" rel="stylesheet">
 <link href="css/datatable.css" rel="stylesheet">
@@ -142,9 +136,10 @@
 													<label>Vehicle No.</label>
 												</div> <select class="custom-select" id="inputGroupSelect01">
 													<option selected>Choose...</option>
-													<option value="1">One</option>
-													<option value="2">Two</option>
-													<option value="3">Three</option>
+												<c:forEach items="${vehicles}" var="vehicle">
+													<option class="vehicle">${vehicle.vehicleNo}</option>
+												</c:forEach>
+													
 											</select>
 											</td>
 											</td>
@@ -704,7 +699,7 @@
 
 				// Handle event when cell gains focus
 				$('#example').on('key-focus.dt', function(e, datatable, cell) {
-					
+					debugger
 					// Select highlighted row
 					$(table.row(cell.index().row).node()).addClass('selected');
 					//$('#exampleModalCenter').hide();
@@ -722,7 +717,7 @@
 
 				// Handle key event that hasn't been handled by KeyTable
 				$('#example').on('key.dt',function(e, datatable, key, cell, originalEvent) {
-
+					//debugger	
 							// If ENTER key is pressed
 							//var i = 1;
 							if (key === 13) {
@@ -738,7 +733,7 @@
 								console.log(data[3]);
 								$('#'+product_name+'').val(data[3]);
 								//$('"#"+hsn').val(data[3]);
-								//debugger
+								
 								//debugger
 								//$('"#"+$($($('#addr' + i).children()[3]).children()[0]).parent().children().attr('id')').text(data[8])
 								
