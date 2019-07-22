@@ -15,8 +15,10 @@
 <!-- <link href="css/style.css" rel="stylesheet"> -->
 <link href="css/invoice.css" rel="stylesheet">
 <link href="css/datatable.css" rel="stylesheet">
-<link href="webjars/bootstrap/4.3.1/css/bootstrap.min.css"
+<!-- <link href="https://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"> -->
+<link href="webjars/bootstrap/3.3.2/css/bootstrap.min.css"
 	rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/css/bootstrap-select.min.css" />
 
 </head>
 <body>
@@ -52,7 +54,7 @@
 												<form>
 													<div class="form-group">
 														<label for="formGroupExampleInput">Invoice No.</label> <input
-															type="text" />
+															type="text" class="form-control" />
 													</div>
 													</div>
 												</form>
@@ -61,7 +63,7 @@
 												<form>
 													<div class="form-group">
 														<label for="formGroupExampleInput">Date of Invoice</label>
-														<input id="date" name="date">
+														<input id="date" name="date" class="form-control" />
 													</div>
 													</div>
 												</form>
@@ -72,7 +74,7 @@
 											<td>
 												<form>
 													<div class="form-group">
-														<input type="text" />
+														<input type="text" class="form-control"/>
 													</div>
 													</div>
 												</form>
@@ -94,7 +96,7 @@
 											<td>
 												<form>
 													<div class="form-group">
-														<input type="text" />
+														<input type="text" class="form-control"/>
 													</div>
 													</div>
 												</form>
@@ -105,7 +107,7 @@
 											<td>
 												<form>
 													<div class="form-group">
-														<input type="text" />
+														<input type="text" class="form-control"/>
 													</div>
 													</div>
 												</form>
@@ -116,7 +118,7 @@
 											<td>
 												<form>
 													<div class="form-group">
-														<input type="text" />
+														<input type="text" class="form-control"/>
 													</div>
 													</div>
 												</form>
@@ -130,21 +132,34 @@
 											<td>
 												<div class="input-group-prepend">
 													<label>Doc No.</label>
-												</div> <select class="custom-select" id="inputGroupSelect01">
-													<option selected>Choose...</option>
-													<option value="1">One</option>
-													<option value="2">Two</option>
-													<option value="3">Three</option>
+												</div>  
+												<select class="selectpicker" data-show-subtext="true" data-live-search="true">
+													<option>Doc. NO...</option>
+													<option>E12345</option>
+													<option>E12341</option>
+													<option>E12342</option>
+													<option>E12343</option>
+													<option>E12344</option>
+													<option>E12346</option>
+													<option>E12347</option>
+													<option>E12348</option>
+													<option>E12349</option>
 											</select>
 											</td>
 											<td>
 												<div class="input-group-prepend">
 													<label>Vehicle No.</label>
-												</div> <select class="custom-select" id="inputGroupSelect01">
-													<option selected>Choose...</option>
-													<option value="1">One</option>
-													<option value="2">Two</option>
-													<option value="3">Three</option>
+												</div> 
+												<select class="selectpicker vehicle-data" data-show-subtext="true" data-live-search="true">
+													<option>select vehicle..</option>
+													<option>TS 04 EM 6340</option>
+													<option>TS 04 EM 6342</option>
+													<option>TS 04 EM 6348</option>
+													<option>TS 04 EM 6349</option>
+													<option>TS 04 EM 6347</option>
+													<option>TS 04 EM 6341</option>
+													<option>TS 04 EM 6345</option>
+													<option>TS 04 EM 6346</option>
 											</select>
 											</td>
 											</td>
@@ -154,7 +169,7 @@
 											<td>
 												<form>
 													<div class="form-group">
-														<input type="text" />
+														<input type="text" class="form-control"/>
 													</div>
 													</div>
 												</form>
@@ -165,7 +180,7 @@
 											<td>
 												<form>
 													<div class="form-group">
-														<input type="text" />
+														<input type="text" class="form-control"/>
 													</div>
 													</div>
 												</form>
@@ -176,7 +191,7 @@
 											<td>
 												<form>
 													<div class="form-group">
-														<input type="text" />
+														<input type="text" class="form-control"/>
 													</div>
 													</div>
 												</form>
@@ -187,7 +202,7 @@
 											<td>
 												<form>
 													<div class="form-group">
-														<input type="text" />
+														<input type="text" class="form-control"/>
 													</div>
 													</div>
 												</form>
@@ -198,7 +213,7 @@
 											<td>
 												<form>
 													<div class="form-group">
-														<input type="text" />
+														<input type="text" class="form-control"/>
 													</div>
 													</div>
 												</form>
@@ -220,7 +235,7 @@
 											<td>
 												<form>
 													<div class="form-group">
-														<input type="text" />
+														<input type="text" class="form-control"/>
 													</div>
 													</div>
 												</form>
@@ -231,7 +246,7 @@
 											<td>
 												<form>
 													<div class="form-group">
-														<textarea placeholder="address"></textarea>
+														<textarea placeholder="address" class="form-control" ></textarea>
 													</div>
 													</div>
 												</form>
@@ -242,7 +257,7 @@
 											<td>
 												<form>
 													<div class="form-group">
-														<input type="text" />
+														<input type="text" class="form-control"/>
 													</div>
 													</div>
 												</form>
@@ -253,7 +268,7 @@
 											<td>
 												<form>
 													<div class="form-group">
-														<input type="text" />
+														<input type="text" class="form-control"/>
 													</div>
 													</div>
 												</form>
@@ -264,7 +279,7 @@
 											<td>
 												<form>
 													<div class="form-group">
-														<input type="text" />
+														<input type="text" class="form-control"/>
 													</div>
 													</div>
 												</form>
@@ -279,7 +294,7 @@
 											<td>
 												<form>
 													<div class="form-group">
-														<input type="text" />
+														<input type="text" class="form-control"/>
 													</div>
 													</div>
 												</form>
@@ -301,7 +316,7 @@
 											<td>
 												<form>
 													<div class="form-group">
-														<input type="text" />
+														<input type="text" class="form-control"/>
 													</div>
 													</div>
 												</form>
@@ -312,7 +327,7 @@
 											<td>
 												<form>
 													<div class="form-group">
-														<input type="text" />
+														<input type="text" class="form-control"/>
 													</div>
 													</div>
 												</form>
@@ -323,7 +338,7 @@
 											<td>
 												<form>
 													<div class="form-group">
-														<input type="text" />
+														<input type="text" class="form-control"/>
 													</div>
 													</div>
 												</form>
@@ -360,7 +375,7 @@
 										<tr id='addr0'>
 											<td>1</td>
 											<td class="brand-id"><input type="number" class="form-control" placeholder='Brand Id'
-												data-toggle="modal" data-target="#exampleModalCenter" id="brand_id_1"/>
+												data-toggle="modal" data-target="#myModal" id="brand_id_1"/>
 												<!-- <p>
 													<b>Details:</b> <span id="example-console">N/A</span>
 												</p> --> 
@@ -542,21 +557,19 @@
 			</div>
 		</div>
 		<!-- Modal -->
-		<div class="modal fade" id="exampleModalCenter" tabindex="-1"
-			role="dialog" aria-labelledby="exampleModalCenterTitle"
-			aria-hidden="true">
-			<div class="modal-dialog modal-dialog-centered" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalCenterTitle">Products
-							Help screen</h5>
-						<button type="button" class="close" data-dismiss="modal"
-							aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-					</div>
-					<div class="modal-body">
-						<table id="example" class="display" cellspacing="0" width="100%">
+		
+<!-- Button trigger modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        <table id="example" class="display" cellspacing="0" width="100%">
 							<thead>
 								<tr>
 									<th>S No</th>
@@ -584,23 +597,23 @@
 								</tr>
 							</tfoot>
 						</table>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary"
-							data-dismiss="modal">Close</button>
-					</div>
-				</div>
-			</div>
-		</div>
-</body>
-<!-- <script src="js/custom.js"></script> -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
+</body>
 <script src="webjars/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/js/bootstrap-select.min.js"></script>
 <script language="javascript" type="text/javascript" src="js/custom.js"></script>
-<script src="webjars/popper.js/1.14.3/umd/popper.js"></script>
-<script src="webjars/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!-- <script src="webjars/popper.js/1.14.3/umd/popper.js"></script> -->
+<script src="webjars/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <script language="javascript" type="text/javascript"
 	src="js/datatable.js"></script>
+	
 
 
 
