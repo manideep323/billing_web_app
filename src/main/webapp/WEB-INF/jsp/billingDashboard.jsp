@@ -56,14 +56,13 @@
 														<label for="formGroupExampleInput">Invoice No.</label> <input
 															type="text" class="form-control" />
 													</div>
-													</div>
 												</form>
 											</td>
 											<td>
 												<form>
 													<div class="form-group">
 														<label for="formGroupExampleInput">Date of Invoice</label>
-														<input id="date" name="date" class="form-control" />
+														<input id="date" name="date" class="form-control" disabled />
 													</div>
 													</div>
 												</form>
@@ -374,7 +373,7 @@
 									<tbody>
 										<tr id='addr0'>
 											<td>1</td>
-											<td class="brand-id"><input type="number" class="form-control" placeholder='Brand Id'
+											<td class="brand-id"><input type="number" class="form-control brand_id_1" placeholder='Brand Id'
 												data-toggle="modal" data-target="#myModal" id="brand_id_1"/>
 												<!-- <p>
 													<b>Details:</b> <span id="example-console">N/A</span>
@@ -383,10 +382,10 @@
 											<td class="product-name">
 											<input type="text"
 												name='product[]' placeholder='Product'
-												class="form-control" id="product-description_1" readonly/>
+												class="form-control product-description_1" id="product-description_1" readonly/>
 											</td>
 											<td class="hsn-code" >
-												<span id='hsn_code_1'></span>
+												<span id='hsn_code_1' class="hsn_code_1"></span>
 											</td>
 											<td>
 												<input type="number" name='qty[]'
@@ -394,7 +393,7 @@
 													min="0" />
 											</td>
 											<td class="unit">
-												<span id="unit_1"></span>
+												<span id="unit_1" class="unit_1"></span>
 											</td>
 											<td><input type="number" name='price[]'
 												placeholder='Enter Unit Price' class="form-control price"
@@ -406,7 +405,7 @@
 											
 											<td class="gst-percent">
 												<input type="number" 
-												placeholder='%' class="form-control gst" id="gst"/>
+												placeholder='%' class="form-control gst gst_percent" id="gst_percent"/>
 											</td>
 											<td class="gst-amount">
 											<input type="number" 
@@ -417,10 +416,10 @@
 												placeholder='0.00' class="form-control net_amount" readonly id="net_amount"/>
 											</td>
 											<td class="class-data">
-												<span id="class_1"></span>
+												<span id="class_1" class="class_1"></span>
 											</td>
 											<td class="division">
-												<span id="division_1"></span>
+												<span id="division_1" class="devision_1"></span>
 											</td>
 										</tr>
 										<tr id='addr1'></tr>
@@ -632,28 +631,28 @@
 							
 							//product entry feald
 							$($($('#addr' + i).children()[2]).children()[0])
-									.parent().children().attr('id',
+									.parent().children().attr('class',
 											'product-description_' + (i+1) + '');
 							
 							//brand id entry feald
-							$($($('#addr' + i).children()[1]).children()[0]).parent().children().attr('id',
+							$($($('#addr' + i).children()[1]).children()[0]).parent().children().attr('class',
 									'brand_id_' + (i+1) + '');
 														
 							
 							//hsn code entry feald
-							$($($('#addr' + i).children()[3]).children()[0]).parent().children().attr('id',
+							$($($('#addr' + i).children()[3]).children()[0]).parent().children().attr('class',
 									'hsn_code_' + (i+1) + '');
 							
 							//unit entry feald
-							$($($('#addr' + i).children()[5]).children()[0]).parent().children().attr('id',
+							$($($('#addr' + i).children()[5]).children()[0]).parent().children().attr('class',
 									'unit_' + (i+1) + '');
 							
 							//class entry feald
-							$($($('#addr' + i).children()[11]).children()[0]).parent().children().attr('id',
+							$($($('#addr' + i).children()[11]).children()[0]).parent().children().attr('class',
 									'class_' + (i+1) + '');
 							
 							//division entry feald
-							$($($('#addr' + i).children()[12]).children()[0]).parent().children().attr('id',
+							$($($('#addr' + i).children()[12]).children()[0]).parent().children().attr('class',
 									'division_' + (i+1) + '');
 							i++;
 						});
@@ -687,7 +686,7 @@
 				
 				
 				var totalAmount = parseInt($(this).find('.total').val());
-				var gst = $(this).find('.gst').val();
+				var gst = $(this).find('.gst_percent').val();
 				$(this).find('.gst_amount').val(gst / 100 * totalAmount);
 				
 				
@@ -777,7 +776,7 @@
 								var product_name=$($($('#addr' + i).children()[2]).children()[0]).parent().children().attr('id');
 								console.log(product_name);	
 								console.log(data[3]);
-								$('#'+product_name+'').val(data[3]);
+								//$('#'+product_name+'').val(data[3]);
 								//$('"#"+hsn').val(data[3]);
 								//debugger
 								//debugger
@@ -790,12 +789,12 @@
 								
 								
 								
-								$('#brand_id_'+i+'').val(data[1]);
-								$('#product-description_'+i+'').val(data[3]);
-								$('#hsn_code_'+i+'').text(data[8]);
-								$('#unit_'+i+'').text(data[6]);
-								$('#class_'+i+'').text(data[4]);
-								$('#division_'+i+'').text(data[5]);
+								$('.brand_id_'+i+'').val(data[1]);
+								$('.product-description_'+i+'').val(data[3]);
+								$('.hsn_code_'+i+'').text(data[8]);
+								$('.unit_'+i+'').text(data[6]);
+								$('.class_'+i+'').text(data[4]);
+								$('.division_'+i+'').text(data[5]);
 								//$(''brand_id_'+data[0]+'')
 								// FOR DEMONSTRATION ONLY
 								$("#example-console").html(data.join(', '));
@@ -803,6 +802,8 @@
 							}
 							
 						});
+				
+				
 			});
 
 	function dataSendToBillingTable(data){
@@ -810,9 +811,7 @@
 		
 		//debugger
 	}
-	
-	
-	
+		
 	</script>
 
 
