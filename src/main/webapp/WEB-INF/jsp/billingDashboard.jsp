@@ -19,7 +19,8 @@
 <!-- <link href="https://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"> -->
 <link href="webjars/bootstrap/3.3.2/css/bootstrap.min.css"
 	rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/css/bootstrap-select.min.css" />
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/css/bootstrap-select.min.css" />
 
 </head>
 <body>
@@ -74,7 +75,7 @@
 											<td>
 												<form>
 													<div class="form-group">
-														<input type="text" class="form-control"/>
+														<input type="text" class="form-control" />
 													</div>
 													</div>
 												</form>
@@ -96,7 +97,7 @@
 											<td>
 												<form>
 													<div class="form-group">
-														<input type="text" class="form-control"/>
+														<input type="text" class="form-control" />
 													</div>
 													</div>
 												</form>
@@ -107,7 +108,7 @@
 											<td>
 												<form>
 													<div class="form-group">
-														<input type="text" class="form-control"/>
+														<input type="text" class="form-control" />
 													</div>
 													</div>
 												</form>
@@ -118,7 +119,7 @@
 											<td>
 												<form>
 													<div class="form-group">
-														<input type="text" class="form-control"/>
+														<input type="text" class="form-control" />
 													</div>
 													</div>
 												</form>
@@ -132,8 +133,8 @@
 											<td>
 												<div class="input-group-prepend">
 													<label>Doc No.</label>
-												</div>  
-												<select class="selectpicker" data-show-subtext="true" data-live-search="true">
+												</div> <select class="selectpicker" data-show-subtext="true"
+												data-live-search="true">
 													<option>Doc. NO...</option>
 													<option>E12345</option>
 													<option>E12341</option>
@@ -149,8 +150,8 @@
 											<td>
 												<div class="input-group-prepend">
 													<label>Vehicle No.</label>
-												</div> 
-												<select class="selectpicker vehicle-data" data-show-subtext="true" data-live-search="true">
+												</div> <select class="selectpicker vehicle-data"
+												data-show-subtext="true" data-live-search="true">
 													<option>select vehicle..</option>
 													<option>TS 04 EM 6340</option>
 													<option>TS 04 EM 6342</option>
@@ -169,7 +170,7 @@
 											<td>
 												<form>
 													<div class="form-group">
-														<input type="text" class="form-control"/>
+														<input type="text" class="form-control" />
 													</div>
 													</div>
 												</form>
@@ -180,7 +181,7 @@
 											<td>
 												<form>
 													<div class="form-group">
-														<input type="text" class="form-control"/>
+														<input type="text" class="form-control" />
 													</div>
 													</div>
 												</form>
@@ -191,7 +192,7 @@
 											<td>
 												<form>
 													<div class="form-group">
-														<input type="text" class="form-control"/>
+														<input type="text" class="form-control" />
 													</div>
 													</div>
 												</form>
@@ -202,7 +203,7 @@
 											<td>
 												<form>
 													<div class="form-group">
-														<input type="text" class="form-control"/>
+														<input type="text" class="form-control" />
 													</div>
 													</div>
 												</form>
@@ -213,7 +214,7 @@
 											<td>
 												<form>
 													<div class="form-group">
-														<input type="text" class="form-control"/>
+														<input type="text" class="form-control" />
 													</div>
 													</div>
 												</form>
@@ -235,7 +236,7 @@
 											<td>
 												<form>
 													<div class="form-group">
-														<input type="text" class="form-control"/>
+														<input type="text" class="form-control" />
 													</div>
 													</div>
 												</form>
@@ -246,7 +247,7 @@
 											<td>
 												<form>
 													<div class="form-group">
-														<textarea placeholder="address" class="form-control" ></textarea>
+														<textarea placeholder="address" class="form-control"></textarea>
 													</div>
 													</div>
 												</form>
@@ -257,7 +258,7 @@
 											<td>
 												<form>
 													<div class="form-group">
-														<input type="text" class="form-control"/>
+														<input type="text" class="form-control" />
 													</div>
 													</div>
 												</form>
@@ -268,7 +269,7 @@
 											<td>
 												<form>
 													<div class="form-group">
-														<input type="text" class="form-control"/>
+														<input type="text" class="form-control" />
 													</div>
 													</div>
 												</form>
@@ -279,7 +280,7 @@
 											<td>
 												<form>
 													<div class="form-group">
-														<input type="text" class="form-control"/>
+														<input type="text" class="form-control" />
 													</div>
 													</div>
 												</form>
@@ -294,7 +295,7 @@
 											<td>
 												<form>
 													<div class="form-group">
-														<input type="text" class="form-control"/>
+														<input type="text" class="form-control" />
 													</div>
 													</div>
 												</form>
@@ -316,7 +317,7 @@
 											<td>
 												<form>
 													<div class="form-group">
-														<input type="text" class="form-control"/>
+														<input type="text" class="form-control" />
 													</div>
 													</div>
 												</form>
@@ -327,7 +328,7 @@
 											<td>
 												<form>
 													<div class="form-group">
-														<input type="text" class="form-control"/>
+														<input type="text" class="form-control" />
 													</div>
 													</div>
 												</form>
@@ -338,7 +339,7 @@
 											<td>
 												<form>
 													<div class="form-group">
-														<input type="text" class="form-control"/>
+														<input type="text" class="form-control" />
 													</div>
 													</div>
 												</form>
@@ -374,54 +375,41 @@
 									<tbody>
 										<tr id='addr0'>
 											<td>1</td>
-											<td class="brand-id"><input type="number" class="form-control brand_id_1" placeholder='Brand Id'
-												data-toggle="modal" data-target="#myModal" id="brand_id_1"/>
-												<!-- <p>
+											<td class="brand-id"><input type="number"
+												class="form-control brand_id" placeholder='Brand Id'
+												data-toggle="modal" data-target="#myModal" /> <!-- <p>
 													<b>Details:</b> <span id="example-console">N/A</span>
-												</p> --> 
-											</td>
-											<td class="product-name">
-											<input type="text"
+												</p> --></td>
+											<td class="product-name"><input type="text"
 												name='product[]' placeholder='Product'
-												class="form-control product-description_1" id="product-description_1" readonly/>
+												class="form-control product-description" readonly /></td>
+											<td class="hsn-code-block"><span class="hsn-code"></span>
 											</td>
-											<td class="hsn-code" >
-												<span id='hsn_code_1' class="hsn_code_1"></span>
-											</td>
-											<td>
-												<input type="number" name='qty[]'
-													placeholder='Enter Qty' class="form-control qty" step="0"
-													min="0" />
-											</td>
-											<td class="unit">
-												<span id="unit_1" class="unit_1"></span>
+											<td><input type="number" name='qty[]'
+												placeholder='Enter Qty' class="form-control qty" step="0"
+												min="0" /></td>
+											<td class="unit"><span id="unit_1" class="unit_0"></span>
 											</td>
 											<td><input type="number" name='price[]'
 												placeholder='Enter Unit Price' class="form-control price"
 												step="0.00" min="0" /></td>
-											<td class="amount">
-												<input type="number" name='total[]'
-												placeholder='0.00' class="form-control total" readonly />
+											<td class="amount"><input type="number" name='total[]'
+												placeholder='0.00' class="form-control total" readonly /></td>
+
+											<td class="gst-percent"><input type="number"
+												placeholder='%' class="form-control gst gst_percent"
+												id="gst_percent" /></td>
+											<td class="gst-amount"><input type="number"
+												placeholder='0.00' class="form-control gst_amount" readonly
+												id="gst_amount" /></td>
+											<td class="net-amount"><input type="number"
+												name='total[]' placeholder='0.00'
+												class="form-control net_amount" readonly id="net_amount" />
 											</td>
-											
-											<td class="gst-percent">
-												<input type="number" 
-												placeholder='%' class="form-control gst gst_percent" id="gst_percent"/>
-											</td>
-											<td class="gst-amount">
-											<input type="number" 
-												placeholder='0.00' class="form-control gst_amount" readonly id="gst_amount"/>
-											</td>
-											<td class="net-amount">
-												<input type="number" name='total[]'
-												placeholder='0.00' class="form-control net_amount" readonly id="net_amount"/>
-											</td>
-											<td class="class-data">
-												<span id="class_1" class="class_1"></span>
-											</td>
-											<td class="division">
-												<span id="division_1" class="devision_1"></span>
-											</td>
+											<td class="class-data"><span
+												class="class-id"></span></td>
+											<td class="division"><span
+												class="devision"></span></td>
 										</tr>
 										<tr id='addr1'></tr>
 									</tbody>
@@ -437,7 +425,7 @@
 							</div>
 						</div>
 
-						
+
 						<!-- GST Table------------ -->
 						<table width="100%" border="1" class="gst-table">
 							<tbody>
@@ -448,9 +436,9 @@
 									<td>IGST</td>
 									<td></td>
 									<td>Gross Amount</td>
-									<td class='gross-amount'>
-										<input type="number" name='gross_total' placeholder='0.00' class="form-control" id="gross_total" readonly/>
-									</td>
+									<td class='gross-amount'><input type="number"
+										name='gross_total' placeholder='0.00' class="form-control"
+										id="gross_total" readonly /></td>
 								</tr>
 								<tr>
 									<td>@0%</td>
@@ -460,9 +448,9 @@
 									<td>SGST</td>
 									<td></td>
 									<td>GST Amount</td>
-									<td class="gst-total">
-										<input type="number" name='gst_total' placeholder='0.00' class="form-control" id="gst_total" readonly/>
-									</td>
+									<td class="gst-total"><input type="number"
+										name='gst_total' placeholder='0.00' class="form-control"
+										id="gst_total" readonly /></td>
 								</tr>
 								<tr>
 									<td>@5%</td>
@@ -472,13 +460,13 @@
 									<td>CGST</td>
 									<td></td>
 									<td>Net Amount</td>
-									<td class="net-amount">
-										<input type="number" name='net_amount' placeholder='0.00' class="form-control" id="netamount_total" readonly"/>
-									</td>
+									<td class="net-amount"><input type="number"
+										name='net_amount' placeholder='0.00' class="form-control"
+										id="netamount_total" readonly"/></td>
 								</tr>
 								<tr>
 									<td>Amount in Words</td>
-									<td colspan="5" ><div id="word"></div></td>
+									<td colspan="5"><div id="word"></div></td>
 									<td>Payment Status</td>
 									<td><select class="custom-select">
 											<option selected>Choose...</option>
@@ -557,19 +545,23 @@
 			</div>
 		</div>
 		<!-- Modal -->
-		
-<!-- Button trigger modal -->
 
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-      </div>
-      <div class="modal-body">
-        <table id="example" class="display" cellspacing="0" width="100%">
+		<!-- Button trigger modal -->
+
+		<!-- Modal -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+			aria-labelledby="myModalLabel">
+			<div class="modal-dialog modal-lg" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"
+							aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+					</div>
+					<div class="modal-body">
+						<table id="example" class="display" cellspacing="0" width="100%">
 							<thead>
 								<tr>
 									<th>S No</th>
@@ -597,23 +589,23 @@
 								</tr>
 							</tfoot>
 						</table>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
 </body>
 <script src="webjars/jquery/3.1.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/js/bootstrap-select.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/js/bootstrap-select.min.js"></script>
 <script language="javascript" type="text/javascript" src="js/custom.js"></script>
 <!-- <script src="webjars/popper.js/1.14.3/umd/popper.js"></script> -->
 <script src="webjars/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <script language="javascript" type="text/javascript"
 	src="js/datatable.js"></script>
-	
+
 
 
 
@@ -629,32 +621,14 @@
 									'td:first-child').html(i + 1);
 							$('#tab_logic').append(
 									'<tr id="addr' + (i + 1) + '"></tr>');
-							
-							//product entry feald
-							$($($('#addr' + i).children()[2]).children()[0])
-									.parent().children().attr('class',
-											'product-description_' + (i+1) + '');
-							
-							//brand id entry feald
-							$($($('#addr' + i).children()[1]).children()[0]).parent().children().attr('class',
-									'brand_id_' + (i+1) + '');
-														
-							
-							//hsn code entry feald
-							$($($('#addr' + i).children()[3]).children()[0]).parent().children().attr('class',
-									'hsn_code_' + (i+1) + '');
-							
-							//unit entry feald
-							$($($('#addr' + i).children()[5]).children()[0]).parent().children().attr('class',
-									'unit_' + (i+1) + '');
-							
-							//class entry feald
-							$($($('#addr' + i).children()[11]).children()[0]).parent().children().attr('class',
-									'class_' + (i+1) + '');
-							
-							//division entry feald
-							$($($('#addr' + i).children()[12]).children()[0]).parent().children().attr('class',
-									'division_' + (i+1) + '');
+
+							//product details clear after add button click
+							$('#addr'+i+'').find('.product-description').val(' ');
+							$('#addr'+i+'').find('.hsn-code').text(' ');
+							$('#addr' + i + '').find('.brand_id').val('');
+							$('#addr' + i + '').find('.unit').text(' ');
+							$('#addr' + i + '').find('.class-id').text(' ');
+							$('#addr' + i + '').find('.division').text(' ');
 							i++;
 						});
 				$("#delete_row").click(function() {
@@ -670,7 +644,7 @@
 				$('#tab_logic tbody').on('keyup change', function() {
 					calc();
 				});
-				
+
 				$('#tax').on('keyup change', function() {
 					calc_total();
 				});
@@ -684,13 +658,11 @@
 				var qty = $(this).find('.qty').val();
 				var price = $(this).find('.price').val();
 				$(this).find('.total').val(qty * price);
-				
-				
+
 				var totalAmount = parseInt($(this).find('.total').val());
 				var gst = $(this).find('.gst_percent').val();
 				$(this).find('.gst_amount').val(gst / 100 * totalAmount);
-				
-				
+
 				var gstAmount = parseInt($(this).find('.gst_amount').val());
 				$(this).find('.net_amount').val(totalAmount + gstAmount);
 				calc_total();
@@ -704,116 +676,103 @@
 			total += parseInt($(this).val());
 		});
 		$('#gross_total').val(total.toFixed(2));
-		
-		
+
 		gst = 0;
 		$('.gst_amount').each(function() {
-	        gst += parseInt($(this).val());
-	        //debugger
-	    });
+			gst += parseInt($(this).val());
+			//debugger
+		});
 		$('#gst_total').val(gst.toFixed(2));
-		
-		
+
 		netAmounttotal = 0;
 		$('.net_amount').each(function() {
 			netAmounttotal += parseInt($(this).val());
-	    });
+		});
 		$('#netamount_total').val(netAmounttotal.toFixed(2));
-		 
+
 	}
 
-	
-	$(document).ready(
-			function() {
-				var values = [];
-				<c:forEach var="product" items="${products}"
+	$(document)
+			.ready(
+					function() {
+						var values = [];
+						<c:forEach var="product" items="${products}"
 			varStatus="loop">
-				values.push([ "${loop.index+1}", "${product.product_code}",
-						"${product.manufacturer_company}",
-						"${product.brand_name}", "${product.class_type}",
-						"${product.division}", "${product.unit}",
-						"${product.rate}", "${product.hsn_code}" ]);
-				</c:forEach>
-				//console.log(values)
+						values.push([ "${loop.index+1}",
+								"${product.product_code}",
+								"${product.manufacturer_company}",
+								"${product.brand_name}",
+								"${product.class_type}", "${product.division}",
+								"${product.unit}", "${product.rate}",
+								"${product.hsn_code}" ]);
+						</c:forEach>
+						//console.log(values)
 
-				var table = $('#example').DataTable({
-					data : values,//Table Data fields
-					keys : {
-						keys : [ 13 /* ENTER */, 38 /* UP */, 40 /* DOWN */]
-					}
-				});
+						var table = $('#example').DataTable(
+								{
+									data : values,//Table Data fields
+									keys : {
+										keys : [ 13 /* ENTER */, 38 /* UP */,
+												40 /* DOWN */]
+									}
+								});
 
-				// Handle event when cell gains focus
-				$('#example').on('key-focus.dt', function(e, datatable, cell) {
-					
-					// Select highlighted row
-					$(table.row(cell.index().row).node()).addClass('selected');
-					//$('#exampleModalCenter').hide();
-				});
+						// Handle event when cell gains focus
+						$('#example').on(
+								'key-focus.dt',
+								function(e, datatable, cell) {
 
-				// Handle event when cell looses focus
-				$('#example').on(
-						'key-blur.dt',
-						function(e, datatable, cell) {
-							// Deselect highlighted row
-							$(table.row(cell.index().row).node()).removeClass(
-									'selected');
-							//$('#exampleModalCenter').hide();
-						});
+									// Select highlighted row
+									$(table.row(cell.index().row).node())
+											.addClass('selected');
+									//$('#exampleModalCenter').hide();
+								});
 
-				// Handle key event that hasn't been handled by KeyTable
-				$('#example').on('key.dt',function(e, datatable, key, cell, originalEvent) {
+						// Handle event when cell looses focus
+						$('#example').on(
+								'key-blur.dt',
+								function(e, datatable, cell) {
+									// Deselect highlighted row
+									$(table.row(cell.index().row).node())
+											.removeClass('selected');
+									//$('#exampleModalCenter').hide();
+								});
 
-							// If ENTER key is pressed
-							var i = 1;
-							if (key === 13) {
-																
-								// Get highlighted row data
-								var data = table.row(cell.index().row).data();
-								//$('#exampleModalCenter').hide();
+						// Handle key event that hasn't been handled by KeyTable
+						var i = 0;
+						$('#example')
+								.on(
+										'key.dt',
+										function(e, datatable, key, cell,
+												originalEvent) {
+											// If ENTER key is pressed
 
-								$('#exampleModalCenter').modal('hide');
-								
-								var product_name=$($($('#addr' + i).children()[2]).children()[0]).parent().children().attr('id');
-								console.log(product_name);	
-								console.log(data[3]);
-								//$('#'+product_name+'').val(data[3]);
-								//$('"#"+hsn').val(data[3]);
-								//debugger
-								//debugger
-								//$('"#"+$($($('#addr' + i).children()[3]).children()[0]).parent().children().attr('id')').text(data[8])
-								
-								
-								
-								
-								//dataSendToBillingTable(data);
-								
-								
-								
-								$('.brand_id_'+i+'').val(data[1]);
-								$('.product-description_'+i+'').val(data[3]);
-								$('.hsn_code_'+i+'').text(data[8]);
-								$('.unit_'+i+'').text(data[6]);
-								$('.class_'+i+'').text(data[4]);
-								$('.division_'+i+'').text(data[5]);
-								//$(''brand_id_'+data[0]+'')
-								// FOR DEMONSTRATION ONLY
-								$("#example-console").html(data.join(', '));
-								i++;
-							}
-							
-						});
-				
-				
-			});
+											if (key === 13) {
+												// Get highlighted row data
+												var data = table.row(
+														cell.index().row)
+														.data();
+												$('#myModal').modal('hide');
+												// FOR DEMONSTRATION ONLY
+												$("#example-console").html(
+														data.join(', '));
+												
+												//products entry 
+												$('#addr' + i + '').find('.brand_id').attr('id','brand_id_' + i + '').val(parseInt(data[1]));
+												$('#addr' + i + '').find('.product-description').attr('id', 'product-description_'+ i+ '').val(data[3]);
+												$('#addr' + i + '').find('.hsn-code').attr('id','hsn_code_' + i + '').text(data[8]);
+												$('#addr' + i + '').find('.unit').attr('id','unit_' + i + '').text(data[6]);
+												$('#addr' + i + '').find('.class-id').attr('id','class_id_' + i + '').text(data[4]);
+												$('#addr' + i + '').find('.division').attr('id','division_' + i + '').text(data[5]);
+												i++;
+											}
 
-	function dataSendToBillingTable(data){
-		console.log(data);
-		
-		//debugger
-	}
-		
-	</script>
+										});
+
+					});
+	
+	//$('#mymodal').find('input').focus();
+</script>
 
 
 </html>
