@@ -14,7 +14,6 @@ public class Product {
 	@Indexed(unique=true)
 	private int product_code;
 	private String manufacturer_company;
-	@Indexed
 	private String brand_name;
 	private int class_type;
 	private int division;
