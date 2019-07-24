@@ -29,6 +29,7 @@ public class CustomerService {
 		String result = null;
 		try {
 			dao.save(customer);
+			
 			//solrDao.save(solrCustomer);
 		//System.out.println(dao.save(new Customer(101, "doemhgjkfj", "hi", 2, 3, "30.2", "sf", 28.0f, 3465, "kdjf")));
 		}
