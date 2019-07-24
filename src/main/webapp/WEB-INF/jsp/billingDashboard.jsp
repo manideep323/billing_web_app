@@ -150,17 +150,12 @@
 											<td>
 												<div class="input-group-prepend">
 													<label>Vehicle No.</label>
-												</div> <select class="selectpicker vehicle-data"
+												</div> <select onchange="setVehicleValues(value)" class="selectpicker vehicle-data"
 												data-show-subtext="true" data-live-search="true">
 													<option>select vehicle..</option>
-													<option>TS 04 EM 6340</option>
-													<option>TS 04 EM 6342</option>
-													<option>TS 04 EM 6348</option>
-													<option>TS 04 EM 6349</option>
-													<option>TS 04 EM 6347</option>
-													<option>TS 04 EM 6341</option>
-													<option>TS 04 EM 6345</option>
-													<option>TS 04 EM 6346</option>
+													<c:forEach var="vehicle" items="${vehicles}" varStatus="loop">
+														<option value='{"index":"${loop.index}","vehicle":"${vehicle.vehicleNo}","licence":"${vehicle.licence}","validDate":"${vehicle.validDate}","capacity":"${vehicle.capacity}","ownName":"${vehicle.licence}","licence":"${vehicle.ownName}","noCases":"${vehicle.noCases}","edCases":"${vehicle.edCases}"}'>${vehicle.vehicleNo}</option>
+													</c:forEach>
 											</select>
 											</td>
 											</td>
@@ -181,7 +176,7 @@
 											<td>
 												<form>
 													<div class="form-group">
-														<input type="text" class="form-control" />
+														<input id="vehicleNo" type="text" class="form-control" />
 													</div>
 													</div>
 												</form>
@@ -772,6 +767,14 @@
 					});
 	
 	//$('#mymodal').find('input').focus();
+	function setVehicleValues(value){
+	console.log("hi");
+	var val = JSON.parse(value);
+	$('#vehicleNo').val(val["vehicle"])
+} 
+	
+	
+
 </script>
 
 

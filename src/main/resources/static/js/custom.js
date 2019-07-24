@@ -15,3 +15,9 @@ $('#division').text(val["division"]);
 
 */
 
+function setVehicleValues(value){
+	var val = JSON.parse(value);
+	$('#vehicleNo').val(val["vehicle"])
+} 
+	
+	
