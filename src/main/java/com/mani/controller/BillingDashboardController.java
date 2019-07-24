@@ -17,6 +17,7 @@ import com.mani.document.Product;
 import com.mani.document.SolrProduct;
 import com.mani.repository.SolrProductRepositry;
 import com.mani.service.BillingDashboardService;
+import com.mani.service.CustomerService;
 import com.mani.service.ProductService;
 import com.mani.service.VehicleService;
 
@@ -28,7 +29,8 @@ public class BillingDashboardController {
 	private ProductService productService;
 	@Autowired
 	private VehicleService vehicleService;
-	
+	@Autowired
+	private CustomerService customerService;
 	/*@RequestMapping(value = "/billingDashboardBkp", method = RequestMethod.GET)
 	public String showBillingDashboardPage() {
 		return "billingDashboard";
@@ -37,6 +39,7 @@ public class BillingDashboardController {
 	public String showBillingDashboardPage(Model model) {
 		model.addAttribute("products", productService.getProducts());
 		model.addAttribute("vehicles", vehicleService.getVehicles());
+		model.addAttribute("customers", customerService.getCustomers());
 		return "billingDashboard";
 	}
 	

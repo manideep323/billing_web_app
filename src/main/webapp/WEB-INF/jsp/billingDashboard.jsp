@@ -133,18 +133,12 @@
 											<td>
 												<div class="input-group-prepend">
 													<label>Doc No.</label>
-												</div> <select class="selectpicker" data-show-subtext="true"
+												</div> <select onchange="setCustomerValues(value)" class="selectpicker" data-show-subtext="true"
 												data-live-search="true">
 													<option>Doc. NO...</option>
-													<option>E12345</option>
-													<option>E12341</option>
-													<option>E12342</option>
-													<option>E12343</option>
-													<option>E12344</option>
-													<option>E12346</option>
-													<option>E12347</option>
-													<option>E12348</option>
-													<option>E12349</option>
+													<c:forEach var="customer" items="${customers}" varStatus="loop">
+														<option value='{"index":"${loop.index}"'>${customer.docNo}</option>
+													</c:forEach>
 											</select>
 											</td>
 											<td>
@@ -767,12 +761,6 @@
 					});
 	
 	//$('#mymodal').find('input').focus();
-	function setVehicleValues(value){
-	console.log("hi");
-	var val = JSON.parse(value);
-	$('#vehicleNo').val(val["vehicle"])
-} 
-	
 	
 
 </script>
