@@ -19,5 +19,16 @@ function setVehicleValues(value){
 	var val = JSON.parse(value);
 	$('#vehicleNo').val(val["vehicle"])
 } 
+function setCustomerValues(value){
+	var val = JSON.parse(value);
+	$('#shippingAddress').val(val["shippingAddress"])
+	$('#billingAddress').val(val["billingAddress"])
+	$('.custName').val(val["custName"])
+	$('.licNo').val(val["licNo"])
+	$('.gstNo').val(val["gstNo"])
+	$('.tinNo').val(val["tinNo"])
+	$('.stateCode').val(val["stateCode"])
 	
+	
+}	
 	

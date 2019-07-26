@@ -137,7 +137,7 @@
 												data-live-search="true">
 													<option>Doc. NO...</option>
 													<c:forEach var="customer" items="${customers}" varStatus="loop">
-														<option value='{"index":"${loop.index}"'>${customer.docNo}</option>
+														<option value='{"index":"${loop.index}","code":"${customer.code}","licNo":"${customer.licNo}","custName":"${customer.custName}","tinNo":"${customer.tinNo}","gstNo":"${customer.gstNo}","validDt":"${customer.validDt}","stateCode":"${customer.stateCode}","billingAddress":"${customer.billingAddress}","shippingAddress":"${customer.shippingAddress}","docNo":"${customer.docNo}"}'>${customer.docNo}</option>
 													</c:forEach>
 											</select>
 											</td>
@@ -225,7 +225,7 @@
 											<td>
 												<form>
 													<div class="form-group">
-														<input type="text" class="form-control" />
+														<input type="text" class="custName" class="form-control" />
 													</div>
 													</div>
 												</form>
@@ -236,7 +236,7 @@
 											<td>
 												<form>
 													<div class="form-group">
-														<textarea placeholder="address" class="form-control"></textarea>
+														<textarea placeholder="address" id="billingAddress" class="form-control"></textarea>
 													</div>
 													</div>
 												</form>
@@ -247,7 +247,7 @@
 											<td>
 												<form>
 													<div class="form-group">
-														<input type="text" class="form-control" />
+														<input type="text" class="gstNo" class="form-control" />
 													</div>
 													</div>
 												</form>
@@ -258,7 +258,7 @@
 											<td>
 												<form>
 													<div class="form-group">
-														<input type="text" class="form-control" />
+														<input type="text" class="licNo" class="form-control" />
 													</div>
 													</div>
 												</form>
@@ -269,7 +269,7 @@
 											<td>
 												<form>
 													<div class="form-group">
-														<input type="text" class="form-control" />
+														<input type="text" class="stateCode" class="form-control" />
 													</div>
 													</div>
 												</form>
@@ -284,7 +284,7 @@
 											<td>
 												<form>
 													<div class="form-group">
-														<input type="text" class="form-control" />
+														<input type="text" class="custName" class="form-control" />
 													</div>
 													</div>
 												</form>
@@ -295,7 +295,7 @@
 											<td>
 												<form>
 													<div class="form-group">
-														<textarea placeholder="address"></textarea>
+														<textarea id="shippingAddress" placeholder="address" ></textarea>
 													</div>
 													</div>
 												</form>
@@ -306,7 +306,7 @@
 											<td>
 												<form>
 													<div class="form-group">
-														<input type="text" class="form-control" />
+														<input type="text" class="gstNo" class="form-control" />
 													</div>
 													</div>
 												</form>
@@ -317,7 +317,7 @@
 											<td>
 												<form>
 													<div class="form-group">
-														<input type="text" class="form-control" />
+														<input type="text" class="licNo" class="form-control" />
 													</div>
 													</div>
 												</form>
@@ -328,7 +328,7 @@
 											<td>
 												<form>
 													<div class="form-group">
-														<input type="text" class="form-control" />
+														<input type="text" class="stateCode" class="form-control" />
 													</div>
 													</div>
 												</form>

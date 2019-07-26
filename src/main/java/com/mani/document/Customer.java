@@ -36,7 +36,7 @@ public class Customer implements Persistable<Serializable> {
 	private String gstNo;
 	 @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
 	private Date   validDt;
-	private String stateCode;
+	private int stateCode;
 	
 	private Address billingAddress;
 	private Address shippingAddress;
@@ -99,10 +99,10 @@ public class Customer implements Persistable<Serializable> {
 	public void setValidDt(Date validDt) {
 		this.validDt = validDt;
 	}
-	public String getStateCode() {
+	public int getStateCode() {
 		return stateCode;
 	}
-	public void setStateCode(String stateCode) {
+	public void setStateCode(int stateCode) {
 		this.stateCode = stateCode;
 	}
 	public Address getBillingAddress() {
@@ -143,7 +143,7 @@ public class Customer implements Persistable<Serializable> {
 
 
 	public Customer(ObjectId id, long code, String licNo, String custName, Date createdDate, String tinNo, String gstNo,
-			Date validDt, String stateCode, Address billingAddress, Address shippingAddress, String docNo) {
+			Date validDt, int stateCode, Address billingAddress, Address shippingAddress, String docNo) {
 		super();
 		this.id = id;
 		this.code = code;
