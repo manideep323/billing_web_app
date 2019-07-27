@@ -1,3 +1,30 @@
-.product{
-	color:red;
+/* .update-btn {
+	padding: 10px;
+	background: #57c1ff;
+	border-radius: 5px;
+	color: #ffffff;
+	font-weight: bold;
 }
+
+.delete-btn {
+	padding: 10px;
+	background: red;
+	border-radius: 5px;
+	color: #ffffff;
+	font-weight: bold;
+}
+ */
+ 
+ .btn-box {
+ 	vertical-align: middle !important;
+ }
+ 
+ 
+ .update-btn, .delete-btn {
+ 	background: #cccccc;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+ }
+   
