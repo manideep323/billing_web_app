@@ -11,8 +11,18 @@
 						  <strong>${message}</strong>
 						
 						  <strong>${result}</strong>
-						<h3 class="cente"><b>Customers Data</b></h3>
-				<input type="text" id="customer_data_search" onkeyup="myFunction()" placeholder="Search" title="Type" class="pull-right form-control">
+						<h3 class="enter"><b>Customers Data</b></h3>
+				
+				<div class="row">
+					<div class="col-md-2">
+						<input type="text" id="customer_data_search" onkeyup="myFunction()" placeholder="Search" title="Type" class="pull-right form-control">	
+					</div>
+					<div class="col-md-10">
+						<div class="pull-right">
+						<a class="button btn btn-primary" href="/insertCustomer">Add a customer</a>
+					</div>
+					</div>
+				</div>					
 					<table class="table table-striped " id="customer_data">
 						<thead>
 							<tr>
@@ -47,9 +57,7 @@
 							</c:forEach>
 						</tbody>
 					</table>
-					<div>
-						<a class="button" href="/insertCustomer">Add a customer</a>
-					</div>
+					
 	</div>
 	</body>
 		<script src="webjars/jquery/3.1.1/jquery.min.js"></script>

@@ -1,17 +1,39 @@
-<%@ include file="common/header.jspf" %>
-<div>${message}</div>
+<!DOCTYPE html>
+<html>
+<head>
+<link href="webjars/bootstrap/3.3.2/css/bootstrap.min.css"
+	rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+	<%@ include file="common/header.jspf"%>
+
 	<div class="container">
-		<table class="table table-striped">
-			<caption>Your vehicles are</caption>
+		<strong>${message}</strong>
+		<h3 class="enter">
+			<b>Vehicles</b>
+		</h3>
+		<div class="row">
+			<div class="col-md-2">
+				<input type="text" id="vehicle_data_search" onkeyup="myFunction()"
+			placeholder="Search" title="Type" class="pull-right form-control">	
+			</div>
+			<div class="col-md-10">
+				<div class="pull-right">
+				<a class="button btn btn-primary" href="/insertVehicle">Add a Vehicles</a>
+			</div>
+			</div>
+		</div>
+		<table class="table table-striped" id="vehicle_data">
 			<thead>
 				<tr>
-					<th>vehicleNo</th>
-					<th>licence</th>
-					<th>validDate</th>
-					<th>capacity</th>
-					<th>ownName</th>
-					<th>noCases</th>
-					<th>edCases</th>
+					<th>VehicleNo</th>
+					<th>Licence</th>
+					<th>ValidDate</th>
+					<th>Capacity</th>
+					<th>OwnName</th>
+					<th>No Cases</th>
+					<th>ED Cases</th>
 					</tr>
 			</thead>
 
@@ -26,15 +48,30 @@
 						<td>${vehicle.noCases}</td>
 						<td>${vehicle.edCases}</td>
 						
-						<td><a type="button" 
-							href="/updateVehicle?id=${vehicle.id}">Update</a></td>
-						<td><a type="button" 
-							href="/deleteVehicle?id=${vehicle.id}">Delete</a></td>
+						<td class="btn-box"><a type="button" 
+							href="/updateVehicle?id=${vehicle.id}" onclick="return confirm('Are you sure you want to update this item?');"
+							class="update-btn">Update</a></td>
+						<td class="btn-box"><a type="button" 
+							href="/deleteVehicle?id=${vehicle.id}" onclick="return confirm('Are you sure you want to delete this item?');"
+							class="update-btn">Delete</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>
 		</table>
-		<div>
-			<a class="button" href="/insertVehicle">Add a vehicle</a>
-		</div>
 	</div>
+</body>
+<script src="webjars/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
+<script src="webjars/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script>
+			var $rows = $('#vehicle_data tr');
+			$('#vehicle_data_search').keyup(function() {
+			    var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+			    
+			    $rows.show().filter(function() {
+			        var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
+			        return !~text.indexOf(val);
+			    }).hide();
+			});
+			</script>
+</html>
