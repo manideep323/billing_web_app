@@ -4,6 +4,9 @@
 		<link href="webjars/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
 		<link href="css/style.css" rel="stylesheet">
 	</head>
+	
+	
+	
 	<body>
 		<%@ include file="common/header.jspf" %>
 			
