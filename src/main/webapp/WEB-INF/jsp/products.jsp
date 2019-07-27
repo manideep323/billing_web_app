@@ -7,7 +7,7 @@
 </head>
 <body>
 	<%@ include file="common/header.jspf"%>
-
+	<%@ include file="common/navigation.jspf"%>
 	<div class="container">
 		<strong>${message}</strong> <strong>${result}</strong>
 		<h3 class="enter">

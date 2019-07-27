@@ -1,5 +1,5 @@
 <%@ include file="common/header.jspf" %>
-
+<%@ include file="common/navigation.jspf"%>
 
 <form:form method="post" commandName="customer">
 <div>${error}</div>

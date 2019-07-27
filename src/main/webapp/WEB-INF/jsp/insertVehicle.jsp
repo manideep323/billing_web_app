@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ include file="common/header.jspf" %>
-
+<%@ include file="common/navigation.jspf"%>
  <form:form method="post" commandName="vehicle">
  <div>${error}</div>
 <form:label path="vehicleNo">vehicleNo</form:label>
