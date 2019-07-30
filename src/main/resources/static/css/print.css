@@ -1,68 +1,28 @@
 @media print {
-	#content, #page {
-		width: 100%;
-		margin: 0;
-		float: none;
+	
+	* {
+		margin: 0 !important;
+		padding: 0 !important;
+		 
 	}
-
+	
+	input, textarea, select {
+		border: none !important;
+	}
+	
 	/** Seitenränder einstellen */
 	@page {
-		margin: 0.5cm;
+		margin: 1cm;
 	}
 	body {
 		line-height: 1.3;
 		background: #fff !important;
 		color: #000;
-	}
-	a {
-		page-break-inside: avoid
-	}
-	blockquote {
-		page-break-inside: avoid;
-	}
-	table, pre {
-		page-break-inside: avoid
-	}
-	ul, ol, dl {
-		page-break-before: avoid
-	}
-
-	/* Linkfarbe und Linkverhalten darstellen */
-	a:link, a:visited, a {
-		background: transparent;
-		color: #520;
-		font-weight: bold;
-		text-decoration: underline;
-		text-align: left;
-	}
-	a {
-		page-break-inside: avoid
-	}
-	a[href^=http]:after {
-		content: " <" attr(href) "> ";
-	}
-	$
-	a:after>img {
-		content: "";
-	}
-	article a[href^="#"]:after {
-		content: "";
-	}
-	a:not (:local-link ):after {
-		content: " <" attr(href) "> ";
-	}
-
-	/**
- * Eingebundene Videos verschwinden lassen und den Whitespace der iframes auf null reduzieren.
- */
-	.embed-youtube, .embed-responsive {
-		position: absolute;
-		height: 0;
-		overflow: hidden;
+		font-size: 8px !impoprtant;
 	}
 	
 	button {
-		display: none;
+		display: none !important;
 	}
 	
 	th, tr, td {
@@ -71,7 +31,11 @@
 	}
 	
 	table table {
-		border : none;
+		border : none !important;
+	}
+	
+	table table tr td {
+		border: none !important;
 	}
 	
 	.form-control {
@@ -87,10 +51,52 @@
 		background-color: red !important;
 	}
 	
-	.adderess-table input {
-		height: 100%;
-		margin: 0 !important;
-	}
-
+	textarea {
+			height : 50px !important;
+			overflow: hidden;
+		}
+	
+	#customer_details {
+			display: inline-table;
+			width: 100% !important;
+		}
+		
+		#insert_data {
+			display: none !important;
+		}
+		
+		a {
+			display : none !important;
+		}
+		
+		#invoice_header {
+			display: block;
+		}
+		
+		#tab_logic {
+			min-height: 400px;
+		}
+		
+		#tab_logic tbody tr {
+			border-right: 1px solid #000000;
+			border-top: none;
+			border-bottom: none;
+			height : 50px !important; 
+		}
+		#tab_logic tbody td:nth-child(1){
+			border-left: 1px solid #000000;
+			border-right: 1px solid #000000;
+		}
+		
+		body, input, textarea, select, td, th { 
+		font-size: 12px;
+		}
+		#tab_logic {
+			font-size: 12px;
+		}
+		
+		#tab_logic tbody tr:last-child {
+			display: none;
+		}
 	
 }

@@ -56,4 +56,27 @@ table {
 		
 		margin-bottom: 0 !important;}
 		
+		.side-lable {
+			float: left;
+			padding: 7px;
+		}
+				
+		#customer_details {
+			display: none;
+			width: 100% !important;
+		}
 		
+		#invoice_header {
+			display: none;
+		}
+		
+		td, th {
+			padding: 0 3px !important;
+		}
+		/* #tab_logic {
+			min-height: 600px;
+		} */
+		
+		#insert_data {
+			dispaly: block;
+		}

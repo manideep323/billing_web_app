@@ -31,4 +31,25 @@ function setCustomerValues(value){
 	
 	
 }	
-	
+
+
+//date and time
+var d = new Date();
+
+var month = d.getMonth()+1;
+var day = d.getDate();
+
+var time = new Date();
+console.log(
+  time.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
+);
+
+
+var curentDate = ((''+day).length<2 ? '0' : '') + day + '-' +
+    ((''+month).length<2 ? '0' : '') + month + '-' +
+    d.getFullYear();
+//date
+document.getElementById('date').value = curentDate;
+document.getElementById('dateInside').value = curentDate;
+//date and time
+document.getElementById('date_time').value = curentDate+' '+time.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });

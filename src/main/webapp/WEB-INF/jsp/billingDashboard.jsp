@@ -21,14 +21,14 @@
 	rel="stylesheet">
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/css/bootstrap-select.min.css" />
-
+<link href="css/print.css" rel="stylesheet" media="print">
 </head>
 <body>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
 				<div class="invoice-generation">
-					<table border="1">
+					<table border="1" id="invoice_header">
 						<tbody>
 							<tr>
 								<td class="logo"></td>
@@ -45,38 +45,65 @@
 						</tbody>
 
 					</table>
-					<!-- address table -->
-					<table class="" border="1" width="100%">
+					<!--insert data-->
+					<table id="insert_data">
 						<tbody>
 							<tr>
-								<td width="50%">
+								<td>Invoice Number</td>
+								<td><input type="text" class="form-control"></td>
+								<td>Date of Invoice</td>
+								<td><input id="date" name="date" class="form-control"></td>
+								<td>Doc No.</td>
+								<td><select onchange="setCustomerValues(value)"
+									class="selectpicker" data-show-subtext="true"
+									data-live-search="true">
+										<option>Doc. NO...</option>
+										<c:forEach var="customer" items="${customers}"
+											varStatus="loop">
+											<option
+												value='{"index":"${loop.index}","code":"${customer.code}","licNo":"${customer.licNo}","custName":"${customer.custName}","tinNo":"${customer.tinNo}","gstNo":"${customer.gstNo}","validDt":"${customer.validDt}","stateCode":"${customer.stateCode}","billingAddress":"${customer.billingAddress}","shippingAddress":"${customer.shippingAddress}","docNo":"${customer.docNo}"}'>${customer.docNo}</option>
+										</c:forEach>
+								</select></td>
+								<td>Vehicle No.</td>
+								<td><select onchange="setVehicleValues(value)"
+									class="selectpicker vehicle-data" data-show-subtext="true"
+									data-live-search="true">
+										<option>select vehicle..</option>
+										<c:forEach var="vehicle" items="${vehicles}" varStatus="loop">
+											<option
+												value='{"index":"${loop.index}","vehicle":"${vehicle.vehicleNo}","licence":"${vehicle.licence}","validDate":"${vehicle.validDate}","capacity":"${vehicle.capacity}","ownName":"${vehicle.licence}","licence":"${vehicle.ownName}","noCases":"${vehicle.noCases}","edCases":"${vehicle.edCases}"}'>${vehicle.vehicleNo}</option>
+										</c:forEach>
+								</select></td>
+							</tr>
+						</tbody>
+					</table>
+					<!-- address table -->
+					<table class="" border="1" width="100%" id="address_data">
+						<tbody>
+							<tr>
+								<td width="60%">
 									<table width="100%" border="1">
 										<tr class="">
+											<td width="25%">Invoice No.</td>
 											<td>
 												<form>
 													<div class="form-group">
-														<label for="formGroupExampleInput">Invoice No.</label> <input
-															type="text" class="form-control" />
-													</div>
-												</form>
-											</td>
-											<td>
-												<form>
-													<div class="form-group">
-														<label for="formGroupExampleInput">Date of Invoice</label>
-														<input id="date" name="date" class="form-control" disabled />
-													</div>
+														<input type="text" class="form-control"
+															style="width: 35%; float: left" />
+														<div class="side-lable">Date of Invoice : </div>
+														<input id="dateInside" name="date" class="form-control"
+															style="width: 25%; float: left" />
 													</div>
 												</form>
 											</td>
 										</tr>
-										<tr class="customer-data">
+										<tr class="">
 											<td>Name</td>
 											<td>
 												<form>
 													<div class="form-group">
-														<input type="text" class="form-control" />
-													</div>
+														<input type="text" class="form-control"
+															value="M/S SHIVARATHRI CHANDRAIAH" />
 													</div>
 												</form>
 											</td>
@@ -86,8 +113,8 @@
 											<td>
 												<form>
 													<div class="form-group">
-														<textarea placeholder="address"></textarea>
-													</div>
+														<textarea placeholder="address" value="">Patelgudem(Vil), Alair(Ml), Yadadri Bhongir(Dist).
+									</textarea>
 													</div>
 												</form>
 											</td>
@@ -97,8 +124,8 @@
 											<td>
 												<form>
 													<div class="form-group">
-														<input type="text" class="form-control" />
-													</div>
+														<input type="text" class="form-control"
+															value="36ACKFS9028G1ZR" />
 													</div>
 												</form>
 											</td>
@@ -108,19 +135,11 @@
 											<td>
 												<form>
 													<div class="form-group">
-														<input type="text" class="form-control" />
-													</div>
-													</div>
-												</form>
-											</td>
-										</tr>
-										<tr class="customer-data">
-											<td>Code</td>
-											<td>
-												<form>
-													<div class="form-group">
-														<input type="text" class="form-control" />
-													</div>
+														<input type="text" class="form-control" value="Telangana"
+															style="width: 40%; float: left" />
+														<div class="side-lable">Code</div>
+														<input type="text" class="form-control" value="36"
+															style="width: 20%; float: left" />
 													</div>
 												</form>
 											</td>
@@ -129,38 +148,12 @@
 								</td>
 								<td>
 									<table width="100%" border="1">
-										<tr>
-											<td>
-												<div class="input-group-prepend">
-													<label>Doc No.</label>
-												</div> <select onchange="setCustomerValues(value)" class="selectpicker" data-show-subtext="true"
-												data-live-search="true">
-													<option>Doc. NO...</option>
-													<c:forEach var="customer" items="${customers}" varStatus="loop">
-														<option value='{"index":"${loop.index}","code":"${customer.code}","licNo":"${customer.licNo}","custName":"${customer.custName}","tinNo":"${customer.tinNo}","gstNo":"${customer.gstNo}","validDt":"${customer.validDt}","stateCode":"${customer.stateCode}","billingAddress":"${customer.billingAddress}","shippingAddress":"${customer.shippingAddress}","docNo":"${customer.docNo}"}'>${customer.docNo}</option>
-													</c:forEach>
-											</select>
-											</td>
-											<td>
-												<div class="input-group-prepend">
-													<label>Vehicle No.</label>
-												</div> <select onchange="setVehicleValues(value)" class="selectpicker vehicle-data"
-												data-show-subtext="true" data-live-search="true">
-													<option>select vehicle..</option>
-													<c:forEach var="vehicle" items="${vehicles}" varStatus="loop">
-														<option value='{"index":"${loop.index}","vehicle":"${vehicle.vehicleNo}","licence":"${vehicle.licence}","validDate":"${vehicle.validDate}","capacity":"${vehicle.capacity}","ownName":"${vehicle.licence}","licence":"${vehicle.ownName}","noCases":"${vehicle.noCases}","edCases":"${vehicle.edCases}"}'>${vehicle.vehicleNo}</option>
-													</c:forEach>
-											</select>
-											</td>
-											</td>
-										</tr>
 										<tr class="">
 											<td>Transportation Mode</td>
 											<td>
 												<form>
 													<div class="form-group">
-														<input type="text" class="form-control" />
-													</div>
+														<input type="text" class="form-control" value="Road" />
 													</div>
 												</form>
 											</td>
@@ -172,7 +165,6 @@
 													<div class="form-group">
 														<input id="vehicleNo" type="text" class="form-control" />
 													</div>
-													</div>
 												</form>
 											</td>
 										</tr>
@@ -181,8 +173,7 @@
 											<td>
 												<form>
 													<div class="form-group">
-														<input type="text" class="form-control" />
-													</div>
+														<input type="text" class="form-control" id="date_time" />
 													</div>
 												</form>
 											</td>
@@ -192,8 +183,7 @@
 											<td>
 												<form>
 													<div class="form-group">
-														<input type="text" class="form-control" />
-													</div>
+														<input type="text" class="form-control" value="Patelgudem" />
 													</div>
 												</form>
 											</td>
@@ -205,14 +195,16 @@
 													<div class="form-group">
 														<input type="text" class="form-control" />
 													</div>
-													</div>
 												</form>
 											</td>
 										</tr>
 									</table>
 								</td>
-
 							</tr>
+						</tbody>
+					</table>
+					<table id="customer_details" border='1' style="width: 100%">
+						<tbody>
 							<tr>
 								<th>Details of Receiver(Billed To)</th>
 								<th>Details of Consignee (Shipped To)</th>
@@ -221,12 +213,11 @@
 								<td>
 									<table width="100%" border="1">
 										<tr class="">
-											<td>Name</td>
+											<td width="25%">Name</td>
 											<td>
 												<form>
 													<div class="form-group">
-														<input type="text" class="custName" class="form-control" />
-													</div>
+														<input type="text" class="form-control custName" />
 													</div>
 												</form>
 											</td>
@@ -236,8 +227,8 @@
 											<td>
 												<form>
 													<div class="form-group">
-														<textarea placeholder="address" id="billingAddress" class="form-control"></textarea>
-													</div>
+														<textarea placeholder="address" id="billingAddress"
+															class="form-control"></textarea>
 													</div>
 												</form>
 											</td>
@@ -247,8 +238,7 @@
 											<td>
 												<form>
 													<div class="form-group">
-														<input type="text" class="gstNo" class="form-control" />
-													</div>
+														<input type="text" class="form-control gstNo" />
 													</div>
 												</form>
 											</td>
@@ -258,8 +248,7 @@
 											<td>
 												<form>
 													<div class="form-group">
-														<input type="text" class="licNo" class="form-control" />
-													</div>
+														<input type="text" class="form-control licNo" />
 													</div>
 												</form>
 											</td>
@@ -269,8 +258,7 @@
 											<td>
 												<form>
 													<div class="form-group">
-														<input type="text" class="stateCode" class="form-control" />
-													</div>
+														<input type="text" class="form-control stateCode" />
 													</div>
 												</form>
 											</td>
@@ -280,12 +268,11 @@
 								<td>
 									<table width="100%" border="1">
 										<tr class="">
-											<td>Name</td>
+											<td width="25%">Name</td>
 											<td>
 												<form>
 													<div class="form-group">
-														<input type="text" class="custName" class="form-control" />
-													</div>
+														<input type="text" class="form-control custName" />
 													</div>
 												</form>
 											</td>
@@ -295,8 +282,8 @@
 											<td>
 												<form>
 													<div class="form-group">
-														<textarea id="shippingAddress" placeholder="address" ></textarea>
-													</div>
+														<textarea id="shippingAddress" placeholder="address"
+															class="form-control"></textarea>
 													</div>
 												</form>
 											</td>
@@ -306,8 +293,7 @@
 											<td>
 												<form>
 													<div class="form-group">
-														<input type="text" class="gstNo" class="form-control" />
-													</div>
+														<input type="text" class="form-control gstNo" />
 													</div>
 												</form>
 											</td>
@@ -317,8 +303,7 @@
 											<td>
 												<form>
 													<div class="form-group">
-														<input type="text" class="licNo" class="form-control" />
-													</div>
+														<input type="text" class="form-control licNo" />
 													</div>
 												</form>
 											</td>
@@ -328,8 +313,7 @@
 											<td>
 												<form>
 													<div class="form-group">
-														<input type="text" class="stateCode" class="form-control" />
-													</div>
+														<input type="text" class="form-control stateCode" />
 													</div>
 												</form>
 											</td>
@@ -339,6 +323,7 @@
 							</tr>
 						</tbody>
 					</table>
+
 					<!--------------------- product Table---------------------- -->
 					<div class="">
 						<div class="row clearfix">
@@ -395,10 +380,8 @@
 												name='total[]' placeholder='0.00'
 												class="form-control net_amount" readonly id="net_amount" />
 											</td>
-											<td class="class-data"><span
-												class="class-id"></span></td>
-											<td class="division"><span
-												class="devision"></span></td>
+											<td class="class-data"><span class="class-id"></span></td>
+											<td class="division"><span class="devision"></span></td>
 										</tr>
 										<tr id='addr1'></tr>
 									</tbody>
@@ -475,7 +458,7 @@
 									<td><button>Delete</button></td>
 									<td><button>Save</button></td>
 									<td><button>Clear</button></td>
-									<td><button>Print-Invoice</button></td>
+									<td><button id="printInvoice">Print-Invoice</button></td>
 									<td><button>Print DC</button></td>
 									<td><button>Print RE-6</button></td>
 									<td><button>Exit</button></td>
@@ -612,8 +595,9 @@
 									'<tr id="addr' + (i + 1) + '"></tr>');
 
 							//product details clear after add button click
-							$('#addr'+i+'').find('.product-description').val(' ');
-							$('#addr'+i+'').find('.hsn-code').text(' ');
+							$('#addr' + i + '').find('.product-description')
+									.val(' ');
+							$('#addr' + i + '').find('.hsn-code').text(' ');
 							$('#addr' + i + '').find('.brand_id').val('');
 							$('#addr' + i + '').find('.unit').text(' ');
 							$('#addr' + i + '').find('.class-id').text(' ');
@@ -684,6 +668,7 @@
 	$(document)
 			.ready(
 					function() {
+
 						var values = [];
 						<c:forEach var="product" items="${products}"
 			varStatus="loop">
@@ -745,24 +730,50 @@
 												// FOR DEMONSTRATION ONLY
 												$("#example-console").html(
 														data.join(', '));
-												
+
 												//products entry 
-												$('#addr' + i + '').find('.brand_id').attr('id','brand_id_' + i + '').val(parseInt(data[1]));
-												$('#addr' + i + '').find('.product-description').attr('id', 'product-description_'+ i+ '').val(data[3]);
-												$('#addr' + i + '').find('.hsn-code').attr('id','hsn_code_' + i + '').text(data[8]);
-												$('#addr' + i + '').find('.unit').attr('id','unit_' + i + '').text(data[6]);
-												$('#addr' + i + '').find('.class-id').attr('id','class_id_' + i + '').text(data[4]);
-												$('#addr' + i + '').find('.division').attr('id','division_' + i + '').text(data[5]);
+												$('#addr' + i + '').find(
+														'.brand_id').attr('id',
+														'brand_id_' + i + '')
+														.val(parseInt(data[1]));
+												$('#addr' + i + '').find(
+														'.product-description')
+														.attr(
+																'id',
+																'product-description_'
+																		+ i
+																		+ '')
+														.val(data[3]);
+												$('#addr' + i + '').find(
+														'.hsn-code').attr('id',
+														'hsn_code_' + i + '')
+														.text(data[8]);
+												$('#addr' + i + '').find(
+														'.unit').attr('id',
+														'unit_' + i + '').text(
+														data[6]);
+												$('#addr' + i + '').find(
+														'.class-id').attr('id',
+														'class_id_' + i + '')
+														.text(data[4]);
+												$('#addr' + i + '').find(
+														'.division').attr('id',
+														'division_' + i + '')
+														.text(data[5]);
 												i++;
 											}
 
 										});
 
 					});
-	
-	//$('#mymodal').find('input').focus();
-	
 
+	//$('#mymodal').find('input').focus();
+	$('#printInvoice').click(function() {
+		/* $('input').css('border','none')
+		$('button').hide();
+		$('#address_data').css('display','none'); */
+		window.print();
+	});
 </script>
 
 

@@ -1,6 +1,24 @@
-<%@ include file="common/header.jspf" %>
-<%@ include file="common/navigation.jspf"%>
-
+<!DOCTYPE html>
+<html>
+	<head>
+		<link href="webjars/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+	</head>
+	<body>
+	<%@ include file="common/header.jspf" %>
+	<%@ include file="common/navigation.jspf"%>
+	<form:form method="post" commandName="product">
+		<div class="input-group">
+			<label for="exampleInputEmail1">Product Code</label>
+		  <form:input path="product_code" type="text" class="form-control" />	
+		</div>
+	</form:form>
+	
+	</body>
+	<script src="webjars/jquery/3.1.1/jquery.min.js"></script>
+	<script type="text/javascript" src="js/custom.js"></script>
+	<script src="webjars/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+</html>
 <form:form method="post" commandName="product">
 <div>${error}</div>
 <form:label path="product_code">product_code</form:label>
