@@ -74,18 +74,17 @@
 		}
 		
 		#tab_logic {
-			min-height: 400px;
+			/* min-height: 400px; */
 		}
 		
 		#tab_logic tbody tr {
-			border-right: 1px solid #000000;
-			border-top: none;
-			border-bottom: none;
-			height : 50px !important; 
+			border: none !important;
 		}
-		#tab_logic tbody td:nth-child(1){
-			border-left: 1px solid #000000;
-			border-right: 1px solid #000000;
+		#tab_logic tbody td {
+			border-left: 1px solid #dddddd;
+			border-right: 1px solid #dddddd;
+			border-bottom : none;
+			border-top: none;
 		}
 		
 		body, input, textarea, select, td, th { 
@@ -98,5 +97,30 @@
 		#tab_logic tbody tr:last-child {
 			display: none;
 		}
+		
+		.hide-cust {
+			display: none;
+		}
+		
+		.gst-head {
+			width: 5% !important;
+		}
+		
+		.brand-id-header {
+			width: 8% !important;
+		}
+		
+		::-webkit-input-placeholder { /* WebKit browsers */
+      color: transparent !important;
+  }
+  :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+      color: transparent !important;
+  }
+  ::-moz-placeholder { /* Mozilla Firefox 19+ */
+      color: transparent !important;
+  }
+  :-ms-input-placeholder { /* Internet Explorer 10+ */
+      color: transparent !important;
+  }
 	
 }

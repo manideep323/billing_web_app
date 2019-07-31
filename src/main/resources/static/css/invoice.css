@@ -77,6 +77,27 @@ table {
 			min-height: 600px;
 		} */
 		
+			
 		#insert_data {
 			dispaly: block;
+		}
+		
+		table table {
+			border: none;
+		}
+		
+		.bootstrap-select {
+			width: 100% !important;
+		}
+		
+		table {
+			border: 1px solid #dddddd;
+		}
+		
+		#tab_logic {
+			font-size: 14px;
+		}
+		
+		#tab_logic .si-no-header {
+			width: 3;
 		}

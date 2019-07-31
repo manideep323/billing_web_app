@@ -14,13 +14,13 @@
 
 
 <!-- <link href="css/style.css" rel="stylesheet"> -->
-<link href="css/invoice.css" rel="stylesheet">
 <link href="css/datatable.css" rel="stylesheet">
 <!-- <link href="https://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"> -->
 <link href="webjars/bootstrap/3.3.2/css/bootstrap.min.css"
 	rel="stylesheet">
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/css/bootstrap-select.min.css" />
+	<link href="css/invoice.css" rel="stylesheet">
 <link href="css/print.css" rel="stylesheet" media="print">
 </head>
 <body>
@@ -46,13 +46,13 @@
 
 					</table>
 					<!--insert data-->
-					<table id="insert_data">
+
+
+					<table id="insert_data" width="100%" class="table table-bordered">
 						<tbody>
 							<tr>
 								<td>Invoice Number</td>
 								<td><input type="text" class="form-control"></td>
-								<td>Date of Invoice</td>
-								<td><input id="date" name="date" class="form-control"></td>
 								<td>Doc No.</td>
 								<td><select onchange="setCustomerValues(value)"
 									class="selectpicker" data-show-subtext="true"
@@ -74,6 +74,40 @@
 												value='{"index":"${loop.index}","vehicle":"${vehicle.vehicleNo}","licence":"${vehicle.licence}","validDate":"${vehicle.validDate}","capacity":"${vehicle.capacity}","ownName":"${vehicle.licence}","licence":"${vehicle.ownName}","noCases":"${vehicle.noCases}","edCases":"${vehicle.edCases}"}'>${vehicle.vehicleNo}</option>
 										</c:forEach>
 								</select></td>
+
+							</tr>
+							<tr>
+								<td>Customer Name</td>
+								<td colspan="3">
+									<form>
+										<div class="form-group">
+											<input type="text" class="form-control custName" />
+										</div>
+									</form>
+								</td>
+								<td>Date of Invoice</td>
+								<td><input id="date" name="date" class="form-control">
+								</td>
+							</tr>
+							<tr>
+								<td>Customer Address</td>
+								<td colspan="3">
+									<form>
+										<div class="form-group">
+											<textarea placeholder="address" id="billingAddress"
+												class="form-control"></textarea>
+										</div>
+									</form>
+								</td>
+								<td>Place of Issue</td>
+								<td>
+									<form>
+										<div class="form-group">
+											<textarea placeholder=""
+												class="form-control"></textarea>
+										</div>
+									</form>
+								</td>
 							</tr>
 						</tbody>
 					</table>
@@ -90,7 +124,7 @@
 													<div class="form-group">
 														<input type="text" class="form-control"
 															style="width: 35%; float: left" />
-														<div class="side-lable">Date of Invoice : </div>
+														<div class="side-lable">Date of Invoice :</div>
 														<input id="dateInside" name="date" class="form-control"
 															style="width: 25%; float: left" />
 													</div>
@@ -331,19 +365,19 @@
 								<table class="" id="tab_logic" border="1">
 									<thead>
 										<tr>
-											<th class="text-center">S No</th>
-											<th class="text-center">Brand Id</th>
-											<th class="text-center">Product Description</th>
-											<th class="text-center">HSN Code</th>
-											<th class="text-center">Qty</th>
-											<th class="text-center">Unit</th>
-											<th class="text-center">Rate</th>
-											<th class="text-center">Amount</th>
-											<th class="text-center">GST%</th>
-											<th class="text-center">GST Amount</th>
-											<th class="text-center">Net Amount</th>
-											<th class="text-center">Class</th>
-											<th class="text-center">Div</th>
+											<th class="text-center si-no-header">S No</th>
+											<th class="text-center brand-id-header">Brand Id</th>
+											<th class="text-center product-dec-header">Product Description</th>
+											<th class="text-center hsn-header">HSN Code</th>
+											<th class="text-center qty-header">Qty</th>
+											<th class="text-center unit-header">Unit</th>
+											<th class="text-center rate-header">Rate</th>
+											<th class="text-center amount-header">Amount</th>
+											<th class="text-center gst-head">GST%</th>
+											<th class="text-center gst-amount-header">GST Amount</th>
+											<th class="text-center net-amount-headder">Net Amount</th>
+											<th class="text-center hide-cust class-header">Class</th>
+											<th class="text-center hide-cust div-header">Div</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -380,8 +414,8 @@
 												name='total[]' placeholder='0.00'
 												class="form-control net_amount" readonly id="net_amount" />
 											</td>
-											<td class="class-data"><span class="class-id"></span></td>
-											<td class="division"><span class="devision"></span></td>
+											<td class="class-data hide-cust"><span class="class-id"></span></td>
+											<td class="division hide-cust"><span class="devision"></span></td>
 										</tr>
 										<tr id='addr1'></tr>
 									</tbody>
