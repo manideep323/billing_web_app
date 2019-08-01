@@ -369,13 +369,13 @@
 											<th class="text-center brand-id-header">Brand Id</th>
 											<th class="text-center product-dec-header">Product Description</th>
 											<th class="text-center hsn-header">HSN Code</th>
-											<th class="text-center qty-header">Qty</th>
 											<th class="text-center unit-header">Unit</th>
+											<th class="text-center qty-header">Qty</th>
 											<th class="text-center rate-header">Rate</th>
-											<th class="text-center amount-header">Amount</th>
+											<th class="text-center amount-header">Value</th>
 											<th class="text-center gst-head">GST%</th>
-											<th class="text-center gst-amount-header">GST Amount</th>
-											<th class="text-center net-amount-headder">Net Amount</th>
+											<th class="text-center gst-amount-header">GST Value</th>
+											<th class="text-center net-amount-headder">Amount</th>
 											<th class="text-center hide-cust class-header">Class</th>
 											<th class="text-center hide-cust div-header">Div</th>
 										</tr>
@@ -388,18 +388,19 @@
 												data-toggle="modal" data-target="#myModal" /> <!-- <p>
 													<b>Details:</b> <span id="example-console">N/A</span>
 												</p> --></td>
-											<td class="product-name"><input type="text"
-												name='product[]' placeholder='Product'
-												class="form-control product-description" readonly /></td>
+											<td class="product-name"><textarea placeholder='Product'
+												class="form-control product-description" readonly></textarea>
+												</td>
 											<td class="hsn-code-block"><span class="hsn-code"></span>
 											</td>
-											<td><input type="number" name='qty[]'
-												placeholder='Enter Qty' class="form-control qty" step="0"
-												min="0" /></td>
 											<td class="unit"><span id="unit_1" class="unit_0"></span>
 											</td>
+											<td><input type="number" name='qty[]'
+												placeholder='Qty' class="form-control qty" step="0"
+												min="0" /></td>
+											
 											<td><input type="number" name='price[]'
-												placeholder='Enter Unit Price' class="form-control price"
+												placeholder='Unit Price' class="form-control price"
 												step="0.00" min="0" /></td>
 											<td class="amount"><input type="number" name='total[]'
 												placeholder='0.00' class="form-control total" readonly /></td>

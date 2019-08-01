@@ -94,10 +94,60 @@ table {
 			border: 1px solid #dddddd;
 		}
 		
+		.form-control {
+			padding : 6px 4px;
+		}
+		
+					input[type=number]::-webkit-inner-spin-button, 
+			input[type=number]::-webkit-outer-spin-button { 
+			  -webkit-appearance: none; 
+			  margin: 0; 
+			}
 		#tab_logic {
 			font-size: 14px;
 		}
 		
 		#tab_logic .si-no-header {
-			width: 3;
+			width: 5%;
 		}
+		
+		#tab_logic .brand-id-header {
+			width: 8%;
+		}
+		
+		#tab_logic .net-amount-headder {
+			width: 9%;
+		}
+		
+		#tab_logic .product-dec-header {
+			width: 20%;
+		}
+		
+		
+		#tab_logic .amount-header {
+			width: 10%;
+		}
+		
+		
+		#tab_logic .hsn-header {
+			width: 10%;
+		}
+		
+		#tab_logic .qty-header {
+			width: 7%;
+		}
+		
+		#tab_logic .gst-head {
+			width: 3%;
+		}
+		.product-description {
+			padding: 0;
+		}
+		
+		
+		
+		
+		#tab_logic .gst-amount-header {
+			width: 10%;
+		}
+		
