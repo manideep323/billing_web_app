@@ -23,10 +23,10 @@
 	<link href="css/invoice.css" rel="stylesheet">
 <link href="css/print.css" rel="stylesheet" media="print">
 </head>
-<body>
+<body class="billing-body">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-12">
+			<div class="col-md-12 bill-section">
 				<div class="invoice-generation">
 					<table border="1" id="invoice_header">
 						<tbody>
@@ -425,9 +425,9 @@
 						</div>
 						<div class="row clearfix">
 							<div class="col-md-12">
-								<button id="add_row" class="btn btn-default pull-left">Add
+								<button id="add_row" class="btn btn-grad pull-left">Add
 									Row</button>
-								<button id='delete_row' class="pull-right btn btn-default">Delete
+								<button id='delete_row' class="pull-right btn btn-grad">Delete
 									Row</button>
 							</div>
 						</div>
@@ -488,15 +488,15 @@
 						<table width="100%" border="1" align="center">
 							<tbody>
 								<tr>
-									<td><button>Add</button></td>
-									<td><button>Edit</button></td>
-									<td><button>Delete</button></td>
-									<td><button>Save</button></td>
-									<td><button>Clear</button></td>
-									<td><button id="printInvoice">Print-Invoice</button></td>
-									<td><button>Print DC</button></td>
-									<td><button>Print RE-6</button></td>
-									<td><button>Exit</button></td>
+									<td><button class='btn btn-grad'>Add</button></td>
+									<td><button class="btn btn-grad">Edit</button></td>
+									<td><button class="btn btn-grad">Delete</button></td>
+									<td><button class="btn btn-grad">Save</button></td>
+									<td><button class="btn btn-grad">Clear</button></td>
+									<td><button id="printInvoice" class="btn btn-grad">Print-Invoice</button></td>
+									<td><button class="btn btn-grad">Print DC</button></td>
+									<td><button class="btn btn-grad">Print RE-6</button></td>
+									<td><button class="btn btn-grad">Exit</button></td>
 								</tr>
 							</tbody>
 						</table>

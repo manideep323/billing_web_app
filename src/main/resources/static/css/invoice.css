@@ -1,153 +1,205 @@
 table {
-			border-collapse: collapse;
-			vertical-align: middle;
-		}
+	border-collapse: collapse;
+	vertical-align: middle;
+	border-width: 5px;
+	border-style: solid;
+	border: solid 5px linear-gradient(45deg, rgb(0,143,104), rgb(250,224,66));
+	border-image: linear-gradient(45deg, rgb(0,143,104), rgb(250,224,66)) 1;
+}
 
-		input {
-			width: 100%;
-			height: 100%;
-		}
+input {
+	width: 100%;
+	height: 100%;
+}
 
-		textarea {
-			width: 100%;
-			height: 100%;
-			resize: none;
-			margin: 0;
-		}
+textarea {
+	width: 100%;
+	height: 100%;
+	resize: none;
+	margin: 0;
+}
 
-		label {
-			margin: 0;
-		}
+label {
+	margin: 0;
+}
 
-		.form-group {
-			margin: 0; 
-		}
-		table table {
-			border: none; 
-		}
+.form-group {
+	margin: 0;
+}
 
-		th, td, tr {
-			margin: 0;
-			padding: 0;
-			border-collapse: collapse;
-		}
+table table {
+	border: none;
+}
 
-		.gst-table td{
-			width: 12.2%;
-		}
+th, td, tr {
+	margin: 0;
+	padding: 0;
+	border-collapse: collapse;
+}
 
-		.bank-details-table td{
-			width: 33.3%
-		}
+.gst-table td {
+	width: 12.2%;
+}
 
-		.logo, .type-click {
-			width: 20%;
-		}
-		
-		.modal-dialog {
-			max-width: 80% !important;
-		}
-		
-		.dataTables_wrapper .dataTables_filter input {
-			height:30px;
-		}
-		
-		.form-group, form {
-		
-		margin-bottom: 0 !important;}
-		
-		.side-lable {
-			float: left;
-			padding: 7px;
-		}
-				
-		#customer_details {
-			display: none;
-			width: 100% !important;
-		}
-		
-		#invoice_header {
-			display: none;
-		}
-		
-		td, th {
-			padding: 0 3px !important;
-		}
-		/* #tab_logic {
+.bank-details-table td {
+	width: 33.3%
+}
+
+.logo, .type-click {
+	width: 20%;
+}
+
+.modal-dialog {
+	max-width: 80% !important;
+}
+
+.dataTables_wrapper .dataTables_filter input {
+	height: 30px;
+}
+
+.form-group, form {
+	margin-bottom: 0 !important;
+}
+
+.side-lable {
+	float: left;
+	padding: 7px;
+}
+
+#customer_details {
+	display: none;
+	width: 100% !important;
+}
+
+#invoice_header {
+	display: none;
+}
+
+td, th {
+	padding: 0 3px !important;
+}
+/* #tab_logic {
 			min-height: 600px;
 		} */
-		
-			
-		#insert_data {
-			dispaly: block;
-		}
-		
-		table table {
-			border: none;
-		}
-		
-		.bootstrap-select {
-			width: 100% !important;
-		}
-		
-		table {
-			border: 1px solid #dddddd;
-		}
-		
-		.form-control {
-			padding : 6px 4px;
-		}
-		
-					input[type=number]::-webkit-inner-spin-button, 
-			input[type=number]::-webkit-outer-spin-button { 
-			  -webkit-appearance: none; 
-			  margin: 0; 
-			}
-		#tab_logic {
-			font-size: 14px;
-		}
-		
-		#tab_logic .si-no-header {
-			width: 5%;
-		}
-		
-		#tab_logic .brand-id-header {
-			width: 8%;
-		}
-		
-		#tab_logic .net-amount-headder {
-			width: 9%;
-		}
-		
-		#tab_logic .product-dec-header {
-			width: 20%;
-		}
-		
-		
-		#tab_logic .amount-header {
-			width: 10%;
-		}
-		
-		
-		#tab_logic .hsn-header {
-			width: 10%;
-		}
-		
-		#tab_logic .qty-header {
-			width: 7%;
-		}
-		
-		#tab_logic .gst-head {
-			width: 3%;
-		}
-		.product-description {
-			padding: 0;
-		}
-		
-		
-		
-		
-		#tab_logic .gst-amount-header {
-			width: 10%;
-		}
-		
+#insert_data {
+	dispaly: block;
+}
+
+table table {
+	border: none;
+}
+
+.bootstrap-select {
+	width: 100% !important;
+}
+
+table {
+	border: 1px solid #dddddd;
+}
+
+.form-control {
+	padding: 6px 4px;
+}
+
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button
+	{
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+#tab_logic {
+	font-size: 14px;
+}
+
+#tab_logic .si-no-header {
+	width: 5%;
+}
+
+#tab_logic .brand-id-header {
+	width: 8%;
+}
+
+#tab_logic .net-amount-headder {
+	width: 9%;
+}
+
+#tab_logic .product-dec-header {
+	width: 20%;
+}
+
+#tab_logic .amount-header {
+	width: 10%;
+}
+
+#tab_logic .hsn-header {
+	width: 10%;
+}
+
+#tab_logic .qty-header {
+	width: 7%;
+}
+
+#tab_logic .gst-head {
+	width: 3%;
+}
+
+.product-description {
+	padding: 0;
+}
+
+table.dataTable tbody th, table.dataTable tbody td {
+	padding: 8px 10px !important;
+}
+
+table.dataTable th.focus, table.dataTable td.focus {
+	outline: none;
+}
+
+.btn-grad {
+	margin: 10px;
+	text-align: center;
+	text-transform: uppercase;
+	transition: 0.5s;
+	background-size: 200% auto;
+	color: white;
+	/* text-shadow: 0px 0px 10px rgba(0,0,0,0.2); */
+	box-shadow: 0 0 20px #eee;
+	font-weight: bold;
+}
+
+.btn-grad {
+	background-image: linear-gradient(to right, #fe8c00 0%, #f83600 51%, #fe8c00 100%)
+}
+
+.btn-grad:hover {
+	background-position: right center;
+}
+
+.btn-grad {
+	background-image: linear-gradient(to right, #6a3093 0%, #a044ff 51%, #6a3093 100%)
+}
+
+.btn-grad:hover {
+	background-position: right center;
+	color: #ffffff !important;
+}
+
+#tab_logic .gst-amount-header {
+	width: 10%;
+}
+
+body {
+	background: #a64bf4;
+    background: -webkit-linear-gradient(45deg, #00dbde, #fc00ff);
+    background: -o-linear-gradient(45deg, #00dbde, #fc00ff);
+    background: -moz-linear-gradient(45deg, #00dbde, #fc00ff);
+    background: linear-gradient(45deg, #00dbde, #fc00ff);
+}
+
+.invoice-generation {
+	background: #f5f5f5;
+	padding: 15px;
+	border-radius: 5px;
+	margin-bottom: 50px;
+	
+}
