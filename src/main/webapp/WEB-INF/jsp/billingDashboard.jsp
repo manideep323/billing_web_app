@@ -24,6 +24,7 @@
 <link href="css/print.css" rel="stylesheet" media="print">
 </head>
 <body class="billing-body">
+<form:form method="post" commandName="invoice">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12 bill-section">
@@ -52,9 +53,9 @@
 						class="table table-bordered hide-dc re-6-hide">
 						<tbody>
 							<tr>
-								<td><b>Invoice Number</b></td>
-								<td><input type="text" class="form-control"></td>
-								<td><b>Doc No.</b></td>
+								<td>Invoice Number</td>
+								<td><form:input path="invoiceNumber" type="text" class="form-control" /></td>
+								<td>Doc No.</td>
 								<td><select onchange="setCustomerValues(value)"
 									class="selectpicker" data-show-subtext="true"
 									data-live-search="true">
@@ -708,11 +709,10 @@
 									<!-- <td><button class='btn btn-grad'>Add</button></td>
 									<td><button class="btn btn-grad">Edit</button></td>
 									<td><button class="btn btn-grad">Delete</button></td> -->
-									<td><button class="btn btn-grad">Save</button></td>
+									<td><button type="submit" class="btn btn-grad">Save</button></td>
 									<td><button class="btn btn-grad">Clear</button></td>
 									<td><button id="printInvoice" class="btn btn-grad">Print-Invoice</button></td>
-									<td><button id="print-dc" class="btn btn-grad">Print
-											DC</button></td>
+									<td><button id="print-dc" class="btn btn-grad">Print DC</button></td>
 									<td><button class="btn btn-grad print-re-6">Print RE-6</button></td>
 									<td><button class="btn btn-grad">Exit</button></td>
 								</tr>
@@ -829,6 +829,7 @@
 			</div>
 		</div>
 	</div>
+		</form:form>
 </body>
 <script src="webjars/jquery/3.1.1/jquery.min.js"></script>
 <script
