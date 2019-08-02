@@ -1,15 +1,12 @@
 @media print {
-	
 	* {
 		margin: 0 !important;
 		padding: 0 !important;
-		 
 	}
-	
 	input, textarea, select {
 		border: none !important;
 	}
-	
+
 	/** Seitenränder einstellen */
 	@page {
 		margin: 1cm;
@@ -18,109 +15,118 @@
 		line-height: 1.3;
 		background: #fff !important;
 		color: #000;
-		font-size: 8px !impoprtant;
+		font-size: 8px!impoprtant;
 	}
-	
 	button {
 		display: none !important;
 	}
-	
 	th, tr, td {
-		height : auto;
+		height: auto;
 		vertical-align: top;
 	}
-	
 	table table {
-		border : none !important;
+		border: none !important;
 	}
-	
 	table table tr td {
 		border: none !important;
 	}
-	
 	.form-control {
-		height : auto;
-	} 
-	
+		height: auto;
+	}
 	label {
 		margin: 0 !important;
 	}
-	
 	.adderess-table {
 		height: 300pt !important;
 		background-color: red !important;
 	}
-	
 	textarea {
-			height : 30px !important;
-			overflow: hidden;
-		}
-	
+		
+		overflow: hidden;
+	}
 	#customer_details {
-			display: inline-table;
-			width: 100% !important;
-		}
+		display: inline-table;
+		width: 100% !important;
+	}
+	#insert_data {
+		display: none !important;
+	}
+	a {
+		display: none !important;
+	}
+	#invoice_header {
+		display: block;
+	}
+	#tab_logic {
+		/* min-height: 400px; */
 		
-		#insert_data {
-			display: none !important;
-		}
-		
-		a {
-			display : none !important;
-		}
-		
-		#invoice_header {
-			display: block;
-		}
-		
-		#tab_logic {
-			/* min-height: 400px; */
-		}
-		
-		#tab_logic tbody tr {
-			border: none !important;
-		}
-		#tab_logic tbody td {
-			border-left: 1px solid #dddddd;
-			border-right: 1px solid #dddddd;
-			border-bottom : none;
-			border-top: none;
-		}
-		
-		body, input, textarea, select, td, th { 
+	}
+	#tab_logic tbody tr {
+		border: none !important;
+	}
+	#tab_logic tbody td {
+		border-left: 1px solid #dddddd;
+		border-right: 1px solid #dddddd;
+		border-bottom: none;
+		border-top: none;
+	}
+	body, input, textarea, select, td, th {
+		font-size: 14px !important;
+	}
+	#tab_logic {
 		font-size: 12px;
-		}
-		#tab_logic {
-			font-size: 12px;
-		}
-		
-		#tab_logic tbody tr:last-child {
-			display: none;
-		}
-		
-		.hide-cust {
-			display: none;
-		}
-		
-		.gst-head {
-			width: 5% !important;
-		}
-		
-		.brand-id-header {
-			width: 8% !important;
-		}
-		
-		::-webkit-input-placeholder { /* WebKit browsers */
-      color: transparent !important;
-  }
-  :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-      color: transparent !important;
-  }
-  ::-moz-placeholder { /* Mozilla Firefox 19+ */
-      color: transparent !important;
-  }
-  :-ms-input-placeholder { /* Internet Explorer 10+ */
-      color: transparent !important;
-  }
+	}
+	#tab_logic tbody tr:last-child {
+		display: none;
+	}
+	.hide-cust {
+		display: none;
+	}
+	.gst-head {
+		width: 5% !important;
+	}
+	.brand-id-header {
+		width: 8% !important;
+	}
+	::-webkit-input-placeholder { /* WebKit browsers */
+		color: transparent !important;
+	}
+	:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+		color: transparent !important;
+	}
+	::-moz-placeholder { /* Mozilla Firefox 19+ */
+		color: transparent !important;
+	}
+	:-ms-input-placeholder { /* Internet Explorer 10+ */
+		color: transparent !important;
+	}
 	
+	.invoice-footer {
+		display: inline-table;
+	}
+	
+	.hide-payment-status {
+		display: none !important;
+	}
+	
+	 th {
+	padding: 4px 0 !important;
+}
+
+#invoice_header td, #invoice_header th{
+	border: none !important;
+} 
+
+#invoice_header img {
+	margin: 3px !important;
+}
+
+body {
+      -webkit-print-color-adjust: exact;
+   }
+
+#tab_logic th {
+	background: #cccccc !important;
+}
+
 }

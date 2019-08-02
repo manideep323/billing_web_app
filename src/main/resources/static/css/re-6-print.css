@@ -1,0 +1,43 @@
+* {
+	margin: auto !important;
+	padding: auto !important;
+	font-size: 16px;
+	line-height: 22px !important;
+}
+
+.re-6-head-text {
+	margin-bottom: 16px !important;
+}
+
+hr {
+	margin-bottom: 10px !important;
+}
+
+.re-6-table {
+	margin-top: 10px !important;
+	border: none !important;
+}
+
+#tab_logic {
+	margin-top: 10px !important;
+}
+
+.hide-cust {
+	display: table-cell !important;
+}
+
+.product-name {
+	width: 35% !important;
+}
+
+.qty-header {
+	width: 20% !important;
+}
+
+.re-6-table {
+	width: 100% !important;
+}
+
+.re-6-print-top, .re-6-bottom {
+	display: block !important;
+}

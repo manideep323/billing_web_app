@@ -1,0 +1,60 @@
+#tab_logic th{
+	background-color: #cccccc !important;
+}
+
+#tab_logic {
+	border-bottom: none !important;
+}
+
+
+.indentor-data {
+	display: inline-table !important;
+}
+
+.bank-details-table {
+	display: none !important;
+}
+
+.si-no-header {
+	width: 8% !important;
+}
+
+.brand-id-header {
+	width: 12% !important;
+}
+
+.hsn-header {
+	width : 15% !important;
+}
+.product-dec-header {
+	width: 40% !important;
+}
+
+ol {
+	padding-left: 14px !important;
+}
+
+.invoice-footer {
+	border-top: none !important;
+}
+
+.invoice-footer td {
+	padding: 5px 0 !important;
+}
+
+.bank-details-table {
+	display: none !important;
+}
+
+.indentor-data-vehicleno {
+	width : 30% !important;
+}
+.logo {
+	border-right: none !important;
+}
+
+.type-click {
+	width: 5% !important;
+	border: none !important;	
+}
+

@@ -1,11 +1,4 @@
-table {
-	border-collapse: collapse;
-	vertical-align: middle;
-	border-width: 5px;
-	border-style: solid;
-	border: solid 5px linear-gradient(45deg, rgb(0,143,104), rgb(250,224,66));
-	border-image: linear-gradient(45deg, rgb(0,143,104), rgb(250,224,66)) 1;
-}
+
 
 input {
 	width: 100%;
@@ -46,9 +39,16 @@ th, td, tr {
 }
 
 .logo, .type-click {
-	width: 20%;
+	width: 15%;
 }
 
+.logo {
+	border-right: none;
+}
+
+.type-click {
+	border-left: none;	
+}
 .modal-dialog {
 	max-width: 80% !important;
 }
@@ -71,19 +71,17 @@ th, td, tr {
 	width: 100% !important;
 }
 
-#invoice_header {
+/* #invoice_header {
 	display: none;
-}
+} */
 
-td, th {
+/* td, th {
 	padding: 0 3px !important;
-}
+} */
 /* #tab_logic {
 			min-height: 600px;
 		} */
-#insert_data {
-	dispaly: block;
-}
+
 
 table table {
 	border: none;
@@ -202,4 +200,33 @@ body {
 	border-radius: 5px;
 	margin-bottom: 50px;
 	
+}
+
+ .indentor-data {
+	display: none;
+} 
+
+.invoice-footer {
+	display: none;
+}
+
+/* re-6 print css */
+
+.re-6-head-text {
+	width: 65%;
+	margin: 0 auto;
+	font-size: 18px;
+	margin-bottom: 16px;
+}
+
+hr {
+	border: 1px solid #000;
+}
+.re-6-sno {
+	width: 5%;
+}
+
+
+.re-6-print-top, .re-6-bottom {
+	display: none;
 }

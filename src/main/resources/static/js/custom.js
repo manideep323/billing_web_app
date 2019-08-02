@@ -17,12 +17,13 @@ $('#division').text(val["division"]);
 
 function setVehicleValues(value){
 	var val = JSON.parse(value);
-	$('#vehicleNo').val(val["vehicle"])
+	$('.vehicleNo').val(val["vehicle"]);
+	$('.vehiclelicence').val(val["licence"]);
 } 
 function setCustomerValues(value){
 	var val = JSON.parse(value);
 	$('#shippingAddress').val(val["shippingAddress"])
-	$('#billingAddress').val(val["billingAddress"])
+	$('.billingAddress').val(val["billingAddress"])
 	$('.custName').val(val["custName"])
 	$('.licNo').val(val["licNo"])
 	$('.gstNo').val(val["gstNo"])
@@ -51,6 +52,8 @@ var curentDate = ((''+day).length<2 ? '0' : '') + day + '-' +
 //date
 document.getElementById('date').value = curentDate;
 document.getElementById('dateInside').value = curentDate;
+document.getElementById('dc_date').value = curentDate;
+document.getElementById('re_6_date').value = curentDate;
 //date and time
 document.getElementById('date_time').value = curentDate+' '+time.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
 

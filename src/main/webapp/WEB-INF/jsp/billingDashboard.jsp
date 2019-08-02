@@ -20,7 +20,7 @@
 	rel="stylesheet">
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/css/bootstrap-select.min.css" />
-	<link href="css/invoice.css" rel="stylesheet">
+<link href="css/invoice.css" rel="stylesheet">
 <link href="css/print.css" rel="stylesheet" media="print">
 </head>
 <body class="billing-body">
@@ -28,10 +28,10 @@
 		<div class="row">
 			<div class="col-md-12 bill-section">
 				<div class="invoice-generation">
-					<table border="1" id="invoice_header">
+					<table border="1" id="invoice_header" class="re-6-hide">
 						<tbody>
 							<tr>
-								<td class="logo"></td>
+								<td class="logo"><img src="images/logo.png"></td>
 								<td align="center" class="tax-address">
 									<p>TAX INCOICE</p>
 									<h4>M/S SHIVARATHRI CHANDRAIAH</h4>
@@ -48,12 +48,13 @@
 					<!--insert data-->
 
 
-					<table id="insert_data" width="100%" class="table table-bordered">
+					<table id="insert_data" width="100%"
+						class="table table-bordered hide-dc re-6-hide">
 						<tbody>
 							<tr>
-								<td>Invoice Number</td>
+								<td><b>Invoice Number</b></td>
 								<td><input type="text" class="form-control"></td>
-								<td>Doc No.</td>
+								<td><b>Doc No.</b></td>
 								<td><select onchange="setCustomerValues(value)"
 									class="selectpicker" data-show-subtext="true"
 									data-live-search="true">
@@ -64,20 +65,20 @@
 												value='{"index":"${loop.index}","code":"${customer.code}","licNo":"${customer.licNo}","custName":"${customer.custName}","tinNo":"${customer.tinNo}","gstNo":"${customer.gstNo}","validDt":"${customer.validDt}","stateCode":"${customer.stateCode}","billingAddress":"${customer.billingAddress}","shippingAddress":"${customer.shippingAddress}","docNo":"${customer.docNo}"}'>${customer.docNo}</option>
 										</c:forEach>
 								</select></td>
-								<td>Vehicle No.</td>
+								<td><b>Vehicle No.</b></td>
 								<td><select onchange="setVehicleValues(value)"
 									class="selectpicker vehicle-data" data-show-subtext="true"
 									data-live-search="true">
 										<option>select vehicle..</option>
 										<c:forEach var="vehicle" items="${vehicles}" varStatus="loop">
 											<option
-												value='{"index":"${loop.index}","vehicle":"${vehicle.vehicleNo}","licence":"${vehicle.licence}","validDate":"${vehicle.validDate}","capacity":"${vehicle.capacity}","ownName":"${vehicle.licence}","licence":"${vehicle.ownName}","noCases":"${vehicle.noCases}","edCases":"${vehicle.edCases}"}'>${vehicle.vehicleNo}</option>
+												value='{"index":"${loop.index}","vehicle":"${vehicle.vehicleNo}","validDate":"${vehicle.validDate}","capacity":"${vehicle.capacity}","ownName":"${vehicle.ownName}","licence":"${vehicle.licence}","noCases":"${vehicle.noCases}","edCases":"${vehicle.edCases}"}'>${vehicle.vehicleNo}</option>
 										</c:forEach>
 								</select></td>
 
 							</tr>
 							<tr>
-								<td>Customer Name</td>
+								<td><b>Customer Name</b></td>
 								<td colspan="3">
 									<form>
 										<div class="form-group">
@@ -85,26 +86,25 @@
 										</div>
 									</form>
 								</td>
-								<td>Date of Invoice</td>
+								<td><b>Date of Invoice</b></td>
 								<td><input id="date" name="date" class="form-control">
 								</td>
 							</tr>
 							<tr>
-								<td>Customer Address</td>
+								<td><b>Customer Address</b></td>
 								<td colspan="3">
 									<form>
 										<div class="form-group">
 											<textarea placeholder="address" id="billingAddress"
-												class="form-control"></textarea>
+												class="form-control billingAddress"></textarea>
 										</div>
 									</form>
 								</td>
-								<td>Place of Issue</td>
+								<td><b>Place of Issue</b></td>
 								<td>
 									<form>
 										<div class="form-group">
-											<textarea placeholder=""
-												class="form-control"></textarea>
+											<textarea placeholder="" class="form-control"></textarea>
 										</div>
 									</form>
 								</td>
@@ -112,19 +112,21 @@
 						</tbody>
 					</table>
 					<!-- address table -->
-					<table class="" border="1" width="100%" id="address_data">
+					<table class="hide-dc re-6-hide" border="1" width="100%" id="address_data">
 						<tbody>
 							<tr>
 								<td width="60%">
 									<table width="100%" border="1">
 										<tr class="">
-											<td width="25%">Invoice No.</td>
+											<td width="25%"><b>Invoice No.</b></td>
 											<td>
 												<form>
 													<div class="form-group">
 														<input type="text" class="form-control"
 															style="width: 35%; float: left" />
-														<div class="side-lable">Date of Invoice :</div>
+														<div class="side-lable">
+															<b>Date of Invoice :</b>
+														</div>
 														<input id="dateInside" name="date" class="form-control"
 															style="width: 25%; float: left" />
 													</div>
@@ -132,7 +134,7 @@
 											</td>
 										</tr>
 										<tr class="">
-											<td>Name</td>
+											<td><b>Name</b></td>
 											<td>
 												<form>
 													<div class="form-group">
@@ -143,7 +145,7 @@
 											</td>
 										</tr>
 										<tr class="customer-data">
-											<td>Address</td>
+											<td><b>Address</b></td>
 											<td>
 												<form>
 													<div class="form-group">
@@ -154,7 +156,7 @@
 											</td>
 										</tr>
 										<tr class="customer-data">
-											<td>GSTIN Number</td>
+											<td><b>GSTIN Number</b></td>
 											<td>
 												<form>
 													<div class="form-group">
@@ -165,7 +167,7 @@
 											</td>
 										</tr>
 										<tr class="customer-data">
-											<td>State</td>
+											<td><b>State</b></td>
 											<td>
 												<form>
 													<div class="form-group">
@@ -183,7 +185,7 @@
 								<td>
 									<table width="100%" border="1">
 										<tr class="">
-											<td>Transportation Mode</td>
+											<td><b>Transportation Mode</b></td>
 											<td>
 												<form>
 													<div class="form-group">
@@ -193,17 +195,18 @@
 											</td>
 										</tr>
 										<tr class="customer-data">
-											<td>Vehicle No.</td>
+											<td><b>Vehicle No.</b></td>
 											<td>
 												<form>
 													<div class="form-group">
-														<input id="vehicleNo" type="text" class="form-control" />
+														<input id="vehicleNo" type="text"
+															class="form-control vehicleNo" />
 													</div>
 												</form>
 											</td>
 										</tr>
 										<tr class="customer-data">
-											<td>Date & Time of Supply</td>
+											<td><b>Date & Time of Supply</b></td>
 											<td>
 												<form>
 													<div class="form-group">
@@ -213,7 +216,7 @@
 											</td>
 										</tr>
 										<tr class="customer-data">
-											<td>Place of Issue</td>
+											<td><b>Place of Issue</b></td>
 											<td>
 												<form>
 													<div class="form-group">
@@ -223,7 +226,7 @@
 											</td>
 										</tr>
 										<tr class="customer-data">
-											<td>Place of Supply</td>
+											<td><b>Place of Supply</b></td>
 											<td>
 												<form>
 													<div class="form-group">
@@ -237,7 +240,8 @@
 							</tr>
 						</tbody>
 					</table>
-					<table id="customer_details" border='1' style="width: 100%">
+					<table id="customer_details" border='1' style="width: 100%"
+						class="hide-dc re-6-hide">
 						<tbody>
 							<tr>
 								<th>Details of Receiver(Billed To)</th>
@@ -247,7 +251,7 @@
 								<td>
 									<table width="100%" border="1">
 										<tr class="">
-											<td width="25%">Name</td>
+											<td width="25%"><b>Name</b></td>
 											<td>
 												<form>
 													<div class="form-group">
@@ -257,18 +261,18 @@
 											</td>
 										</tr>
 										<tr class="customer-data">
-											<td>Address</td>
+											<td><b>Address</b></td>
 											<td>
 												<form>
 													<div class="form-group">
 														<textarea placeholder="address" id="billingAddress"
-															class="form-control"></textarea>
+															class="form-control billingAddress"></textarea>
 													</div>
 												</form>
 											</td>
 										</tr>
 										<tr class="customer-data">
-											<td>GSTIN</td>
+											<td><b>GSTIN</b></td>
 											<td>
 												<form>
 													<div class="form-group">
@@ -278,7 +282,7 @@
 											</td>
 										</tr>
 										<tr class="customer-data">
-											<td>Licence No.</td>
+											<td><b>Licence No.</b></td>
 											<td>
 												<form>
 													<div class="form-group">
@@ -288,7 +292,7 @@
 											</td>
 										</tr>
 										<tr class="customer-data">
-											<td>State Code</td>
+											<td><b>State Code</b></td>
 											<td>
 												<form>
 													<div class="form-group">
@@ -302,7 +306,7 @@
 								<td>
 									<table width="100%" border="1">
 										<tr class="">
-											<td width="25%">Name</td>
+											<td width="25%"><b>Name</b></td>
 											<td>
 												<form>
 													<div class="form-group">
@@ -312,7 +316,7 @@
 											</td>
 										</tr>
 										<tr class="customer-data">
-											<td>Address</td>
+											<td><b>Address</b></td>
 											<td>
 												<form>
 													<div class="form-group">
@@ -323,7 +327,7 @@
 											</td>
 										</tr>
 										<tr class="customer-data">
-											<td>GSTIN</td>
+											<td><b>GSTIN</b></td>
 											<td>
 												<form>
 													<div class="form-group">
@@ -333,7 +337,7 @@
 											</td>
 										</tr>
 										<tr class="customer-data">
-											<td>Licence No.</td>
+											<td><b>Licence No.</b></td>
 											<td>
 												<form>
 													<div class="form-group">
@@ -343,7 +347,7 @@
 											</td>
 										</tr>
 										<tr class="customer-data">
-											<td>State Code</td>
+											<td><b>State Code</b></td>
 											<td>
 												<form>
 													<div class="form-group">
@@ -357,6 +361,152 @@
 							</tr>
 						</tbody>
 					</table>
+					<table class="indentor-data re-6-hide" border="1" width="100%">
+						<tbody>
+							<tr>
+								<td colspan="4"><b>Indentor Name & Address : </b></td>
+							</tr>
+							<tr>
+								<td width="50%">
+									<table width="100%">
+										<tr>
+											<td><b>Name</b></td>
+											<td><input type="text" class="form-control custName">
+											</td>
+										</tr>
+										<tr>
+											<td><b>Address</b></td>
+											<td><textarea class="form-control billingAddress"></textarea></td>
+										</tr>
+										<tr>
+											<td><b>GSTIN</b></td>
+											<td><input type="text" name=""
+												class="form-control gstNo"></td>
+										</tr>
+										<tr>
+											<td><b>Licence No</b></td>
+											<td><input type="text" name=""
+												class="form-control licNo"></td>
+										</tr>
+									</table>
+								</td>
+								<!-- table-left -->
+								<td>
+									<table width="100%">
+										<tbody>
+											<tr>
+												<td><b>DC No.</b></td>
+												<td>
+													<form>
+														<div class="form-group">
+															<input type="text" class="form-control"
+																style="width: 35%; float: left" />
+															<div class="side-lable">
+																<b>Date :</b>
+															</div>
+															<input id="dc_date" name="date" class="form-control"
+																style="width: 25%; float: left" />
+														</div>
+													</form>
+												</td>
+											</tr>
+											<tr>
+												<td><b>From</b></td>
+												<td>
+													<form>
+														<div class="form-group">
+															<input type="text" class="form-control"
+																value="Patelgudem(Vil)" />
+														</div>
+													</form>
+												</td>
+											</tr>
+											<tr>
+												<td><b>To</b></td>
+												<td><input type="text" name="" class="form-control">
+												</td>
+											</tr>
+											<tr>
+												<td class="indentor-data-vehicleno"><b>Vehicle No</b></td>
+												<td>
+													<form>
+														<div class="form-group">
+															<input id="vehicleNo" type="text"
+																class="form-control vehicleNo" />
+														</div>
+													</form>
+												</td>
+											</tr>
+											<tr>
+												<td><b>Licence No</b></td>
+												<td><input type="text" name=""
+													class="form-control vehiclelicence"></td>
+											</tr>
+										</tbody>
+									</table> <!-- right table -->
+								</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<!--------------  re-6 table top--------------->
+					<div class="re-6-print-top">
+						<div class="re-6-print-head">
+							<p class="text-center">
+								<b><h4 class="text-center">FORM RE - 6</h4></b>
+							</p>
+							<p class="text-center re-6-head-text">
+								<b>(See Rule 61 (2) of the Explosives Rules, 2008) <br/>
+								FORM OF RECORDS TO BE MAINTAINED BY LICENSEE <br/>Records of Explosives
+									Transported by Road Van</b>
+							</p>
+							<hr>
+							<p>Note: This record should be kept up to date.</p>
+						</div>
+						<table class="re-6-table">
+							<tbody>
+								<tr>
+									<td class="re-6-sno">1)</td>
+									<td>Licence No : E/SC/TG/25/557(E63278 )</td>
+									<td>IN FORM LE-7 OF Explosives Rules, 2008</td>
+								</tr>
+								<tr>
+									<td class="re-6-sno">2)</td>
+									<td><div class="side-lable">
+															Date :
+														</div>
+														<input id="re_6_date" name="date" class="form-control"
+															style="width: 30%; float: left" />
+									</td>
+								</tr>
+								<tr>
+									<td class="re-6-sno">3)</td>
+									<td  width="45%">Name, Address and Licence No of the consignor :</td>
+									<td>
+										<p>
+											<b>M/S Shivarathri chandraiah</b>
+										</p>
+										<p>Sy.No.28, Patelgudem Village, Alair Mandal,<br/> Yadadri
+											Bhongiri District, Telangana - 508101.</p>
+										<p>E/HQ/TG/21/540(E48910)- explosives</p>
+										<p>E/HQ/TG/21/539(E48908)- Detonaters</p>
+										<p>E/HQ/TG/21/624(E79971) Explosives</p>
+										<p>E/HQ/TG/21/622(E79505) D F</p>
+									</td>
+								</tr>
+								<tr>
+									<td class="re-6-sno">4)</td>
+									<td colspan="2">Batch Number of Date Manufactures Form RE
+										12 attached</td>
+								</tr>
+								<tr>
+									<td class="re-6-sno">5)</td>
+									<td>Place of Loading Description of Explosives :</td>
+									<td>Patelgudem</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
 
 					<!--------------------- product Table---------------------- -->
 					<div class="">
@@ -366,57 +516,62 @@
 									<thead>
 										<tr>
 											<th class="text-center si-no-header">S No</th>
-											<th class="text-center brand-id-header">Brand Id</th>
-											<th class="text-center product-dec-header">Product Description</th>
-											<th class="text-center hsn-header">HSN Code</th>
-											<th class="text-center unit-header">Unit</th>
-											<th class="text-center qty-header">Qty</th>
-											<th class="text-center rate-header">Rate</th>
-											<th class="text-center amount-header">Value</th>
-											<th class="text-center gst-head">GST%</th>
-											<th class="text-center gst-amount-header">GST Value</th>
-											<th class="text-center net-amount-headder">Amount</th>
-											<th class="text-center hide-cust class-header">Class</th>
-											<th class="text-center hide-cust div-header">Div</th>
+											<th class="text-center brand-id-header re-6-hide">Brand Id</th>
+											<th class="text-center product-dec-header">Product
+												Description</th>
+											<th class="text-center hsn-header re-6-hide">HSN Code</th>
+											<th class="text-center unit-header re-6-hide">Unit</th>
+											<th class="text-center qty-header">Qty</th>	
+											<th class="text-center rate-header hide-dc re-6-hide">Rate</th>
+											<th class="text-center amount-header hide-dc re-6-hide">Value</th>
+											<th class="text-center gst-head hide-dc re-6-hide">GST%</th>
+											<th class="text-center gst-amount-header hide-dc re-6-hide">GST
+												Value</th>
+											<th class="text-center net-amount-headder hide-dc re-6-hide">Amount</th>
+											<th class="text-center hide-cust class-header hide-dc">Class</th>
+											<th class="text-center hide-cust div-header hide-dc">Div</th>
 										</tr>
 									</thead>
 									<tbody>
 										<tr id='addr0'>
-											<td>1</td>
-											<td class="brand-id"><input type="number"
+											<td class="text-center"><b>1</b></td>
+											<td class="brand-id re-6-hide"><input type="number"
 												class="form-control brand_id" placeholder='Brand Id'
 												data-toggle="modal" data-target="#myModal" /> <!-- <p>
 													<b>Details:</b> <span id="example-console">N/A</span>
 												</p> --></td>
 											<td class="product-name"><textarea placeholder='Product'
-												class="form-control product-description" readonly></textarea>
-												</td>
-											<td class="hsn-code-block"><span class="hsn-code"></span>
+													class="form-control product-description" readonly></textarea>
 											</td>
-											<td class="unit"><span id="unit_1" class="unit_0"></span>
+											<td class="hsn-code-block re-6-hide"><span class="hsn-code"></span>
 											</td>
-											<td><input type="number" name='qty[]'
-												placeholder='Qty' class="form-control qty" step="0"
-												min="0" /></td>
-											
-											<td><input type="number" name='price[]'
-												placeholder='Unit Price' class="form-control price"
-												step="0.00" min="0" /></td>
-											<td class="amount"><input type="number" name='total[]'
-												placeholder='0.00' class="form-control total" readonly /></td>
+											<td class="unit re-6-hide"><span id="unit_1" class="unit_0"></span>
+											</td>
+											<td><input type="number" name='qty[]' placeholder='Qty'
+												class="form-control qty" step="0" min="0" /></td>
 
-											<td class="gst-percent"><input type="number"
+											<td class="hide-dc re-6-hide"><input type="number" name='price[]'
+												placeholder='Unit Price' class="form-control price "
+												step="0.00" min="0" /></td>
+											<td class="amount hide-dc re-6-hide"><input type="number"
+												name='total[]' placeholder='0.00'
+												class="form-control text-right total" readonly /></td>
+
+											<td class="gst-percent hide-dc re-6-hide"><input type="number"
 												placeholder='%' class="form-control gst gst_percent"
 												id="gst_percent" /></td>
-											<td class="gst-amount"><input type="number"
-												placeholder='0.00' class="form-control gst_amount" readonly
+											<td class="gst-amount hide-dc re-6-hide"><input type="number"
+												placeholder='0.00'
+												class="form-control gst_amount text-right" readonly
 												id="gst_amount" /></td>
-											<td class="net-amount"><input type="number"
-												name='total[]' placeholder='0.00'
-												class="form-control net_amount" readonly id="net_amount" />
-											</td>
-											<td class="class-data hide-cust"><span class="class-id"></span></td>
-											<td class="division hide-cust"><span class="devision"></span></td>
+											<td class="net-amount text-right hide-dc re-6-hide"><input
+												type="number" name='total[]' placeholder='0.00'
+												class="form-control text-right net_amount" readonly
+												id="net_amount" /></td>
+											<td class="class-data hide-cust hide-dc text-center"><span
+												class="class-id"></span></td>
+											<td class="division hide-cust hide-dc text-center"><span
+												class="devision"></span></td>
 										</tr>
 										<tr id='addr1'></tr>
 									</tbody>
@@ -431,51 +586,113 @@
 									Row</button>
 							</div>
 						</div>
-
+						<!---------------- re-6 bottom ------------- -->
+						<div class="re-6-bottom">
+							<table class="re-6-table">
+								<tbody>
+									<tr>
+										<td class="re-6-sno">6)</td>
+										<td>
+											<div class="side-lable">Pass No. &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+											<input type="text" class="form-control invoice-number"
+															style="width: 50%; float: left" />
+																										
+										</td>
+									</tr>
+									<tr>
+										<td class="re-6-sno">7)</td>
+										<td>
+										<div class="side-lable">Van No. &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+														<input type="text" id="vehicleNo" class="form-control vehicleNo"
+															style="width: 50%; float: left" />
+										</td>
+									</tr>
+									<tr>
+										<td class="re-6-sno">8)</td>
+										<td>Signature of the consignor :</td>
+									</tr>
+									<tr>
+										<td class="re-6-sno">9)</td>
+										<td width="45%">Name, Address And Licence No of the Consignee :</td>
+										<td>
+											<form>
+												<div class="form-group">
+													<textarea placeholder="address" id="billingAddress" class="form-control billingAddress"></textarea>
+												</div>
+											</form>										
+											<form>
+												<div class="form-group">
+													<input type="text" class="form-control licNo">
+												</div>
+											</form>
+										</td>
+									</tr>
+									<tr>
+										<td class="re-6-sno">10)</td>
+										<td>Place of unloading
+											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:
+										</td>
+									</tr>
+									<tr>
+										<td>11)</td>
+										<td>Date of Unloading&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</td>
+									</tr>
+									<tr>
+										<td>12)</td>
+										<td>Signature of the consignee :</td>
+									</tr>
+									<tr>
+										<td>13)</td>
+										<td>Remarks</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
 
 						<!-- GST Table------------ -->
-						<table width="100%" border="1" class="gst-table">
+						<table width="100%" border="1" class="gst-table hide-dc re-6-hide">
 							<tbody>
 								<tr>
 									<th colspan="2">GST%:</th>
-									<td>@12%</td>
-									<td></td>
-									<td>IGST</td>
-									<td></td>
-									<td>Gross Amount</td>
-									<td class='gross-amount'><input type="number"
+									<th>@12%</th>
+									<th></th>
+									<th>IGST</th>
+									<th></th>
+									<th>Gross Amount</th>
+									<th class='gross-amount'><input type="number"
 										name='gross_total' placeholder='0.00' class="form-control"
-										id="gross_total" readonly /></td>
+										id="gross_total" readonly /></th>
 								</tr>
 								<tr>
-									<td>@0%</td>
-									<td></td>
-									<td>@18%</td>
-									<td></td>
-									<td>SGST</td>
-									<td></td>
-									<td>GST Amount</td>
+									<td><b>@0%</b></td>
+									<td><b></b></td>
+									<td><b>@18%</b></td>
+									<td><b></b></td>
+									<td><b>SGST</b></td>
+									<td><b></b></td>
+									<td><b>GST Amount</b></td>
 									<td class="gst-total"><input type="number"
 										name='gst_total' placeholder='0.00' class="form-control"
 										id="gst_total" readonly /></td>
 								</tr>
 								<tr>
-									<td>@5%</td>
-									<td></td>
-									<td>@28%</td>
-									<td></td>
-									<td>CGST</td>
-									<td></td>
-									<td>Net Amount</td>
+									<td><b>@5%</b></td>
+									<td><b></b></td>
+									<td><b>@28%</b></td>
+									<td><b></b></td>
+									<td><b>CGST</b></td>
+									<td><b></b></td>
+									<td><b>Net Amount</b></td>
 									<td class="net-amount"><input type="number"
 										name='net_amount' placeholder='0.00' class="form-control"
 										id="netamount_total" readonly"/></td>
 								</tr>
 								<tr>
-									<td>Amount in Words</td>
+									<td><b>Amount in Words</b></td>
 									<td colspan="5"><div id="word"></div></td>
-									<td>Payment Status</td>
-									<td><select class="custom-select">
+									<td class="hide-payment-status"><b>Payment Status</b></td>
+									<td class="hide-payment-status"><select
+										class="custom-select form-control">
 											<option selected>Choose...</option>
 											<option value="1">One</option>
 											<option value="2">Two</option>
@@ -485,49 +702,52 @@
 							</tbody>
 						</table>
 						<!-- button Table -->
-						<table width="100%" border="1" align="center">
+						<table width="100%" border="1" style="text-align: center;" class="re-6-hide">
 							<tbody>
 								<tr>
-									<td><button class='btn btn-grad'>Add</button></td>
+									<!-- <td><button class='btn btn-grad'>Add</button></td>
 									<td><button class="btn btn-grad">Edit</button></td>
-									<td><button class="btn btn-grad">Delete</button></td>
+									<td><button class="btn btn-grad">Delete</button></td> -->
 									<td><button class="btn btn-grad">Save</button></td>
 									<td><button class="btn btn-grad">Clear</button></td>
 									<td><button id="printInvoice" class="btn btn-grad">Print-Invoice</button></td>
-									<td><button class="btn btn-grad">Print DC</button></td>
-									<td><button class="btn btn-grad">Print RE-6</button></td>
+									<td><button id="print-dc" class="btn btn-grad">Print
+											DC</button></td>
+									<td><button class="btn btn-grad print-re-6">Print RE-6</button></td>
 									<td><button class="btn btn-grad">Exit</button></td>
 								</tr>
 							</tbody>
 						</table>
 						<!-- invoice Footer -->
-						<table width="100%" border="1">
+						<table width="100%" border="1" class="invoice-footer re-6-hide">
 							<tbody>
 								<tr>
-									<td width="70%">
+									<td width="70%" class="bank-details-data">
 										<table width="100%" border="1" class="bank-details-table">
 											<tbody>
 												<tr>
-													<td>Bank Details</td>
+													<td><b>Bank Details</b></td>
 													<td></td>
 													<td></td>
 												</tr>
 											</tbody>
 										</table>
 									</td>
-									<td rowspan="2" align="center">For M/s Shivarathri
-										Chandraiah <br> <br> <br> <br> <br> <br>
-										<p style="text-align: center;">Authorized Signatory</p>
-									</td>
+									<td rowspan="2" align="center"><b>For M/s Shivarathri
+											Chandraiah</b> <br> <br> <br> <br> <br>
+										<br>
+										<p style="text-align: center;">
+											<b>Authorized Signatory</b>
+										</p></td>
 								</tr>
 								<tr>
 									<td>
 										<table>
 											<tbody>
 												<tr>
-													<td>Notes:</td>
+													<td><b>Notes:</b></td>
 													<td>
-														<ol>
+														<ol class="invoice-notes">
 															<li>Goods once sold will not be taken back or
 																exchanged.</li>
 															<li>Recipent has to follow as per Explosives Act
@@ -550,59 +770,65 @@
 					</div>
 				</div>
 			</div>
+			<!-------------------------------- DC Print -------------------------------------->
+
 		</div>
-		<!-- Modal -->
 
-		<!-- Button trigger modal -->
 
-		<!-- Modal -->
-		<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
-			aria-labelledby="myModalLabel">
-			<div class="modal-dialog modal-lg" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal"
-							aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-						<h4 class="modal-title" id="myModalLabel">Modal title</h4>
-					</div>
-					<div class="modal-body">
-						<table id="example" class="display" cellspacing="0" width="100%">
-							<thead>
-								<tr>
-									<th>S No</th>
-									<th>Brand Id</th>
-									<th>Mfgs</th>
-									<th>Brand Name</th>
-									<th>class</th>
-									<th>Division</th>
-									<th>Unit</th>
-									<th>Rate</th>
-									<th>HSN Code</th>
-								</tr>
-							</thead>
-							<tfoot>
-								<tr>
-									<th>S No</th>
-									<th>Brand Id</th>
-									<th>Mfgs</th>
-									<th>Brand Name</th>
-									<th>class</th>
-									<th>Division</th>
-									<th>Unit</th>
-									<th>Rate</th>
-									<th>HSN Code</th>
-								</tr>
-							</tfoot>
-						</table>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					</div>
+	</div>
+
+	<!-- Modal -->
+
+	<!-- Button trigger modal -->
+
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+				</div>
+				<div class="modal-body">
+					<table id="example" class="display" cellspacing="0" width="100%">
+						<thead>
+							<tr>
+								<th>S No</th>
+								<th>Brand Id</th>
+								<th>Mfgs</th>
+								<th>Brand Name</th>
+								<th>class</th>
+								<th>Division</th>
+								<th>Unit</th>
+								<th>Rate</th>
+								<th>HSN Code</th>
+							</tr>
+						</thead>
+						<tfoot>
+							<tr>
+								<th>S No</th>
+								<th>Brand Id</th>
+								<th>Mfgs</th>
+								<th>Brand Name</th>
+								<th>class</th>
+								<th>Division</th>
+								<th>Unit</th>
+								<th>Rate</th>
+								<th>HSN Code</th>
+							</tr>
+						</tfoot>
+					</table>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 				</div>
 			</div>
 		</div>
+	</div>
 </body>
 <script src="webjars/jquery/3.1.1/jquery.min.js"></script>
 <script
@@ -612,7 +838,7 @@
 <script src="webjars/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <script language="javascript" type="text/javascript"
 	src="js/datatable.js"></script>
-
+<script src="js/jQuery.print.js"></script>
 
 
 
@@ -804,12 +1030,26 @@
 
 	//$('#mymodal').find('input').focus();
 	$('#printInvoice').click(function() {
-		/* $('input').css('border','none')
-		$('button').hide();
-		$('#address_data').css('display','none'); */
-		window.print();
+		$.print('.bill-section');
 	});
+
+	$('#print-dc').click(function() {
+		$(".bill-section").print({
+			noPrintSelector : ".hide-dc",
+			//Custom stylesheet
+			stylesheet : "css/dc-print.css"
+		});
+	})
+	
+	$('.print-re-6').click(function() {
+		$(".bill-section").print({
+			noPrintSelector : ".re-6-hide",
+			//Custom stylesheet
+			stylesheet : "css/re-6-print.css"
+		});
+	})
 </script>
+
 
 
 </html>
