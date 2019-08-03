@@ -54,11 +54,11 @@
 						<td>${product.safe_dist}</td>
 
 						<td class="btn-box"><a type="button"
-							href="/updateProduct?id=${product.id}"
+							href="${pageContext.request.contextPath}/updateProduct?id=${product.id}"
 							onclick="return confirm('Are you sure you want to update this item?');"
 							class="update-btn">Update</a></td>
 						<td class="btn-box"><a type="button"
-							href="/deleteProduct?id=${product.id}"
+							href="${pageContext.request.contextPath}/deleteProduct?id=${product.id}"
 							onclick="return confirm('Are you sure you want to update this item?');"
 							class="delete-btn">Delete</a></td>
 					</tr>

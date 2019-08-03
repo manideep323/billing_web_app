@@ -8,26 +8,33 @@
 			<li class="active"><a href="/">Home</a></li>
 			<li><a href="/list-todos">Todos</a></li>
 		</ul> -->
+<ul class="nav navbar-nav navbar-left">
+			<li><a href="${pageContext.request.contextPath}/">Home</a></li>
+		</ul>
+<ul class="nav navbar-nav navbar-left">
+			<li><a href="${pageContext.request.contextPath}/login">Login</a></li>
+		</ul>
+
 		<ul class="nav navbar-nav navbar-left">
-			<li><a href="/billingDashboard">billingDashboard</a></li>
+			<li><a href="${pageContext.request.contextPath}/billingDashboard">billingDashboard</a></li>
 		</ul>
 <ul class="nav navbar-nav navbar-left">
-			<li><a href="/customers">customers</a></li>
+			<li><a href="${pageContext.request.contextPath}/customers">customers</a></li>
 		</ul>
 <ul class="nav navbar-nav navbar-left">
-			<li><a href="/insertCustomer">insertCustomer</a></li>
+			<li><a href="${pageContext.request.contextPath}/insertCustomer">insertCustomer</a></li>
 		</ul>
 <ul class="nav navbar-nav navbar-left">
-			<li><a href="/insertProduct">insertProduct</a></li>
+			<li><a href="${pageContext.request.contextPath}/insertProduct">insertProduct</a></li>
 		</ul>
 <ul class="nav navbar-nav navbar-left">
-			<li><a href="/products">products</a></li>
+			<li><a href="${pageContext.request.contextPath}/products">products</a></li>
 		</ul>
 <ul class="nav navbar-nav navbar-left">
-			<li><a href="/vehicles">vehicles</a></li>
+			<li><a href="${pageContext.request.contextPath}/vehicles">vehicles</a></li>
 		</ul>
 <ul class="nav navbar-nav navbar-left">
-			<li><a href="/insertVehicle">insertVehicle</a></li>
+			<li><a href="${pageContext.request.contextPath}/insertVehicle">insertVehicle</a></li>
 		</ul>
 	</div>
 </nav>

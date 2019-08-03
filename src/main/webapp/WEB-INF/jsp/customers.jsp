@@ -53,9 +53,9 @@
 									<td>${customer.docNo}</td>
 									
 									<td class="btn-box"><a type="button" 
-										href="/updateCustomer?id=${customer.id}" onclick="return confirm('Are you sure you want to update this item?');" class="update-btn">Update</a></td>
+										href="${pageContext.request.contextPath}/updateCustomer?id=${customer.id}" onclick="return confirm('Are you sure you want to update this item?');" class="update-btn">Update</a></td>
 									<td class="btn-box"><a type="button" 
-										href="/deleteCustomer?id=${customer.id}" onclick="return confirm('Are you sure you want to delete this item?');" class="delete-btn">Delete</a></td>
+										href="${pageContext.request.contextPath}/deleteCustomer?id=${customer.id}" onclick="return confirm('Are you sure you want to delete this item?');" class="delete-btn">Delete</a></td>
 								</tr>
 							</c:forEach>
 						</tbody>

@@ -49,10 +49,10 @@
 						<td>${vehicle.edCases}</td>
 						
 						<td class="btn-box"><a type="button" 
-							href="/updateVehicle?id=${vehicle.id}" onclick="return confirm('Are you sure you want to update this item?');"
+							href="${pageContext.request.contextPath}/updateVehicle?id=${vehicle.id}" onclick="return confirm('Are you sure you want to update this item?');"
 							class="update-btn">Update</a></td>
 						<td class="btn-box"><a type="button" 
-							href="/deleteVehicle?id=${vehicle.id}" onclick="return confirm('Are you sure you want to delete this item?');"
+							href="${pageContext.request.contextPath}/deleteVehicle?id=${vehicle.id}" onclick="return confirm('Are you sure you want to delete this item?');"
 							class="update-btn">Delete</a></td>
 					</tr>
 				</c:forEach>
