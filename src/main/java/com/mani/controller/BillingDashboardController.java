@@ -18,9 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.mani.document.Invoice;
 import com.mani.document.Product;
-import com.mani.document.SolrProduct;
 import com.mani.document.Vehicle;
-import com.mani.repository.SolrProductRepositry;
 import com.mani.service.BillingDashboardService;
 import com.mani.service.CustomerService;
 import com.mani.service.ProductService;

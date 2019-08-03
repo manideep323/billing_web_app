@@ -6,9 +6,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import com.mani.document.Invoice;
-import com.mani.document.SolrProduct;
 import com.mani.repository.BillingDashboardRepository;
-import com.mani.repository.SolrProductRepositry;
 import com.mongodb.MongoException;
 
 

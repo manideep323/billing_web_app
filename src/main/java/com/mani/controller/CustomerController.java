@@ -15,7 +15,6 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.mani.document.Customer;
-import com.mani.document.SolrCustomer;
 import com.mani.service.CustomerService;
 
 
@@ -35,8 +34,8 @@ public class CustomerController {
 	}
 	
 	@RequestMapping(value = "/insertCustomer", method =  RequestMethod.POST)
-	public String insertCustomer(ModelMap model, @Valid Customer customer, BindingResult result, SolrCustomer solrCustomer) {
-		String error = customerService.insertCustomer(customer,solrCustomer);
+	public String insertCustomer(ModelMap model, @Valid Customer customer, BindingResult result) {
+		String error = customerService.insertCustomer(customer);
 		model.addAttribute("error",error);
 		return "insertCustomer";
 		/*System.out.println("5555555"+result1);

@@ -14,9 +14,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.mani.document.Product;
-import com.mani.document.SolrProduct;
 import com.mani.repository.ProductRepository;
-import com.mani.repository.SolrProductRepositry;
 import com.mongodb.DuplicateKeyException;
 import com.mongodb.MongoException;
 
@@ -30,11 +28,11 @@ private Logger logger = Logger.getLogger(this.getClass());
 	//@Autowired
 	//SolrProductRepositry solrDao;
 	
-	public String insertProduct(Product product, SolrProduct solrProduct) {
+	public String insertProduct(Product product) {
 		String result = null;
 		try {
 			dao.save(product);
-			solrProduct.setId(product.getId().toString());
+			
 			//solrDao.save(solrProduct);
 			
 			//System.out.println(product.getId());
