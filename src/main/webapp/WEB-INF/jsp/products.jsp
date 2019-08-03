@@ -20,7 +20,7 @@
 			</div>
 			<div class="col-md-10">
 				<div class="pull-right">
-				<a class="button btn btn-primary" href="/insertProduct">Add a product</a>
+				<a class="button add-product-btn" href="/insertProduct">Add a product</a>
 			</div>
 			</div>
 		</div>

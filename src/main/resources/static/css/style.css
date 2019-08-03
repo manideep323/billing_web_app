@@ -1,30 +1,96 @@
-/* .update-btn {
-	padding: 10px;
-	background: #57c1ff;
-	border-radius: 5px;
-	color: #ffffff;
-	font-weight: bold;
+body {
+	background-image: linear-gradient(to right, #5C258D 0%, #4389A2 51%, #5C258D 100%);
+    
 }
 
-.delete-btn {
+#product_data {
+	background: #cccccc;
+	margin: 20px 0;
 	padding: 10px;
-	background: red;
-	border-radius: 5px;
-	color: #ffffff;
-	font-weight: bold;
 }
- */
+.update-btn, .delete-btn, .add-product-btn, .insert-add-btn {
+    padding: 8px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2); */
+    box-shadow: 3px 4px 8px #424141;
+    border-radius: 5px;
+    display: block;
+    font-weight: bold;
+    background-image: linear-gradient(to right, #5C258D 0%, #4389A2 51%, #5C258D 100%);
+}
+
+.add-product-btn {
+	background-image: linear-gradient(to right, #56CCF2 0%, #2F80ED 51%, #56CCF2 100%);
+}
+
+.insert-add-btn {
+	width: 100%;
+	border: none;
+	padding: 12px;
+	margin-top: 16px;
+}
+
+.enter {
+	color: #ffffff;
+}
+
+
+.update-btn:hover, .delete-btn:hover, .add-product-btn:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
+}
  
  .btn-box {
  	vertical-align: middle !important;
  }
  
+ .product-enty-form, .product-form, .form-cont-custom {
+ 	width: 100%;
+ 	float: left;
+ 	}
  
- .update-btn, .delete-btn {
+ .entryform-parent {
+ 	float: left;
  	background: #cccccc;
-    color: #ffffff;
-    font-weight: bold;
-    padding: 10px;
-    border-radius: 5px;
+ 	padding: 0 ;
+ 	padding-bottom: 5px;
+ 	border-radius: 5px;
+ 	box-shadow: 3px 4px 8px #424141;
+ 	border-top: 8px solid #813c92;
  }
+ 
+ .margin-auto {
+ 	float: none;
+ 	margin: 0 auto;
+ }
+ 
+ .entry-form-head {
+ 	background-image: linear-gradient(to right, #4580a0 0%, #333399 51%, #467ca0 100%);
+ 	height: 60px;
+ 	margin-bottom: 20px;
+ 	text-align: center;
+ 	display: table;
+ 	width: 100%;
+ }
+ 
+ .entry-form-head h3{
+ 	padding: 0;
+ 	margin: 0;
+ 	display: table-cell;
+ 	height: 100%;
+ 	vertical-align: middle;
+ 	color: #ffffff;
+	font-weight: bold;
+ }
+ 
+ .product-enty-form input {
+ 	box-shadow: 3px 4px 8px #424141;
+ }
+ 
+
    
