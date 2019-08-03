@@ -22,7 +22,7 @@
 					</div>
 					<div class="col-md-10">
 						<div class="pull-right">
-						<a class="button btn btn-primary" href="/insertCustomer">Add a customer</a>
+						<a class="button add-product-btn" href="/insertCustomer">Add a customer</a>
 					</div>
 					</div>
 				</div>					

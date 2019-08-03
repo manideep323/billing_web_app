@@ -3,7 +3,7 @@ body {
     
 }
 
-#product_data {
+#product_data, #customer_data, #vehicle_data {
 	background: #cccccc;
 	margin: 20px 0;
 	padding: 10px;
@@ -37,6 +37,17 @@ body {
 .enter {
 	color: #ffffff;
 }
+
+.billing-title {
+	font-weight: bold;
+	/* font-size: 16px; */
+	text-align: center;
+	background-image: linear-gradient(to right, #593490 0%, #2F80ED 51%, #583490 100%);
+	padding: 10px;
+	border-radius: 5px;
+	color: #ffffff;
+	text-transform: uppercase;
+	}
 
 
 .update-btn:hover, .delete-btn:hover, .add-product-btn:hover {
