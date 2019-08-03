@@ -8,9 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.mani.document.Customer;
-import com.mani.document.SolrCustomer;
 import com.mani.repository.CustomerRepository;
-import com.mani.repository.SolrCustomerRepositry;
 import com.mongodb.MongoException;
 
 @Service
@@ -22,10 +20,8 @@ public class CustomerService {
 	@Autowired
 	CustomerRepository dao;
 	
-	@Autowired
-	SolrCustomerRepositry solrDao;
 	
-	public String insertCustomer(Customer customer, SolrCustomer solrCustomer) {
+	public String insertCustomer(Customer customer) {
 		String result = null;
 		try {
 			dao.save(customer);

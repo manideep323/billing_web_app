@@ -20,7 +20,7 @@
 			</div>
 			<div class="col-md-10">
 				<div class="pull-right">
-				<a class="button add-product-btn" href="/insertVehicle">Add a Vehicles</a>
+				<a class="button add-product-btn" href="${pageContext.request.contextPath}/insertVehicle">Add a Vehicles</a>
 			</div>
 			</div>
 		</div>

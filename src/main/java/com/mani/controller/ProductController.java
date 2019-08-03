@@ -6,7 +6,6 @@ import javax.validation.Valid;
 import javax.xml.ws.BindingType;
 
 import org.bson.types.ObjectId;
-import org.json.simple.JSONArray;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -23,7 +22,6 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.mani.document.Product;
-import com.mani.document.SolrProduct;
 import com.mani.service.ProductService;
 @Controller
 public class ProductController {
@@ -40,8 +38,8 @@ public class ProductController {
 	}
 	
 	@RequestMapping(value = "/insertProduct", method =  RequestMethod.POST)
-	public String insertProduct(ModelMap model, @Valid Product product, BindingResult result, SolrProduct solrProduct) {
-		String error = productService.insertProduct(product,solrProduct);
+	public String insertProduct(ModelMap model, @Valid Product product, BindingResult result) {
+		String error = productService.insertProduct(product);
 		model.addAttribute("error",error);
 		return "insertProduct";
 		/*System.out.println("5555555"+result1);
