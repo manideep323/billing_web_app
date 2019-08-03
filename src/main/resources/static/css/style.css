@@ -68,11 +68,12 @@ body {
  .entryform-parent {
  	float: left;
  	background: #cccccc;
- 	padding: 0 ;
+ 	padding: 0;
  	padding-bottom: 5px;
  	border-radius: 5px;
  	box-shadow: 3px 4px 8px #424141;
  	border-top: 8px solid #813c92;
+ 	margin-top: 30px;
  }
  
  .margin-auto {
@@ -103,5 +104,31 @@ body {
  	box-shadow: 3px 4px 8px #424141;
  }
  
+ .navbar {
+ 	margin:0;
+ }
+ 
+.navbar-default {
+	background: #ffffff;
+	border: none;
+	border-top: 6px solid #5c288e;
+	border-radius: 0 !important;
+	color: #000000;
+}
 
-   
+.navbar-default .navbar-nav>li>a {
+	color : #000000;
+	font-size: 16px;	
+}
+.navbar-nav li {
+	border-bottom: 3px solid transparent;
+}
+
+.navbar-nav li:hover {
+	background: #5c288e;
+	border-bottom: 3px solid #d820fb;
+}
+
+.navbar-nav li:hover a {
+	color: #ffffff !important;
+}

@@ -133,4 +133,12 @@ body {
 	background: #cccccc !important;
 }
 
+.box-check {
+	margin: 5px 0 !important;
+} 
+
+.invoice-generation {
+	border-top: 0 !important;
+}
+
 }

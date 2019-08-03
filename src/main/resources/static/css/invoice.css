@@ -71,9 +71,13 @@ th, td, tr {
 	width: 100% !important;
 }
 
-/* #invoice_header {
+.invoice-generation {
+	margin: 20px 0;
+	border-top: 6px solid #403561;
+}
+ #invoice_header {
 	display: none;
-} */
+} 
 
 /* td, th {
 	padding: 0 3px !important;
@@ -237,3 +241,7 @@ hr {
 	display: none;
 }
 
+.box-check {
+	    font-size: 21px;
+    vertical-align: middle;
+}

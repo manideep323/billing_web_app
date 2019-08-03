@@ -8,11 +8,11 @@
 <html>
 
 <head>
-    <!-- <link href="css/style.css" rel="stylesheet"> -->
     <link href="css/datatable.css" rel="stylesheet">
-    <!-- <link href="https://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"> -->
     <link href="webjars/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/css/bootstrap-select.min.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
     <link href="css/invoice.css" rel="stylesheet">
     <link href="css/print.css" rel="stylesheet" media="print">
 </head>
@@ -28,14 +28,18 @@
                                 <tr>
                                     <td class="logo"><img src="images/logo.png"></td>
                                     <td align="center" class="tax-address">
-                                        <p>TAX INCOICE</p>
-                                        <h4>M/S SHIVARATHRI CHANDRAIAH</h4>
+                                        <p><b>TAX INCOICE</b></p>
+                                        <h3><b>M/S SHIVARATHRI CHANDRAIAH</b></h3>
                                         <p>Sy No : 28 Patelgudem Village, Alair Mandal, Yadadri
                                             District, Telangana - 508101 GSTIN : 36ACKFS9028G1ZR Lic No.
                                             E/HQ/TG/21/540(E48910), E/HQ/TG/21/539(E48908),
                                             E/HQ/TG/21/624(E79971), E/HQ/TG/21/622(E79505).</p>
                                     </td>
-                                    <td class="type-click" align="left"></td>
+                                    <td class="type-click" align="left">
+                                    	<p><i class="material-icons box-check">crop_din</i>ORIGINAL</p>
+                                    	<p><i class="material-icons box-check">crop_din</i>DUPLICATE</p>
+                                    	<p><i class="material-icons box-check">crop_din</i>TRIPLICATE</p>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -45,7 +49,7 @@
                                 <tr>
                                     <td>Invoice Number</td>
                                     <td>
-                                        <form:input path="invoiceNumber" type="text" class="form-control" />
+                                        <form:input path="invoiceNumber" type="text" class="form-control" readonly="true"/>
                                     </td>
                                     <td>Doc No.</td>
                                     <td><select onchange="setCustomerValues(value)" class="selectpicker" data-show-subtext="true" data-live-search="true">
@@ -67,12 +71,12 @@
                                     <td colspan="3">
                                         <form>
                                             <div class="form-group">
-                                                <input type="text" class="form-control custName" />
+                                                <input type="text" class="form-control custName" readonly="true"/>
                                             </div>
                                         </form>
                                     </td>
                                     <td><b>Date of Invoice</b></td>
-                                    <td><input id="date" name="date" class="form-control">
+                                    <td><input id="date" name="date" class="form-control" readonly="true">
                                     </td>
                                 </tr>
                                 <tr>
@@ -80,7 +84,7 @@
                                     <td colspan="3">
                                         <form>
                                             <div class="form-group">
-                                                <textarea placeholder="address" id="billingAddress" class="form-control billingAddress"></textarea>
+                                                <textarea placeholder="address" id="billingAddress" class="form-control billingAddress" readonly="true"></textarea>
                                             </div>
                                         </form>
                                     </td>
@@ -88,7 +92,7 @@
                                     <td>
                                         <form>
                                             <div class="form-group">
-                                                <textarea placeholder="" class="form-control"></textarea>
+                                                <textarea placeholder="" class="form-control" readonly></textarea>
                                             </div>
                                         </form>
                                     </td>
@@ -106,11 +110,11 @@
                                                 <td>
                                                     <form>
                                                         <div class="form-group">
-                                                            <input type="text" class="form-control" style="width: 35%; float: left" />
+                                                            <input type="text" class="form-control" style="width: 35%; float: left" readonly/>
                                                             <div class="side-lable">
                                                                 <b>Date of Invoice :</b>
                                                             </div>
-                                                            <input id="dateInside" name="date" class="form-control" style="width: 25%; float: left" />
+                                                            <input id="dateInside" name="date" class="form-control" style="width: 25%; float: left" readonly/>
                                                         </div>
                                                     </form>
                                                 </td>
@@ -120,7 +124,7 @@
                                                 <td>
                                                     <form>
                                                         <div class="form-group">
-                                                            <input type="text" class="form-control" value="M/S SHIVARATHRI CHANDRAIAH" />
+                                                            <input type="text" class="form-control" value="M/S SHIVARATHRI CHANDRAIAH" readonly/>
                                                         </div>
                                                     </form>
                                                 </td>
@@ -130,7 +134,7 @@
                                                 <td>
                                                     <form>
                                                         <div class="form-group">
-                                                            <textarea placeholder="address" value="">Patelgudem(Vil), Alair(Ml), Yadadri Bhongir(Dist).
+                                                            <textarea placeholder="address" readonly >Patelgudem(Vil), Alair(Ml), Yadadri Bhongir(Dist).
 									</textarea>
                                                         </div>
                                                     </form>
@@ -141,7 +145,7 @@
                                                 <td>
                                                     <form>
                                                         <div class="form-group">
-                                                            <input type="text" class="form-control" value="36ACKFS9028G1ZR" />
+                                                            <input type="text" class="form-control" value="36ACKFS9028G1ZR" readonly/>
                                                         </div>
                                                     </form>
                                                 </td>
@@ -151,9 +155,9 @@
                                                 <td>
                                                     <form>
                                                         <div class="form-group">
-                                                            <input type="text" class="form-control" value="Telangana" style="width: 40%; float: left" />
+                                                            <input type="text" class="form-control" value="Telangana" style="width: 40%; float: left" readonly/>
                                                             <div class="side-lable">Code</div>
-                                                            <input type="text" class="form-control" value="36" style="width: 20%; float: left" />
+                                                            <input type="text" class="form-control" value="36" style="width: 20%; float: left" readonly/>
                                                         </div>
                                                     </form>
                                                 </td>
@@ -167,7 +171,7 @@
                                                 <td>
                                                     <form>
                                                         <div class="form-group">
-                                                            <input type="text" class="form-control" value="Road" />
+                                                            <input type="text" class="form-control" value="Road" readonly/>
                                                         </div>
                                                     </form>
                                                 </td>
@@ -177,7 +181,7 @@
                                                 <td>
                                                     <form>
                                                         <div class="form-group">
-                                                            <input id="vehicleNo" type="text" class="form-control vehicleNo" />
+                                                            <input id="vehicleNo" type="text" class="form-control vehicleNo" readonly/>
                                                         </div>
                                                     </form>
                                                 </td>
@@ -187,7 +191,7 @@
                                                 <td>
                                                     <form>
                                                         <div class="form-group">
-                                                            <input type="text" class="form-control" id="date_time" />
+                                                            <input type="text" class="form-control" id="date_time" readonly/>
                                                         </div>
                                                     </form>
                                                 </td>
@@ -197,7 +201,7 @@
                                                 <td>
                                                     <form>
                                                         <div class="form-group">
-                                                            <input type="text" class="form-control" value="Patelgudem" />
+                                                            <input type="text" class="form-control" value="Patelgudem" readonly/>
                                                         </div>
                                                     </form>
                                                 </td>
@@ -207,7 +211,7 @@
                                                 <td>
                                                     <form>
                                                         <div class="form-group">
-                                                            <input type="text" class="form-control" />
+                                                            <input type="text" class="form-control" readonly/>
                                                         </div>
                                                     </form>
                                                 </td>
