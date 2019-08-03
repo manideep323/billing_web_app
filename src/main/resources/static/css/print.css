@@ -20,6 +20,10 @@
 	button {
 		display: none !important;
 	}
+	
+	input[type=button] {
+		display: none !important;
+	}
 	th, tr, td {
 		height: auto;
 		vertical-align: top;

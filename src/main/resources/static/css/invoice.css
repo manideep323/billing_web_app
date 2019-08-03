@@ -210,6 +210,12 @@ body {
 	display: none;
 }
 
+input[type=button] {
+	width: auto !important;
+	height: auto !important;
+}
+
+
 /* re-6 print css */
 
 .re-6-head-text {
