@@ -49,7 +49,7 @@
                                 <tr>
                                     <td>Invoice Number</td>
                                     <td>
-                                        <form:input path="invoiceNumber" type="text" class="form-control" readonly="true"/>
+                                        <form:input path="invoiceNumber" type="text" class="form-control" value="SC/18-19/02031" readonly="true"/>
                                     </td>
                                     <td>Doc No.</td>
                                     <td><select onchange="setCustomerValues(value)" class="selectpicker" data-show-subtext="true" data-live-search="true">
@@ -110,7 +110,7 @@
                                                 <td>
                                                     <form>
                                                         <div class="form-group">
-                                                            <input type="text" class="form-control" style="width: 35%; float: left" readonly/>
+                                                            <input type="text" class="form-control"  value="SC/18-19/02031" style="width: 35%; float: left" readonly/>
                                                             <div class="side-lable">
                                                                 <b>Date of Invoice :</b>
                                                             </div>
