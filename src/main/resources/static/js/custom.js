@@ -141,9 +141,9 @@ function convertNumberToWords(amount) {
     return words_string;
 }
 
-$('.price').on('keyup change', function() {
+/*$('.price').on('keyup change', function() {
 	//debugger
 	var totalVal= $('#netamount_total').val()
-	word.innerHTML=convertNumberToWords(totalVal);
+	
 });
-
+*/

@@ -20,7 +20,6 @@
 	button {
 		display: none !important;
 	}
-	
 	input[type=button] {
 		display: none !important;
 	}
@@ -45,7 +44,6 @@
 		background-color: red !important;
 	}
 	textarea {
-		
 		overflow: hidden;
 	}
 	#customer_details {
@@ -104,41 +102,55 @@
 	:-ms-input-placeholder { /* Internet Explorer 10+ */
 		color: transparent !important;
 	}
-	
 	.invoice-footer {
 		display: inline-table;
 	}
-	
 	.hide-payment-status {
 		display: none !important;
 	}
+	th {
+		padding: 4px 0 !important;
+	}
+	#invoice_header td, #invoice_header th {
+		border: none !important;
+	}
+	#invoice_header img {
+		margin: 3px !important;
+	}
+	body {
+		-webkit-print-color-adjust: exact;
+	}
+	#tab_logic th {
+		background: #cccccc !important;
+	}
+	.box-check {
+		margin: 5px 0 !important;
+	}
+	.invoice-generation, .invoice-footer {
+		border-top: none !important;
+	}
+	table table td, table table tr, table table th {
+		border-top: none !important;
+	}
+	.colspan-custom {
+		display: table-cell !important;
+	}
+	.gst-table, .gst-table td {
+		border-bottom: none !important;
+	}
+	.bank-title {
+		width: 20% !important;
+	}
+	ol {
+	padding-left: 20px !important;
+	}
 	
-	 th {
-	padding: 4px 0 !important;
-}
-
-#invoice_header td, #invoice_header th{
-	border: none !important;
-} 
-
-#invoice_header img {
-	margin: 3px !important;
-}
-
-body {
-      -webkit-print-color-adjust: exact;
-   }
-
-#tab_logic th {
-	background: #cccccc !important;
-}
-
-.box-check {
-	margin: 5px 0 !important;
-} 
-
-.invoice-generation {
-	border-top: 0 !important;
-}
-
+	.rec-sign {
+		padding-right: 40px !important;
+	}
+	.tax-invoice-text {
+		margin: 8px 0 !important;
+	}
+	
+	
 }

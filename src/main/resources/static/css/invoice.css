@@ -31,13 +31,20 @@ th, td, tr {
 }
 
 .gst-table td {
-	width: 12.2%;
+	width: 10.2%;
 }
 
-.bank-details-table td {
+.gst-total {
+	width: 16% !important;
+}
+
+.GSTAmount-text {
+	width: 14% !important;
+} 
+/* .bank-details-table td {
 	width: 33.3%
 }
-
+ */
 .logo, .type-click {
 	width: 15%;
 }
@@ -49,6 +56,7 @@ th, td, tr {
 .type-click {
 	border-left: none;	
 }
+
 .modal-dialog {
 	max-width: 80% !important;
 }

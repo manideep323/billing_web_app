@@ -28,7 +28,7 @@
                                 <tr>
                                     <td class="logo"><img src="images/logo.png"></td>
                                     <td align="center" class="tax-address">
-                                        <p><b>TAX INCOICE</b></p>
+                                        <p class="tax-invoice-text"><b>TAX INVOICE</b></p>
                                         <h3><b>M/S SHIVARATHRI CHANDRAIAH</b></h3>
                                         <p>Sy No : 28 Patelgudem Village, Alair Mandal, Yadadri
                                             District, Telangana - 508101 GSTIN : 36ACKFS9028G1ZR Lic No.
@@ -607,9 +607,9 @@
                                     <tr>
                                         <th colspan="2">GST%:</th>
                                         <th>@12%</th>
-                                        <th></th>
+                                        <th width="10%"></th>
                                         <th>IGST</th>
-                                        <th></th>
+                                        <td><input type="text" class="form-control igst" readonly></td>
                                         <th>Gross Amount</th>
                                         <th class='gross-amount'><input type="number" name='gross_total' placeholder='0.00' class="form-control" id="gross_total" readonly /></th>
                                     </tr>
@@ -619,8 +619,8 @@
                                         <td><b>@18%</b></td>
                                         <td><b></b></td>
                                         <td><b>SGST</b></td>
-                                        <td><b></b></td>
-                                        <td><b>GST Amount</b></td>
+                                        <td><input type="text" class="form-control sgst" readonly></td>
+                                        <td class="GSTAmount-text"><b>GST Amount</b></td>
                                         <td class="gst-total"><input type="number" name='gst_total' placeholder='0.00' class="form-control" id="gst_total" readonly /></td>
                                     </tr>
                                     <tr>
@@ -629,13 +629,13 @@
                                         <td><b>@28%</b></td>
                                         <td><b></b></td>
                                         <td><b>CGST</b></td>
-                                        <td><b></b></td>
+                                        <td><input type="text" class="form-control cgst" readonly></td>
                                         <td><b>Net Amount</b></td>
                                         <td class="net-amount"><input type="number" name='net_amount' placeholder='0.00' class="form-control" id="netamount_total" readonly" /></td>
                                     </tr>
-                                    <tr>
-                                        <td><b>Amount in Words</b></td>
-                                        <td colspan="5">
+                                    <tr >
+                                        <td colspan="2"><b>Amount in Words</b></td>
+                                        <td colspan="4" class="colspan-custom">
                                             <div id="word"></div>
                                         </td>
                                         <td class="hide-payment-status"><b>Payment Status</b></td>
@@ -687,15 +687,19 @@
                                             <table width="100%" border="1" class="bank-details-table">
                                                 <tbody>
                                                     <tr>
-                                                        <td><b>Bank Details</b></td>
-                                                        <td></td>
-                                                        <td></td>
+                                                        <td class="bank-title"><b>Bank Details</b></td>
+                                                        <td width="44%">ICICI Bank, Uppal Kalan Branch.</td>
+                                                        <td>A/c No :131405000712</td>
+                                                    </tr>
+                                                    <tr>
+	                                                    <td></td>
+                                                    	<td colspan="2">IFSC Code : ICIC0001314</td>
                                                     </tr>
                                                 </tbody>
                                             </table>
                                         </td>
                                         <td rowspan="2" align="center"><b>For M/s Shivarathri
-                                                Chandraiah</b> <br> <br> <br> <br> <br>
+                                                Chandraiah</b> <br> <br> <br> <br> <br><br> <br>
                                             <br>
                                             <p style="text-align: center;">
                                                 <b>Authorized Signatory</b>
@@ -719,7 +723,7 @@
                                                                 <li>Subject to ALAIR Jurisdiction.</li>
                                                                 <li>Free on Board</li>
                                                             </ol>
-                                                            <p style="text-align: right;">Receiver Signature</p>
+                                                            <p class="rec-sign" style="text-align: right;">Receiver Signature</p>
                                                         </td>
                                                         <td></td>
                                                     </tr>
@@ -873,7 +877,21 @@ function calc_total() {
         netAmounttotal += parseInt($(this).val());
     });
     $('#netamount_total').val(netAmounttotal.toFixed(2));
+	
+    //amount in words
+    var totalVal= $('#netamount_total').val()
+    word.innerHTML=convertNumberToWords(totalVal+'only');
 
+    //gst Calculation
+    var custStatecode = parseInt($('.stateCode').val());
+    var gstTotalval = $('#gst_total').val();
+     if(custStatecode=="36") {
+    	$('.igst').val(gstTotalval);
+    }else{
+    	$('.sgst').val(gstTotalval/2);
+    	$('.cgst').val(gstTotalval/2);
+    } 
+    
 }
 
 $(document)
@@ -980,7 +998,11 @@ $(document)
 
 //$('#mymodal').find('input').focus();
 $('#printInvoice').click(function() {
-    $.print('.bill-section');
+	$('.colspan-custom').attr('colspan','6');
+	$.print('.bill-section');
+	setTimeout(function(){
+		$('.colspan-custom').attr('colspan','4');
+	}, 1);
 });
 
 $('#print-dc').click(function() {
